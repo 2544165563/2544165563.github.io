@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python网络编程 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="udpudp发送1234567891011import socket# 1.创建socket并连接s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python网络编程</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python网络编程</h1>
+        <div class="stuff">
+            <span>十一月 09, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="udp"><a href="#udp" class="headerlink" title="udp"></a>udp</h1><h2 id="udp发送"><a href="#udp发送" class="headerlink" title="udp发送"></a>udp发送</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="comment"># 1.创建socket并连接</span></span><br><span class="line">s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)</span><br><span class="line"><span class="comment"># AF_INET表示这个socket表示用来进行网络连接</span></span><br><span class="line"><span class="comment"># SOCK_DGRAM表示这是一个udp连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.发送数据</span></span><br><span class="line">s.sendto(<span class="string">&#x27;憨憨&#x27;</span>.encode(<span class="string">&#x27;utf8&#x27;</span>),(<span class="string">&#x27;10.173.86.27&#x27;</span>,<span class="number">19000</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.关闭socket</span></span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="udp接收数据"><a href="#udp接收数据" class="headerlink" title="udp接收数据"></a>udp接收数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line">s.bind((<span class="string">&#x27;10.173.86.27&#x27;</span>,<span class="number">19000</span>))   <span class="comment"># 绑定自己的地址端号</span></span><br><span class="line">data,addr = s.recvfrom(<span class="number">1024</span>)   <span class="comment"># 接收(消息,(地址，端号))</span></span><br><span class="line"></span><br><span class="line">print(data.decode(<span class="string">&#x27;utf8&#x27;</span>))   <span class="comment"># 将接收的消息编码</span></span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
+
+<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h2 id="客户端-发送"><a href="#客户端-发送" class="headerlink" title="客户端(发送)"></a>客户端(发送)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line"></span><br><span class="line">s.connect((<span class="string">&#x27;10.173.86.27&#x27;</span>,<span class="number">19000</span>))    <span class="comment"># 连接对面服务器</span></span><br><span class="line">s.send(<span class="string">&#x27;Hellow&#x27;</span>.encode(<span class="string">&#x27;utf8&#x27;</span>))</span><br><span class="line"></span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="服务端-接收"><a href="#服务端-接收" class="headerlink" title="服务端(接收)"></a>服务端(接收)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">s.bind((<span class="string">&#x27;10.173.37.31&#x27;</span>,<span class="number">190000</span>))   <span class="comment"># 绑定自己的ip</span></span><br><span class="line">s.listen(<span class="number">128</span>)   <span class="comment"># 能同时接收128个</span></span><br><span class="line">client_socket,client_addr = s.accept()</span><br><span class="line">data = client_socket.recv(<span class="number">1024</span>)</span><br><span class="line">print(<span class="string">&#x27;接收到了&#123;&#125;客户端&#123;&#125;端口号发送的内容:&#123;&#125;&#x27;</span>.format(client_addr[<span class="number">0</span>],client_addr[<span class="number">1</span>],data.decode(<span class="string">&#x27;utf8&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h1><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dance</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">        print(<span class="string">&#x27;跳舞&#x27;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sing</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">        print(<span class="string">&#x27;唱歌&#x27;</span>)</span><br><span class="line"></span><br><span class="line">t1 = threading.Thread(target=dance)   <span class="comment"># 创建线程,target指定函数</span></span><br><span class="line">t2 = threading.Thread(target=sing)</span><br><span class="line"></span><br><span class="line">t1.start()   <span class="comment"># 启动进程</span></span><br><span class="line">t2.start()</span><br></pre></td></tr></table></figure>
+
+<h3 id="线程锁"><a href="#线程锁" class="headerlink" title="线程锁"></a>线程锁</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建</span></span><br><span class="line">lock = threading.Lock()</span><br><span class="line"><span class="comment"># 上锁</span></span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="comment"># 解锁</span></span><br><span class="line">lock.release()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建锁</span></span><br><span class="line">lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">sum = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sell</span>():</span></span><br><span class="line">    <span class="keyword">global</span> sum</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        lock.acquire()   <span class="comment"># 加同步锁</span></span><br><span class="line">        <span class="keyword">if</span> sum &gt; <span class="number">0</span>:</span><br><span class="line">            time.sleep(<span class="number">1</span>)</span><br><span class="line">            sum -= <span class="number">1</span></span><br><span class="line">            lock.release()</span><br><span class="line">            print(<span class="string">&#x27;&#123;&#125;卖出1张，还剩&#123;&#125;张&#x27;</span>.format(threading.current_thread().name,sum))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lock.release()</span><br><span class="line">            print(<span class="string">&#x27;票卖完了&#x27;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">t1 = threading.Thread(target=sell,name=<span class="string">&#x27;线程1&#x27;</span>)</span><br><span class="line">t2 = threading.Thread(target=sell,name=<span class="string">&#x27;线程2&#x27;</span>)</span><br><span class="line"></span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br></pre></td></tr></table></figure>
+
+<h3 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">produce</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        print(<span class="string">&#x27;生产了面包b&#123;&#125;&#x27;</span>.format(i))</span><br><span class="line">        q.put(<span class="string">&#x27;b&#123;&#125;&#x27;</span>.format(i))   <span class="comment"># 添加到队列</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        print(<span class="string">&#x27;买到面包&#123;&#125;&#x27;</span>.format(q.get()))   <span class="comment"># 堵塞方法，将队列中的内容拿出</span></span><br><span class="line"></span><br><span class="line">q = queue.Queue()   <span class="comment"># 创建队列</span></span><br><span class="line">p1 = threading.Thread(target=produce)</span><br><span class="line">p2 = threading.Thread(target=consumer)</span><br><span class="line">p1.start()</span><br><span class="line">p2.start()</span><br></pre></td></tr></table></figure>
+
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sing</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        print(<span class="string">&#x27;唱歌&#x27;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dance</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        print(<span class="string">&#x27;跳舞&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    p1 = multiprocessing.Process(target=sing,args=(<span class="number">10</span>,))</span><br><span class="line">    p2 = multiprocessing.Process(target=dance,args=(<span class="number">10</span>,))</span><br><span class="line"></span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br></pre></td></tr></table></figure>
+
+<h3 id="进程间的通信"><a href="#进程间的通信" class="headerlink" title="进程间的通信"></a>进程间的通信</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">produce</span>(<span class="params">q</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        time.sleep(<span class="number">0.3</span>)</span><br><span class="line">        print(<span class="string">&#x27;+++++面包&#123;&#125; &#123;&#125;&#x27;</span>.format(os.getpid(),i))</span><br><span class="line">        q.put(<span class="string">&#x27;&#123;&#125;&#x27;</span>.format(i))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span>(<span class="params">q</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        print(<span class="string">&#x27;-----面包&#123;&#125; &#123;&#125;&#x27;</span>.format(os.getpid(),q.get()))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    q = multiprocessing.Queue()</span><br><span class="line"></span><br><span class="line">    p = multiprocessing.Process(target=produce,args=(q,))   <span class="comment"># 由于线程间不能使用全局变量，所以要传参</span></span><br><span class="line">    c = multiprocessing.Process(target=consumer,args=(q,))</span><br><span class="line"></span><br><span class="line">    p.start()</span><br><span class="line">    c.start()</span><br></pre></td></tr></table></figure>
+
+<h3 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing,time,random,os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker</span>(<span class="params">msg</span>):</span></span><br><span class="line">    t_start = time.time()</span><br><span class="line">    print(<span class="string">&#x27;%s开始执行，进程号为%d&#x27;</span> %(msg,os.getpid()))</span><br><span class="line">    time.sleep(random.random()*<span class="number">2</span>)</span><br><span class="line">    t_stop = time.time()</span><br><span class="line">    print(msg,<span class="string">&#x27;执行完毕,耗时%0.2f&#x27;</span> %(t_stop-t_start))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    po = multiprocessing.Pool(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        po.apply_async(worker,(i,))</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">&quot;----start----&quot;</span>)</span><br><span class="line">    po.close()</span><br><span class="line">    po.join()   <span class="comment"># 让主线程等待子线程结束</span></span><br><span class="line">    print(<span class="string">&quot;----end----&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="简单的HTTP服务器"><a href="#简单的HTTP服务器" class="headerlink" title="简单的HTTP服务器"></a>简单的HTTP服务器</h1><p>只有自己能访问。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">s.bind((<span class="string">&#x27;0.0.0.0&#x27;</span>,<span class="number">8090</span>))   <span class="comment"># 0.0.0.0代表可以访问的任何形式地址</span></span><br><span class="line">s.listen(<span class="number">128</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    client_socket,client_addr = s.accept()</span><br><span class="line">    data = client_socket.recv(<span class="number">1024</span>).decode(<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">    path = data.splitlines()[<span class="number">0</span>].split()[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    response_header = <span class="string">&#x27;HTTP/1.1 200 OK\n&#x27;</span></span><br><span class="line">    response_body = <span class="string">&#x27;Hellow&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据不同的请求返回不同内容</span></span><br><span class="line">    <span class="keyword">if</span> path == <span class="string">&#x27;/login&#x27;</span>:</span><br><span class="line">        response_body = <span class="string">&#x27;欢迎来到登陆界面&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> path == <span class="string">&#x27;/register&#x27;</span>:</span><br><span class="line">        response_body = <span class="string">&#x27;欢迎来到注册界面&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> path == <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">        response_body = <span class="string">&#x27;欢迎来到首页&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        response_header = <span class="string">&#x27;HTTP/1.1 404 Page Not Found\n&#x27;</span></span><br><span class="line">        response_body = <span class="string">&#x27;&lt;p style=&quot;color:red;text-align:center;font-size:120px&quot;&gt;页面不存在&lt;/p&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line">    response_header += <span class="string">&#x27;content-type:text/html;charset=utf8\n&#x27;</span>   <span class="comment"># charset指定浏览器解码</span></span><br><span class="line">    response_header += <span class="string">&#x27;\n&#x27;</span></span><br><span class="line">    response = response_header + response_body</span><br><span class="line"></span><br><span class="line">    client_socket.send(response.encode(<span class="string">&#x27;utf8&#x27;</span>))</span><br><span class="line"></span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure>
+
+<h2 id="WSGI服务器"><a href="#WSGI服务器" class="headerlink" title="WSGI服务器"></a>WSGI服务器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wsgiref.simple_server <span class="keyword">import</span> make_server</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">demp_app</span>(<span class="params">environ,start_response</span>):</span></span><br><span class="line">    start_response(<span class="string">&#x27;200 OK&#x27;</span>,[(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/html;charset=utf8&#x27;</span>),(<span class="string">&#x27;Server&#x27;</span>,<span class="string">&#x27;WSGI&#x27;</span>)])   <span class="comment"># 处理响应头</span></span><br><span class="line">    path = environ[<span class="string">&#x27;PATH_INFO&#x27;</span>]</span><br><span class="line">    print(path)</span><br><span class="line">    <span class="keyword">return</span> [<span class="string">&#x27;你好&#x27;</span>.encode(<span class="string">&#x27;utf8&#x27;</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    httpd = make_server(<span class="string">&#x27;&#x27;</span>,<span class="number">8000</span>,demp_app)   <span class="comment"># ip地址，端口号，处理函数</span></span><br><span class="line">    sa = httpd.socket.getsockname()</span><br><span class="line">    print(<span class="string">&#x27;Serving HTTP on&#x27;</span>,sa[<span class="number">0</span>],<span class="string">&#x27;port&#x27;</span>,sa[<span class="number">1</span>],<span class="string">&#x27;...&#x27;</span>)</span><br><span class="line">    <span class="comment"># httpd.handle_request() 接收一次</span></span><br><span class="line">    httpd.serve_forever()   <span class="comment"># 一直接收</span></span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#udp"><span class="toc-number">1.</span> <span class="toc-text">udp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#udp%E5%8F%91%E9%80%81"><span class="toc-number">1.1.</span> <span class="toc-text">udp发送</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#udp%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.</span> <span class="toc-text">udp接收数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP"><span class="toc-number">2.</span> <span class="toc-text">TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-%E5%8F%91%E9%80%81"><span class="toc-number">2.1.</span> <span class="toc-text">客户端(发送)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF-%E6%8E%A5%E6%94%B6"><span class="toc-number">2.2.</span> <span class="toc-text">服务端(接收)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text">多任务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E9%94%81"><span class="toc-number">3.1.1.</span> <span class="toc-text">线程锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="toc-number">3.1.2.</span> <span class="toc-text">线程间通信</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.2.</span> <span class="toc-text">进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-number">3.2.1.</span> <span class="toc-text">进程间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%B1%A0"><span class="toc-number">3.2.2.</span> <span class="toc-text">进程池</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">简单的HTTP服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WSGI%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">4.1.</span> <span class="toc-text">WSGI服务器</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

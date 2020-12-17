@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>泛型与集合框架 - ScaryPigLX的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ScaryPigLX,"> 
+    <meta name="description" content="chenlvtang友情赞助,1.List表(有序可重复)(LinkedList链表、ArrayList)
+
+常用方法：
+void add(int index,Object element)        boolean add,"> 
+    <meta name="author" content="liuxiang"> 
+    <link rel="alternative" href="atom.xml" title="ScaryPigLX的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ScaryPigLX的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://2544165563.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">泛型与集合框架</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">泛型与集合框架</h1>
+        <div class="stuff">
+            <span>八月 27, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="1-List表-有序可重复-LinkedList链表、ArrayList"><a href="#1-List表-有序可重复-LinkedList链表、ArrayList" class="headerlink" title="1.List表(有序可重复)(LinkedList链表、ArrayList)"></a>1.List表(有序可重复)(LinkedList链表、ArrayList)</h1><a id="more"></a>
+
+<p>常用方法：</p>
+<p>void add(int index,Object element)        boolean addAll(int index,Collection c)</p>
+<p>Object get(int index)                                 Object remove(int index)</p>
+<p>Object set(int index,Object element)      int indexOf(Object o)</p>
+<p>int lastIndex(Object o)                               List subList(int fromIndex,int toIndex)                          </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> </span>&#123;</span><br><span class="line">String name;</span><br><span class="line"><span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">int</span> wages;</span><br><span class="line">Man(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> wages) &#123;</span><br><span class="line">	<span class="keyword">this</span>.name=name;</span><br><span class="line">	<span class="keyword">this</span>.age=age;</span><br><span class="line">	<span class="keyword">this</span>.wages=wages;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"姓名:"</span>+name+<span class="string">"  "</span>+<span class="string">"年龄:"</span>+age+<span class="string">"  "</span>+<span class="string">"工资:"</span>+wages);;&#125;&#125;</span><br><span class="line"><span class="comment">/*---------------------------------------------------------------------------------*/</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">And</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  List&lt;Man&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();  <span class="comment">//&lt;泛型&gt;</span></span><br><span class="line">  list.add(<span class="keyword">new</span> Man(<span class="string">"张三"</span>, <span class="number">18</span>, <span class="number">3000</span>));</span><br><span class="line">  list.add(<span class="keyword">new</span> Man(<span class="string">"李四"</span>, <span class="number">25</span>, <span class="number">3500</span>));</span><br><span class="line">  list.add(<span class="keyword">new</span> Man(<span class="string">"王五"</span>, <span class="number">22</span>, <span class="number">3200</span>));</span><br><span class="line">  list.add(<span class="keyword">new</span> Man(<span class="string">"赵六"</span>, <span class="number">24</span>, <span class="number">3300</span>));</span><br><span class="line">  <span class="keyword">int</span> len=list.size();     <span class="comment">//获取长度</span></span><br><span class="line"><span class="comment">//迭代器遍历</span></span><br><span class="line">Iterator&lt;Man&gt; iterator=list.iterator();    </span><br><span class="line"> <span class="keyword">while</span>(iterator.hasNext()) &#123;</span><br><span class="line">	 Man man=iterator.next();</span><br><span class="line">	man.get();&#125;&#125;&#125;</span><br><span class="line"><span class="comment">//简单遍历</span></span><br><span class="line"><span class="keyword">for</span>(Man man : list) &#123;</span><br><span class="line">	 man.get();&#125;</span><br><span class="line"> &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-Stack栈"><a href="#1-Stack栈" class="headerlink" title="(1)Stack栈"></a>(1)Stack栈</h2><p>常用方法：</p>
+<p>Object push(Object item)</p>
+<p>Object pop()</p>
+<p>boolean empty()    //判断是否为空</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">And</span></span>&#123;</span><br><span class="line"> <span class="keyword">static</span> String months[]= &#123;<span class="string">"January"</span>,<span class="string">"February"</span>,<span class="string">"March"</span>,<span class="string">"April"</span>,<span class="string">"May"</span>,<span class="string">"June"</span>,<span class="string">"July"</span>,<span class="string">"August"</span>,<span class="string">"September"</span>,<span class="string">"October"</span>,<span class="string">"November"</span>,<span class="string">"December"</span>&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  Stack&lt;String&gt; stk=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;months.length;i++) </span><br><span class="line">	  stk.push(months[i]);</span><br><span class="line">	  System.out.println(stk);   <span class="comment">//输出栈内元素（正序）</span></span><br><span class="line">   <span class="keyword">while</span>(!stk.empty())</span><br><span class="line">	   System.out.println(stk.pop());&#125;&#125;   <span class="comment">//出栈（倒序）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Queue队列"><a href="#2-Queue队列" class="headerlink" title="(2)Queue队列"></a>(2)Queue队列</h2><p>常用方法1.抛出异常方法 add(e)  remove()   element()</p>
+<p>​               2.返回元素方法 offer(e)  poll()  peek()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">And</span></span>&#123;</span><br><span class="line"> <span class="keyword">static</span> String months[]= &#123;<span class="string">"January"</span>,<span class="string">"February"</span>,<span class="string">"March"</span>,<span class="string">"April"</span>,<span class="string">"May"</span>,<span class="string">"June"</span>,<span class="string">"July"</span>,<span class="string">"August"</span>,<span class="string">"September"</span>,<span class="string">"October"</span>,<span class="string">"November"</span>,<span class="string">"December"</span>&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  Queue&lt;String&gt; que=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;months.length;i++)</span><br><span class="line">	  que.offer(months[i]);</span><br><span class="line">  <span class="keyword">while</span>(!que.isEmpty())</span><br><span class="line">	  System.out.println(que.poll());&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2-Set集-无序不可重复-HashSet、TreeSet树集"><a href="#2-Set集-无序不可重复-HashSet、TreeSet树集" class="headerlink" title="2.Set集(无序不可重复)(HashSet、TreeSet树集)"></a>2.Set集(无序不可重复)(HashSet、TreeSet树集)</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">And</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Set&lt;String&gt; set=<span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">		set.add(<span class="string">"apple"</span>);</span><br><span class="line">		set.add(<span class="string">"banane"</span>);</span><br><span class="line">		set.add(<span class="string">"apple"</span>);</span><br><span class="line">System.out.println(set.contains(<span class="string">"banane"</span>));  <span class="comment">//判断是否存在</span></span><br><span class="line">	System.out.println(set); &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p>​       true</p>
+<p>​       [apple,banane]</p>
+<h1 id="3-Map映射（键-值对的集合）（HashMap散列映射、TreeMap）"><a href="#3-Map映射（键-值对的集合）（HashMap散列映射、TreeMap）" class="headerlink" title="3.Map映射（键-值对的集合）（HashMap散列映射、TreeMap）"></a>3.Map映射（键-值对的集合）（HashMap散列映射、TreeMap）</h1><p>常用方法：put(key,value)       get(key)</p>
+<p>​                   entrySet(）  keySet()     values()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">And</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Map&lt;String,String&gt; map=<span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">	map.put(<span class="string">"1"</span>, <span class="string">"apple"</span>);</span><br><span class="line">	map.put(<span class="string">"2"</span>, <span class="string">"banane"</span>);</span><br><span class="line">	map.put(<span class="string">"1"</span>, <span class="string">"orange"</span>);</span><br><span class="line">	System.out.println(map.get(<span class="string">"1"</span>));</span><br><span class="line">	<span class="keyword">for</span>(String s:map.keySet())           <span class="comment">//根据键输出值</span></span><br><span class="line">		System.out.print(map.get(s)+<span class="string">"  "</span>);System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="keyword">for</span>(String s:map.values())           <span class="comment">//直接输出值</span></span><br><span class="line">		System.out.print(s+<span class="string">"  "</span>);System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">	Iterator it=map.entrySet().iterator();     <span class="comment">//迭代器遍历</span></span><br><span class="line">	<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">		Map.Entry&lt;String,String&gt; entry=(Map.Entry&lt;String, String&gt;)it.next();</span><br><span class="line">		System.out.println(entry.getKey()+<span class="string">":"</span>+entry.getValue());&#125; </span><br><span class="line">	&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p>​            orange</p>
+<p>​            orange  banane</p>
+<p>​            orange  banane</p>
+<p>​            1:orange</p>
+<p>​            2:banane</p>
+<h1 id="4-泛型"><a href="#4-泛型" class="headerlink" title="4.泛型"></a>4.泛型</h1><p>优点：可以建立具有类型安全的数据结构，在使用泛型类建立的数据结构时，不必进行类型转换</p>
+<p>泛型类： class ShowObject<E>  E为任何对象（类）或接口</p>
+<p>​                 泛型变量只能调用toString方法</p>
+<p>泛型类声明对象：泛型类声明和创建对象时，类名后多一对“&lt;&gt;”          </p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/123.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/123.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-List表-有序可重复-LinkedList链表、ArrayList"><span class="toc-number">1.</span> <span class="toc-text">1.List表(有序可重复)(LinkedList链表、ArrayList)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Stack栈"><span class="toc-number">1.1.</span> <span class="toc-text">(1)Stack栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Queue队列"><span class="toc-number">1.2.</span> <span class="toc-text">(2)Queue队列</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Set集-无序不可重复-HashSet、TreeSet树集"><span class="toc-number">2.</span> <span class="toc-text">2.Set集(无序不可重复)(HashSet、TreeSet树集)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Map映射（键-值对的集合）（HashMap散列映射、TreeMap）"><span class="toc-number">3.</span> <span class="toc-text">3.Map映射（键-值对的集合）（HashMap散列映射、TreeMap）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-泛型"><span class="toc-number">4.</span> <span class="toc-text">4.泛型</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

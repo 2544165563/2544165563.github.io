@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>mysql基础 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+
+创建数据库1create database pig;
+
+展示数据库
+1show databases;
+
+使用该数据库
+1use &amp;lt;库名&amp;gt;
+
+表展示该数据库中的所有表
+1show ta,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">mysql基础</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">mysql基础</h1>
+        <div class="stuff">
+            <span>十月 10, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <a id="more"></a>
+
+<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database pig;</span><br></pre></td></tr></table></figure>
+
+<p>展示数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+<p>使用该数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use &lt;库名&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><p>展示该数据库中的所有表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+
+<p>显示表的详情信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe &lt;表名&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create table tb</span><br><span class="line">(</span><br><span class="line">  id       int         auto_increment  not null primary key,</span><br><span class="line">  </span><br><span class="line">  name     varchar(10)                 not null default 1,</span><br><span class="line">   </span><br><span class="line">  password varchar(10)                 not null,</span><br><span class="line">  </span><br><span class="line">  sex      int                         not null check(sex in [1,2])</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建外键与主键"><a href="#创建外键与主键" class="headerlink" title="创建外键与主键"></a>创建外键与主键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table test2</span><br><span class="line">(学号 char(4) not null,</span><br><span class="line"> 姓名 char(4) not null,</span><br><span class="line"> primary key(学号),</span><br><span class="line"> foreign key(学号) references test1(学号)</span><br><span class="line">  on delete restrict</span><br><span class="line">  on update cascade</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">restrict   拒绝操作</span><br><span class="line"></span><br><span class="line">cascade    级联操作</span><br><span class="line"></span><br><span class="line">no action  不执行操作</span><br><span class="line"></span><br><span class="line">set default  设为默认值</span><br><span class="line"></span><br><span class="line">set null    设为空值</span><br></pre></td></tr></table></figure>
+
+<h3 id="check、枚举类型enum"><a href="#check、枚举类型enum" class="headerlink" title="check、枚举类型enum"></a>check、枚举类型enum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table test</span><br><span class="line">(性别 char(1) not null check(性别 in (&#39;男&#39;,&#39;女&#39;)));</span><br><span class="line"># 好像mysql中check不起作用。。。</span><br><span class="line"></span><br><span class="line">create table test</span><br><span class="line">(性别 enum(&#39;男&#39;,&#39;女&#39;) not null);</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h3><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table test</span><br><span class="line">(姓名 char(4) not null,</span><br><span class="line">constraint primary_key primary key(姓名));</span><br></pre></td></tr></table></figure>
+
+<p>删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table test drop primary key;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">alter table &lt;表名&gt; add column &lt;列名&gt; &lt;类型&gt; ..     # 添加列</span><br><span class="line"></span><br><span class="line">alter table &lt;表名&gt; modify &lt;列名&gt; &lt;类型&gt; ..  # 更改列的属性</span><br><span class="line"></span><br><span class="line">alter table &lt;表名&gt; drop column &lt;列名&gt;  # 删除列</span><br><span class="line"></span><br><span class="line">alter table &lt;表名&gt; rename &lt;新表名&gt;   # 修改表名</span><br><span class="line"></span><br><span class="line">rename table test to test_name;   # 修改表名</span><br><span class="line"></span><br><span class="line">alter table &lt;表名&gt; change &lt;列名&gt; &lt;原列名&gt;  # 修改列名，但我运行失败了</span><br><span class="line"></span><br><span class="line">drop table if exists &lt;表名&gt;  # 删除表</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>insert</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into &lt;表名&gt; values (&lt;&gt;,&lt;&gt;,&lt;&gt;);</span><br></pre></td></tr></table></figure>
+
+<p>replace 与insert功能相同，不过能替代原有的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">replace into &lt;表名&gt; vales (&lt;&gt;,&lt;&gt;,&lt;&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update &lt;表名&gt; set &lt;改动&gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from Student;</span><br></pre></td></tr></table></figure>
+
+<p>列名更换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname 姓名 from Student   # 将列名sname更换成&#39;姓名&#39;输出;</span><br></pre></td></tr></table></figure>
+
+<p>between</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from Student where Sage between 10 and 20;</span><br></pre></td></tr></table></figure>
+
+<p>in</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from Student where Sno in (1,2,3);</span><br></pre></td></tr></table></figure>
+
+<p>%  _  /</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from Student where Sname like &#39;刘%&#39;   # %任意数量字符,_单个字符;</span><br><span class="line"></span><br><span class="line">select * from Student where Sname like &#39;刘\_,escape&#39;\&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>is</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from Student where Sname is not null;</span><br></pre></td></tr></table></figure>
+
+<p>order by</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from Student order by Sno desc;   # desc降序,asc升序</span><br></pre></td></tr></table></figure>
+
+<p>聚合函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from Student;   # sum,avg,max,min</span><br></pre></td></tr></table></figure>
+
+<p>group by</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 课程号,count(学号) from xs_kc group by 课程号 having count(学号)&lt;2;</span><br></pre></td></tr></table></figure>
+
+<p>when</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select money,</span><br><span class="line">case</span><br><span class="line">when money&lt;&#x3D;3000 then &#39;低&#39;</span><br><span class="line">when money&gt;3000 then &#39;高&#39;</span><br><span class="line">else &#39;还可以&#39;</span><br><span class="line">end as 等级</span><br><span class="line">from salary</span><br></pre></td></tr></table></figure>
+
+<h3 id="内连接与外连接"><a href="#内连接与外连接" class="headerlink" title="内连接与外连接"></a>内连接与外连接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select * from A inner join B on A.name&#x3D;B.name;</span><br><span class="line"></span><br><span class="line">select * from A left&#x2F;right outer join B on A.name&#x3D;B.name</span><br><span class="line"></span><br><span class="line">mysql不支持full outer join。。。</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>删除表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop &lt;表名&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from &lt;表名&gt; where &lt;条件&gt;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><h2 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create view avg(num,avg) as</span><br><span class="line">select 学号,avg(成绩) from xs_kc group by 学号 having avg(成绩)&gt;80 with check option;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create view test as select * from xs where 专业名&#x3D;&#39;计算机&#39; with chexk option;</span><br><span class="line"></span><br><span class="line">with check option    在更新视图的时候判断是否符合where语句</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改视图"><a href="#修改视图" class="headerlink" title="修改视图"></a>修改视图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter view test as select 学号,姓名,总学分 from xs where 专业名&#x3D;&#39;计算机&#39;</span><br></pre></td></tr></table></figure>
+
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p>局部变量声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare t1 integer;</span><br></pre></td></tr></table></figure>
+
+<p>变量赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set t1&#x3D;666;</span><br></pre></td></tr></table></figure>
+
+<p>select…into将结果存放在variable变量里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select Sname,Sex into variable1,variable2</span><br><span class="line"> from student where Sname&#x3D;&#39;刘晨&#39;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line">create procedure save_name()</span><br><span class="line">begin</span><br><span class="line"> select * from student where name&#x3D;&#39;Li&#39;;</span><br><span class="line">end $$</span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><h3 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line">create procedure save_name(in k1 integer,out k2 char(6))</span><br><span class="line">begin</span><br><span class="line"> if k1&#x3D;3 then set k2&#x3D;&#39;正确&#39;;</span><br><span class="line"> elseif k1&#x3D;6 then set k2&#x3D;&#39;差不多&#39;;</span><br><span class="line"> else set k2&#x3D;&#39;错误&#39;;</span><br><span class="line"> end if;</span><br><span class="line">end $$</span><br><span class="line">delimiter ;</span><br><span class="line"></span><br><span class="line"># 使用</span><br><span class="line">call save_name(3,@k);</span><br><span class="line">select @k 结果;</span><br></pre></td></tr></table></figure>
+
+<h3 id="case"><a href="#case" class="headerlink" title="case"></a>case</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line">create procedure liudi(in liu2 integer,out liu3 char(6))</span><br><span class="line">begin</span><br><span class="line"> case liu2</span><br><span class="line">     when 1 then set liu3&#x3D;&#39;aaa&#39;;</span><br><span class="line">     when 2 then set liu3&#x3D;&#39;bbb&#39;;</span><br><span class="line">     else set liu3&#x3D;&#39;ccc&#39;;</span><br><span class="line"> end case;</span><br><span class="line">end $$</span><br><span class="line">delimiter ; </span><br><span class="line"></span><br><span class="line"># 使用</span><br><span class="line">call liudi(1,@k);</span><br><span class="line">select @k;</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iterate label;   # 再次循环</span><br><span class="line"></span><br><span class="line">leave label;   # 离开循环</span><br></pre></td></tr></table></figure>
+
+<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line">create procedure while_name()</span><br><span class="line">begin</span><br><span class="line"> declare s1 int default 5;</span><br><span class="line"> while s1&gt;0 do</span><br><span class="line">   select s1;</span><br><span class="line">   set s1&#x3D;s1-1;</span><br><span class="line"> end while;</span><br><span class="line">end $$</span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
+
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line">create procedure repeat_name()</span><br><span class="line">begin</span><br><span class="line"> declare s1 int default 3;</span><br><span class="line"> repeat</span><br><span class="line">   set s1&#x3D;s1-1;</span><br><span class="line">   until s1&lt;1   # 当条件为真的时候结束</span><br><span class="line"> end repeat;</span><br><span class="line">end $$</span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
+
+<h3 id="loop"><a href="#loop" class="headerlink" title="loop"></a>loop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line">create procedure loop_name()</span><br><span class="line">begin</span><br><span class="line"> set @a&#x3D;3;   # @a为局部变量，可以一直存在</span><br><span class="line"> label:loop   # label为标记名字，自定义</span><br><span class="line">  set @a&#x3D;@a-1;</span><br><span class="line">  select @a;</span><br><span class="line">  if @a&lt;0 then leave label;</span><br><span class="line">  end if;</span><br><span class="line"> end loop label;   # 离开label标记的函数</span><br><span class="line"> end $$</span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-number">2.1.</span> <span class="toc-text">创建表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%96%E9%94%AE%E4%B8%8E%E4%B8%BB%E9%94%AE"><span class="toc-number">2.1.1.</span> <span class="toc-text">创建外键与主键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#check%E3%80%81%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8Benum"><span class="toc-number">2.1.2.</span> <span class="toc-text">check、枚举类型enum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="toc-number">2.1.3.</span> <span class="toc-text">完整性约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-number">2.2.</span> <span class="toc-text">修改表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5"><span class="toc-number">2.3.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9"><span class="toc-number">2.4.</span> <span class="toc-text">更改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-number">2.5.</span> <span class="toc-text">查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5%E4%B8%8E%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.5.1.</span> <span class="toc-text">内连接与外连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">2.6.</span> <span class="toc-text">删除</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.1.</span> <span class="toc-text">创建视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A7%86%E5%9B%BE"><span class="toc-number">3.2.</span> <span class="toc-text">修改视图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">存储过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD"><span class="toc-number">4.2.</span> <span class="toc-text">判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-then-else"><span class="toc-number">4.2.1.</span> <span class="toc-text">if-then-else</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case"><span class="toc-number">4.2.2.</span> <span class="toc-text">case</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">4.3.</span> <span class="toc-text">循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#while"><span class="toc-number">4.3.1.</span> <span class="toc-text">while</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#repeat"><span class="toc-number">4.3.2.</span> <span class="toc-text">repeat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loop"><span class="toc-number">4.3.3.</span> <span class="toc-text">loop</span></a></li></ol></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

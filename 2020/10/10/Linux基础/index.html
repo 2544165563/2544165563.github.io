@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Linux基础 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="通配符
+
+1234567891011121314151617181920212223*   任意长度的任意字符?   单个任意字符[]   范围内的字符,如[a-z,0-9]&amp;#123;&amp;#125;,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Linux基础</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Linux基础</h1>
+        <div class="stuff">
+            <span>十月 10, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h1><a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">*   任意长度的任意字符</span><br><span class="line"></span><br><span class="line">?   单个任意字符</span><br><span class="line"></span><br><span class="line">[]   范围内的字符,如[a-z,0-9]</span><br><span class="line"></span><br><span class="line">&#123;&#125;   包含的字符串&#123;ab,cd&#125;</span><br><span class="line"></span><br><span class="line">[a-z]   除了大Z外的其他字母</span><br><span class="line"></span><br><span class="line">[A-Z]   除了小a外的其他字母</span><br><span class="line"></span><br><span class="line">[:upper:]   全大写字母</span><br><span class="line"></span><br><span class="line">[:lower:]   全小写</span><br><span class="line"></span><br><span class="line">[:alpha:]   全部大小写</span><br><span class="line"></span><br><span class="line">[:digit:]   全部数字</span><br><span class="line"></span><br><span class="line">[:alnum:]   全部数字+字母</span><br><span class="line"></span><br><span class="line">[^0-9]   0-9范围内的其他数值</span><br></pre></td></tr></table></figure>
+
+<h1 id="转义序列"><a href="#转义序列" class="headerlink" title="转义序列"></a>转义序列</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\n</span><br><span class="line"></span><br><span class="line">\b   退格</span><br><span class="line"></span><br><span class="line">\c   不打印换行</span><br><span class="line"></span><br><span class="line">\f   换页</span><br><span class="line"></span><br><span class="line">\a   警报(就是运行时嘀~一声)</span><br><span class="line"></span><br><span class="line">\r   回车</span><br></pre></td></tr></table></figure>
+
+<h1 id="ll结果分析"><a href="#ll结果分析" class="headerlink" title="ll结果分析"></a>ll结果分析</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">一 二   三  四  五  六   七   八    十</span><br><span class="line"> - rw- r-- r-- 1 root root 656 9月 9 06:38</span><br><span class="line"> </span><br><span class="line">一 &#39;-&#39;表文件,&#39;d&#39;表目录,&#39;l&#39;表链接</span><br><span class="line">二 当前用户权限，r读,w写,x执行</span><br><span class="line">三 当前组用户权限</span><br><span class="line">四 其他组权限</span><br><span class="line">五 文件被调用次数</span><br><span class="line">六 所有者</span><br><span class="line">七 所在组</span><br><span class="line">八 文件大小</span><br><span class="line">十 最后修改时间</span><br></pre></td></tr></table></figure>
+
+<h1 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h1><h2 id="basename"><a href="#basename" class="headerlink" title="basename"></a>basename</h2><p>显示最底层目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">basename aa&#x2F;bb&#x2F;cc   # cc</span><br></pre></td></tr></table></figure>
+
+<h2 id="dirname"><a href="#dirname" class="headerlink" title="dirname"></a>dirname</h2><p>显示前部目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirname aa&#x2F;bb&#x2F;cc   # aa&#x2F;bb</span><br></pre></td></tr></table></figure>
+
+<h2 id="history-历史记录"><a href="#history-历史记录" class="headerlink" title="history 历史记录"></a>history 历史记录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">history   查看指令历史记录</span><br><span class="line"></span><br><span class="line">history 10  显示最近10条记录</span><br><span class="line"></span><br><span class="line">!&lt;记录序号&gt;   使用该记录的代码</span><br></pre></td></tr></table></figure>
+
+<h2 id="help-帮助"><a href="#help-帮助" class="headerlink" title="help 帮助"></a>help 帮助</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">help 命令    用于内部命令</span><br><span class="line"></span><br><span class="line">命令 --help  用于外部命令</span><br></pre></td></tr></table></figure>
+
+<h2 id="man-详细帮助"><a href="#man-详细帮助" class="headerlink" title="man 详细帮助"></a>man 详细帮助</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">man 命令</span><br><span class="line"></span><br><span class="line">&#x2F;  查找字符串</span><br><span class="line"></span><br><span class="line">q  退出手册</span><br></pre></td></tr></table></figure>
+
+<h2 id="info-超详细目录"><a href="#info-超详细目录" class="headerlink" title="info 超详细目录"></a>info 超详细目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info 命令   与man功能差不多，但查找到的东西更多</span><br></pre></td></tr></table></figure>
+
+<h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><p>设置默认选项</p>
+<ol>
+<li>进入 /etc/inittab</li>
+<li>添加 id:3initdefault</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">0   停机</span><br><span class="line"></span><br><span class="line">1   单用户</span><br><span class="line"></span><br><span class="line">2   多用户，没有NFS，不联网</span><br><span class="line"></span><br><span class="line">3   完全多用户(initdefault)</span><br><span class="line"></span><br><span class="line">4   没用</span><br><span class="line"></span><br><span class="line">5   图形化界面</span><br><span class="line"></span><br><span class="line">6   重启</span><br></pre></td></tr></table></figure>
+
+<h2 id="paweroff"><a href="#paweroff" class="headerlink" title="paweroff"></a>paweroff</h2><p>关机</p>
+<p>普通用户和管理员都可以用，如果多个用户用该系统，则普通用户也不能用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-w   不会关机,把记录写在&#x2F;var&#x2F;log&#x2F;wtmp里</span><br><span class="line"></span><br><span class="line">-d   与w相反,关机不写</span><br></pre></td></tr></table></figure>
+
+<h2 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h2><p>关机或重启</p>
+<p>只有管理员能够使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">shutdown 5 byebye</span><br><span class="line"></span><br><span class="line">shutdown -r now</span><br><span class="line"></span><br><span class="line">shutdown 9:00</span><br><span class="line"></span><br><span class="line">-t   设定几分钟后关机，可省略</span><br><span class="line"></span><br><span class="line">-k   不会真关机，只会警告使用者</span><br><span class="line"></span><br><span class="line">-r   关机后重启</span><br><span class="line"></span><br><span class="line">-n   强制杀掉程序关机</span><br><span class="line"></span><br><span class="line">-c   取消进行中的关机动作</span><br></pre></td></tr></table></figure>
+
+<h2 id="halt"><a href="#halt" class="headerlink" title="halt"></a>halt</h2><p>关闭操作系统</p>
+<p>管理员权限才能使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-w   不关机，写记录&#x2F;var&#x2F;log&#x2F;wtmp</span><br><span class="line"></span><br><span class="line">-d   不写记录关机</span><br><span class="line"></span><br><span class="line">-f   强制关机,不呼叫shutdown</span><br><span class="line"></span><br><span class="line">-p   关机的时候关闭电源(poweroff)</span><br></pre></td></tr></table></figure>
+
+<h2 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h2><p>普通用户和管理员都可以用，如果多个用户用该系统，则普通用户也不能用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-w</span><br><span class="line"></span><br><span class="line">-d</span><br><span class="line"></span><br><span class="line">-f</span><br></pre></td></tr></table></figure>
+
+<h2 id="logname"><a href="#logname" class="headerlink" title="logname"></a>logname</h2><p>初次登陆的用户</p>
+<h2 id="whoami"><a href="#whoami" class="headerlink" title="whoami"></a>whoami</h2><p>当前活动用户</p>
+<h2 id="who"><a href="#who" class="headerlink" title="who"></a>who</h2><p>详情版users</p>
+<p>当前登录系统的用户列表</p>
+<h2 id="users"><a href="#users" class="headerlink" title="users"></a>users</h2><p>当前登录系统的用户列表</p>
+<h2 id="id"><a href="#id" class="headerlink" title="id"></a>id</h2><p>查看用户的详细信息</p>
+<h2 id="last"><a href="#last" class="headerlink" title="last"></a>last</h2><p>登录系统的历史信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-num   展示前num个</span><br><span class="line"></span><br><span class="line">username   展示username的登入信息</span><br></pre></td></tr></table></figure>
+
+<h2 id="uname"><a href="#uname" class="headerlink" title="uname"></a>uname</h2><p>显示计算机的基本信息</p>
+<h2 id="hostname"><a href="#hostname" class="headerlink" title="hostname"></a>hostname</h2><p>显示计算机名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname XXX  暂时更改主机名</span><br></pre></td></tr></table></figure>
+
+<h2 id="hostnamectl"><a href="#hostnamectl" class="headerlink" title="hostnamectl"></a>hostnamectl</h2><p>永久设置主机名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl status   查看当前主机名设置</span><br><span class="line"></span><br><span class="line">hostnamectl set-hostname XXX</span><br></pre></td></tr></table></figure>
+
+<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>/etc/passwd 存放用户信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-d   指定用户的登入目录</span><br><span class="line"></span><br><span class="line">-e   账户有效天数</span><br><span class="line"></span><br><span class="line">-f   账号过期多少天后关闭</span><br><span class="line"></span><br><span class="line">-r   建立系统账号</span><br><span class="line"></span><br><span class="line">-g   指定所属群组</span><br><span class="line"></span><br><span class="line">-G   所属附加群组</span><br><span class="line"></span><br><span class="line">-u   指定用户ID</span><br></pre></td></tr></table></figure>
+
+<h2 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h2><p>修改用户</p>
+<p>useradd中选项大多适用于usermod</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-l   修改用户名</span><br><span class="line"></span><br><span class="line">-L   锁定账号密码</span><br><span class="line"></span><br><span class="line">-U   解除密码锁定</span><br></pre></td></tr></table></figure>
+
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-r   删除用户登入目录</span><br></pre></td></tr></table></figure>
+
+<h2 id="su"><a href="#su" class="headerlink" title="su"></a>su</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su test   切换到test</span><br><span class="line"></span><br><span class="line">su - test   切换到test且当前路径改为test的home</span><br><span class="line"></span><br><span class="line">su -c ls root   借用root的权限</span><br></pre></td></tr></table></figure>
+
+<h2 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h2><p>/etc/group 存放组的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-g   指定组的id</span><br><span class="line"></span><br><span class="line">-r   创建系统工作组，组的id小于500</span><br></pre></td></tr></table></figure>
+
+<h2 id="groupmod"><a href="#groupmod" class="headerlink" title="groupmod"></a>groupmod</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-n &lt;new_name&gt; &lt;old_name&gt;  设置新的组名</span><br></pre></td></tr></table></figure>
+
+<h2 id="groupdel"><a href="#groupdel" class="headerlink" title="groupdel"></a>groupdel</h2><h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ..  回到父目录</span><br><span class="line"></span><br><span class="line">cd -   回到上一个目录</span><br><span class="line"></span><br><span class="line">cd ~   回到家目录</span><br></pre></td></tr></table></figure>
+
+<h2 id="pwd-查看当前目录"><a href="#pwd-查看当前目录" class="headerlink" title="pwd 查看当前目录"></a>pwd 查看当前目录</h2><h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-n   # 给每行加上序号，包括空格</span><br><span class="line"></span><br><span class="line">-b   # 加序号，不包括空格</span><br><span class="line"></span><br><span class="line">-s   # 将一行以上的空行转换为一行</span><br><span class="line"></span><br><span class="line">cat -n test1 &gt; test2   # 将test1文本加上序号后复制test2</span><br></pre></td></tr></table></figure>
+
+<h2 id="more"><a href="#more" class="headerlink" title="more"></a>more</h2><p>enter   下一行</p>
+<p>f   隔一页    </p>
+<p>空格   下一屏</p>
+<p>b   上一屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-s   # 将一行以上的空行转换为一行</span><br><span class="line"></span><br><span class="line">more +10 test   # 在第10行开始显示</span><br><span class="line"></span><br><span class="line">more -3 test   # 每次显示3行</span><br></pre></td></tr></table></figure>
+
+<h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ls -a  显示所有文件和目录</span><br><span class="line"></span><br><span class="line">ls -d  只显示目录</span><br><span class="line"></span><br><span class="line">ls -l  文件详情信息</span><br><span class="line"></span><br><span class="line">ls -r  反次序显示</span><br><span class="line"></span><br><span class="line">ls -t  按建立时间列出</span><br><span class="line"></span><br><span class="line">ls -A  同a，不列出.与..</span><br><span class="line"></span><br><span class="line">ls -R  显示所有文件包括目录里的</span><br></pre></td></tr></table></figure>
+
+<h2 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir 创建目录"></a>mkdir 创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir &lt;选项&gt; &lt;目录名&gt;</span><br><span class="line"></span><br><span class="line">mkdir &#123;user1,user2,user3&#125;  创建多个目录</span><br><span class="line"></span><br><span class="line">mkdir -m &lt;权限&gt; &lt;目录名&gt;   创建权限目录</span><br><span class="line"> </span><br><span class="line">mkdir -v &lt;目录名&gt;   创建并显示信息</span><br><span class="line"></span><br><span class="line">mkdir -p test1&#x2F;test1.1 创建目录及子目录</span><br></pre></td></tr></table></figure>
+
+<h2 id="rmdir-删除目录"><a href="#rmdir-删除目录" class="headerlink" title="rmdir 删除目录"></a>rmdir 删除目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rmdir -p  test1&#x2F;test1.1</span><br><span class="line"></span><br><span class="line">rmdir -v  显示指令执行过程</span><br></pre></td></tr></table></figure>
+
+<h2 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch &#123;t1,t2&#125;.mp4</span><br><span class="line"></span><br><span class="line">touch -c &lt;文件名&gt;   更改访问时间</span><br></pre></td></tr></table></figure>
+
+<h2 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp 复制文件或目录"></a>cp 复制文件或目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cp &lt;文件&gt; &lt;指令&gt; &lt;指定目录&gt;</span><br><span class="line"></span><br><span class="line"> -p   保持原属性不变</span><br><span class="line"></span><br><span class="line"> -r   递归复制目录下所有文件</span><br><span class="line"></span><br><span class="line"> -f   强制复制，直接覆盖重名</span><br><span class="line"> </span><br><span class="line"> -l   不复制，只生产链接文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="mv-移动文件、改名"><a href="#mv-移动文件、改名" class="headerlink" title="mv 移动文件、改名"></a>mv 移动文件、改名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mv &lt;选项&gt; &lt;源文件&gt; &lt;指定目录&gt;</span><br><span class="line"></span><br><span class="line">mv &lt;old_name&gt; &lt;new_name&gt;</span><br><span class="line"></span><br><span class="line"> -b  若覆盖，先备份</span><br><span class="line"> </span><br><span class="line"> -f  直接覆盖</span><br><span class="line"> </span><br><span class="line"> -u  若源文件较新，就更新目标文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="rm-删除文件"><a href="#rm-删除文件" class="headerlink" title="rm 删除文件"></a>rm 删除文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm &lt;选项&gt; &lt;文件名&gt;</span><br><span class="line"> </span><br><span class="line">  -f  强行删除</span><br><span class="line">  </span><br><span class="line">  -r  删除目录及文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="ln链接"><a href="#ln链接" class="headerlink" title="ln链接"></a>ln链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ln &lt;选项&gt; &lt;文件&gt; &lt;目标&#x2F;new_name&gt;</span><br><span class="line"></span><br><span class="line">-b   删除,覆盖以前建的链接</span><br><span class="line"></span><br><span class="line">-d   允许超级用户制作目录的硬链接</span><br><span class="line"></span><br><span class="line">-f</span><br><span class="line"></span><br><span class="line">-i</span><br><span class="line"></span><br><span class="line">-v   显示处理过程</span><br><span class="line"></span><br><span class="line">-n   把符号链接视为一般目录(老师说这话是硬链接0.0)</span><br><span class="line"></span><br><span class="line">-s   软链接(符号链接)</span><br></pre></td></tr></table></figure>
+
+<h2 id="find-查找文件"><a href="#find-查找文件" class="headerlink" title="find 查找文件"></a>find 查找文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">find 路径 &lt;选项&gt; &lt;文件名&gt;</span><br><span class="line"> </span><br><span class="line"> -name   区分大小写</span><br><span class="line"> </span><br><span class="line"> -iname  不区分大小写</span><br><span class="line"> </span><br><span class="line"> -size -10M  小于10M的文件</span><br><span class="line"> </span><br><span class="line"> -type   类型</span><br><span class="line"> </span><br><span class="line"> -user   所属用户</span><br><span class="line"> </span><br><span class="line"> -group  所属组</span><br></pre></td></tr></table></figure>
+
+<h2 id="vi-编辑"><a href="#vi-编辑" class="headerlink" title="vi 编辑"></a>vi 编辑</h2><p>三种模式：命令模式、编辑模式(插入模式)、末行模式</p>
+<p>命令模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vi &lt;文档1&gt;,&lt;文档2&gt;,&lt;文档3&gt;</span><br><span class="line"></span><br><span class="line">:n   下一个文件</span><br><span class="line"></span><br><span class="line">:e   指定文件</span><br><span class="line"></span><br><span class="line">i&#x2F;I   当前位置字符前插入&#x2F;所在行最前方字符</span><br><span class="line"></span><br><span class="line">a&#x2F;A   当前位置字符后插入&#x2F;所在行最后面字符</span><br><span class="line"></span><br><span class="line">o&#x2F;O   当前位置的下一行开始插入</span><br><span class="line"></span><br><span class="line">c   好像是清空再插入</span><br><span class="line"></span><br><span class="line">p   将最后一个删除文本放在当前字符</span><br></pre></td></tr></table></figure>
+
+<p>末行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:w!   强制保存</span><br><span class="line"></span><br><span class="line">:q!   强制退出</span><br><span class="line"></span><br><span class="line">:e!   放弃所有修改，重上次保存开始再编辑</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:n1,n2 w [filename]   将n1到n2行保存为另一个文件</span><br><span class="line"></span><br><span class="line">:![command]   在vi里使用命令</span><br><span class="line"></span><br><span class="line">:r [filename]   将一个文件的内容写到光标所在位置</span><br><span class="line"></span><br><span class="line">:r![command]   将命令结果写入文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:n1,n2 co n3   复制</span><br><span class="line"></span><br><span class="line">:n1,n2 m n3   移动</span><br><span class="line"></span><br><span class="line">:n1,n2 d   删除</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:set nu   打开行号</span><br><span class="line"></span><br><span class="line">:set nonu   关闭行号</span><br><span class="line"></span><br><span class="line">:数字   定位到具体行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;pattern   移动到下一个包含pattern的行</span><br><span class="line"></span><br><span class="line">?pattern   移动到上一个</span><br><span class="line"></span><br><span class="line">&#x2F;pattern&#x2F;+n   移动到下一个后的第n行</span><br><span class="line"></span><br><span class="line">?pattern?-n   移动到上一个前的第n行</span><br><span class="line"></span><br><span class="line">s&#x2F;str1&#x2F;str2   替换行中首个出现的st1</span><br><span class="line"></span><br><span class="line">s&#x2F;str1&#x2F;str2&#x2F;g   替换所有</span><br><span class="line"></span><br><span class="line">.,$s&#x2F;str1&#x2F;str2&#x2F;g   当前行到末尾</span><br><span class="line"></span><br><span class="line">3,5s&#x2F;str1&#x2F;str2&#x2F;gc    3~5行显示步骤，逐一替换</span><br></pre></td></tr></table></figure>
+
+<h2 id="tar、gzip打包解压"><a href="#tar、gzip打包解压" class="headerlink" title="tar、gzip打包解压"></a>tar、gzip打包解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf test.tar.gz &lt;目标文件&gt;</span><br><span class="line"></span><br><span class="line">tar -zxvf test.tar.gz -C &lt;目标目录&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-z   # 压缩</span><br><span class="line"></span><br><span class="line">-c   # 打包</span><br><span class="line"></span><br><span class="line">-x   # 解包</span><br><span class="line"></span><br><span class="line">-v   # 显示过程</span><br><span class="line"></span><br><span class="line">-f   # 指定备份文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><p>默认输出后换行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;string&quot;</span><br><span class="line"></span><br><span class="line">echo &#96;date&#96;   不是单引号，是反引号</span><br><span class="line"></span><br><span class="line">-e   识别转义符</span><br><span class="line"></span><br><span class="line">-n   输出后不换行</span><br></pre></td></tr></table></figure>
+
+<h2 id="printf输出"><a href="#printf输出" class="headerlink" title="printf输出"></a>printf输出</h2><p>默认输出后不换行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">printf &quot;this is string&quot;   无双引号，单引号都可</span><br><span class="line"></span><br><span class="line">printf &quot;this is %s\n&quot; &quot;sting&quot;   在不带引号的时候要\\n才能换行</span><br></pre></td></tr></table></figure>
+
+<h2 id="date"><a href="#date" class="headerlink" title="date"></a>date</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">date &#39;+%D&#39;</span><br><span class="line"></span><br><span class="line">%D   09&#x2F;26&#x2F;20</span><br><span class="line"></span><br><span class="line">%x   09&#x2F;26&#x2F;2020</span><br><span class="line"></span><br><span class="line">%T   23:10:31</span><br><span class="line"></span><br><span class="line">%X   23:10:31 PM </span><br></pre></td></tr></table></figure>
+
+<h2 id="cal日历"><a href="#cal日历" class="headerlink" title="cal日历"></a>cal日历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cal 2020</span><br><span class="line"></span><br><span class="line">-y   当年日历</span><br><span class="line"></span><br><span class="line">-3   上个月，这月，下月</span><br><span class="line"></span><br><span class="line">-j   某一日位于当年的第几天</span><br></pre></td></tr></table></figure>
+
+<h2 id="expr计数器"><a href="#expr计数器" class="headerlink" title="expr计数器"></a>expr计数器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">expr 2 + 5         # 7</span><br><span class="line"></span><br><span class="line">expr 2+5           # 2+5</span><br><span class="line"></span><br><span class="line">expr length &quot;this&quot;   # 4</span><br><span class="line"></span><br><span class="line">expr substr &quot;this is a test&quot; 3 5   # is is 在第3个字符开始,抓取5个字符</span><br><span class="line"></span><br><span class="line">expr index &quot;123456&quot; 5   # 5 抓取该字符第一次出现的位置</span><br></pre></td></tr></table></figure>
+
+<h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt; t.txt   # 将ls结果存放到t.txt中</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;   # 将标准输出覆盖写入文件</span><br><span class="line"></span><br><span class="line">&gt;&gt;   # 追加写入文件</span><br><span class="line"></span><br><span class="line">&amp;&gt;   # 将错误信息重定向，&gt;&amp;一样</span><br><span class="line"></span><br><span class="line">&amp;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | grep &lt;patter&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|   # 将两边代码连起来</span><br></pre></td></tr></table></figure>
+
+<h1 id="软链接与硬链接"><a href="#软链接与硬链接" class="headerlink" title="软链接与硬链接"></a>软链接与硬链接</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>软链接<br>1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式<br>2.软链接可以跨文件系统 ，硬链接不可以<br>3.软链接可以对一个不存在的文件名进行链接<br>4.软链接可以对目录进行链接<br>硬链接：<br>1.硬链接以文件副本的形式存在。但不占用实际空间。<br>2.不允许给目录创建硬链接<br>3.硬链接只有在同一个文件系统中才能创建</p>
+<h2 id="软链接de特征"><a href="#软链接de特征" class="headerlink" title="软链接de特征"></a>软链接de特征</h2><p>1.软链接有自己的文件属性及权限等；<br>2.可对不存在的文件或目录创建软链接；<br>3.软链接可交叉文件系统；<br>4.软链接可对文件或目录创建；<br>5.创建软链接时，链接计数 i_nlink 不会增加；<br>6.删除软链接并不影响被指向的文件,但若被指向的原文件被删除，则相关软连接被称为死链接<br>   (即 dangling link,若被指向路径文件被重新创建,死链接可恢复为正常的软链接）。</p>
+<h1 id="光标快捷移动"><a href="#光标快捷移动" class="headerlink" title="光标快捷移动"></a>光标快捷移动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">←、h、backspace</span><br><span class="line"></span><br><span class="line">→、l、space</span><br><span class="line"></span><br><span class="line">↑、k、Ctrl+p</span><br><span class="line"></span><br><span class="line">↓、j、Ctrl+n、Enter</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">H   窗口第一行</span><br><span class="line"></span><br><span class="line">M   窗口中间行</span><br><span class="line"></span><br><span class="line">L   窗口最末行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">G   文件最后一行</span><br><span class="line"></span><br><span class="line">gg   文件第一行</span><br><span class="line"></span><br><span class="line">n G &#x2F; n gg   文件第n行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">^   本行第一个非空字符</span><br><span class="line"></span><br><span class="line">$   行尾</span><br><span class="line"></span><br><span class="line">0   行首</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">段落以 空行 区分</span><br><span class="line">&#123;   所在段落第一字母</span><br><span class="line"></span><br><span class="line">&#125;   所在段落在最后一个字母</span><br><span class="line"></span><br><span class="line">句子以 标点 区分</span><br><span class="line">(   所在句子第一个字母</span><br><span class="line"> </span><br><span class="line">)   下一个句子的第一个字母</span><br><span class="line"></span><br><span class="line">单词以 空格 区分</span><br><span class="line">大写的忽略字符</span><br><span class="line"></span><br><span class="line">w,W   下一个字的开头</span><br><span class="line"></span><br><span class="line">b,B   前一个字的开头</span><br><span class="line"></span><br><span class="line">e,E   下一个字的末尾</span><br><span class="line"></span><br><span class="line">ge,gE   前一个字的末尾</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yy   复制当行到内存缓冲区</span><br><span class="line"></span><br><span class="line">4yy   复制光标所在行开始向下4行</span><br><span class="line"></span><br><span class="line">p   将缓冲区内容放到光标后面</span><br><span class="line"></span><br><span class="line">P(大写)   将缓冲区内容放到光标前面</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x   删除光标所在字符</span><br><span class="line"></span><br><span class="line">X   前面字符</span><br><span class="line"></span><br><span class="line">s   删除光标所在字符并进入插入模式</span><br><span class="line"></span><br><span class="line">S   删除所在行进入插入模式</span><br><span class="line"></span><br><span class="line">dd   删除所在行</span><br><span class="line"></span><br><span class="line">2dd   删除光标所在行开始向下两行</span><br><span class="line"></span><br><span class="line">D   删除从光标位置到行尾</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r   修改光标字符，比如ra</span><br><span class="line"></span><br><span class="line">R   进入替换型插入模式</span><br><span class="line"></span><br><span class="line">cc   修改所在行(感觉和大写S功能一样)</span><br><span class="line"></span><br><span class="line">C(大写)   修改光标位置到末尾(比D多了个插入)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n   在同一方向查找</span><br><span class="line"></span><br><span class="line">N   在相反方向查找</span><br><span class="line"></span><br><span class="line">u   撤销前一条命令结果</span><br><span class="line"></span><br><span class="line">.   重复前一步</span><br></pre></td></tr></table></figure>
+
+<h1 id="Shell-高级程序设计语言"><a href="#Shell-高级程序设计语言" class="headerlink" title="Shell(高级程序设计语言)"></a>Shell(高级程序设计语言)</h1><p>常用版本：sh、ash、bsh、csh、ksh</p>
+<p>shell脚本第一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+
+
+
+<p>/etc/passwd查看用户使用的shall</p>
+<p>/etc/shells查看安装的shell</p>
+<h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">env   # 展示环境变量</span><br><span class="line"></span><br><span class="line">set   # 展示本地变量</span><br><span class="line"></span><br><span class="line">echo $&#123;path-nopath&#125;   # 判断是否定义</span><br><span class="line"></span><br><span class="line">echo $&#123;path:-nopath&#125;   # 判断是否有值</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">unset x   # 删除环境和本地变量x</span><br><span class="line"></span><br><span class="line">export x   # 将本地变量x转换为环境变量</span><br><span class="line"></span><br><span class="line">readonly x   # 将x设置为只读</span><br></pre></td></tr></table></figure>
+
+<p>read输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">read a   # 输入变量a</span><br><span class="line"></span><br><span class="line">read -p &lt;提示语句&gt; a</span><br><span class="line"></span><br><span class="line">read -t &lt;秒数&gt; a</span><br><span class="line"></span><br><span class="line">read -n &lt;字符个数&gt; a</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>数组变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">declare -a nn   # 声明</span><br><span class="line">nn&#x3D;(my name is scary pig)   # 赋值,等号两边不能有空格</span><br><span class="line"></span><br><span class="line">echo $nn   # my</span><br><span class="line">echo $&#123;nn[1]&#125;   # name</span><br></pre></td></tr></table></figure>
+
+<p>数值型变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">declare -i a</span><br><span class="line">a&#x3D;11+2   # a&#x3D;13</span><br><span class="line"></span><br><span class="line">declare b</span><br><span class="line">b&#x3D;11+2   # b&#x3D;&#39;11+2&#39;</span><br></pre></td></tr></table></figure>
+
+<p>只读型变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare -r a</span><br></pre></td></tr></table></figure>
+
+<p>查看变量状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare -p a   # 输出declare -r a&#x3D;&quot;11&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量的更改"><a href="#变量的更改" class="headerlink" title="变量的更改"></a>变量的更改</h2><p>增加输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;a&#125;123   #输出增加123</span><br><span class="line"></span><br><span class="line">echo 123$a</span><br></pre></td></tr></table></figure>
+
+<p>删除输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;path#&#x2F;*:&#125;   # 删除从左则开始第一个符合的,以&#x2F;开头*结尾</span><br><span class="line"></span><br><span class="line">echo $&#123;path##&#x2F;*:&#125;   # 删除最长符合的</span><br><span class="line"></span><br><span class="line">echo $&#123;path%:*&#125;   # 从右向左查找</span><br><span class="line"></span><br><span class="line">echo $&#123;path%%:*&#125;</span><br></pre></td></tr></table></figure>
+
+<p>替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;path&#x2F;bin&#x2F;123&#125;   # 替换第一个(从左向右)</span><br><span class="line"></span><br><span class="line">echo $&#123;path&#x2F;&#x2F;bin&#x2F;123&#125;   # 替换全部</span><br></pre></td></tr></table></figure>
+
+<h2 id="shell程序的运行方法"><a href="#shell程序的运行方法" class="headerlink" title="shell程序的运行方法"></a>shell程序的运行方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 第一种</span><br><span class="line">bash test.sh   # 简写 . test.sh</span><br><span class="line">#第二章(当脚本具有执行权限时)</span><br><span class="line">.&#x2F;test.sh   # 路径的方式</span><br></pre></td></tr></table></figure>
+
+<h2 id="shell注释"><a href="#shell注释" class="headerlink" title="shell注释"></a>shell注释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 一行</span><br><span class="line"></span><br><span class="line">:&lt;&lt;! </span><br><span class="line">多行</span><br><span class="line"> !</span><br></pre></td></tr></table></figure>
+
+<h2 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h2><p>x=10</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$x&quot;   # 10</span><br><span class="line"></span><br><span class="line">echo &#39;$x&#39;   # $x</span><br><span class="line"></span><br><span class="line">echo &#96;ls&#96;   #显示命令结果</span><br><span class="line"></span><br><span class="line">echo $(ls)   # 显示命令</span><br><span class="line"></span><br><span class="line">\   # 转义字符</span><br></pre></td></tr></table></figure>
+
+<h2 id="if-else、while、until、for"><a href="#if-else、while、until、for" class="headerlink" title="if-else、while、until、for"></a>if-else、while、until、for</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-d	检查此file是否是一个目录</span><br><span class="line">-e	检查此file是否存在 </span><br><span class="line">-f	检查此file是否为一般的文件</span><br><span class="line">-g	检查此file是否有SGID权限</span><br><span class="line">-r	检查此file是否可以读取 </span><br><span class="line">-s	检查此file大小是否不为0</span><br><span class="line">-u	检查此file是否有SUID权限</span><br><span class="line">-w	检查此file是否可以写入</span><br><span class="line">-x	检查此file是否可以执行</span><br><span class="line">-c  检查此file文件是否是字符设备文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 数值之间的比较</span><br><span class="line">-eq   相等</span><br><span class="line">-ne   不相等</span><br><span class="line">-gt   大于</span><br><span class="line">-lt   小于</span><br><span class="line"># 字符串之间的比较</span><br><span class="line">&#x3D;</span><br><span class="line">!&#x3D;</span><br><span class="line">-n   不是空字符串则为真</span><br><span class="line">-z   是空字符串为真</span><br></pre></td></tr></table></figure>
+
+<p>if-else</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">if test -f t.txt   # 判断t.txt是否存在</span><br><span class="line">then</span><br><span class="line">ehco &#39;exist&#39;</span><br><span class="line">else</span><br><span class="line">echo &#39;no exist&#39;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">x&#x3D;2</span><br><span class="line">if [ -f t.txt ];then</span><br><span class="line">echo &#39;yes&#39;</span><br><span class="line">else</span><br><span class="line">echo &#39;no&#39;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>while</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">while true;</span><br><span class="line">do</span><br><span class="line">echo &#39;Hellow World&#39;</span><br><span class="line">done   # 按ctrl+c退出循环</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">x&#x3D;0</span><br><span class="line">while [ $x -le 10 ];   # 不满足条件停止</span><br><span class="line">do</span><br><span class="line">echo Hellow$x</span><br><span class="line">x&#x3D;$(expr $x + 1)</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>until</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">x&#x3D;0</span><br><span class="line">until [ $x -gt 10];   #满足停止</span><br><span class="line">do</span><br><span class="line">echo Hellow$x</span><br><span class="line">x&#x3D;$(expr $x + 1)</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>for</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">for i in 1 2 3;</span><br><span class="line">do</span><br><span class="line">echo -n &quot;$i&quot;   # 123</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><h2 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h2><h3 id="文字设定法"><a href="#文字设定法" class="headerlink" title="文字设定法"></a>文字设定法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+r test</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">u   # 用户</span><br><span class="line"></span><br><span class="line">g   # 同组</span><br><span class="line"></span><br><span class="line">o   # 其他</span><br><span class="line"></span><br><span class="line">a   # 所有</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+   # 添加</span><br><span class="line"></span><br><span class="line">-   # 取消</span><br><span class="line"></span><br><span class="line">&#x3D;   # 赋值给定权限并取消其他所有权限</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">r   # 读</span><br><span class="line"></span><br><span class="line">w   # 写</span><br><span class="line"></span><br><span class="line">x   # 执行</span><br><span class="line"></span><br><span class="line">u   # 与属主一样的权限</span><br><span class="line"></span><br><span class="line">g   # 与同组一样的权限</span><br><span class="line"></span><br><span class="line">o   # 与其他用户一样的权限</span><br></pre></td></tr></table></figure>
+
+<h3 id="数字设定法"><a href="#数字设定法" class="headerlink" title="数字设定法"></a>数字设定法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 671 test   # rw-rwx--x</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r   # 4</span><br><span class="line"></span><br><span class="line">w   # 2</span><br><span class="line"></span><br><span class="line">x   # 1</span><br></pre></td></tr></table></figure>
+
+<h2 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chgrp group_name file_name   # 更改所在组</span><br><span class="line"></span><br><span class="line">chgrp -R group_name &#x2F;a&#x2F;b &#x2F;c   # 修改b和c下的所有文件所属组</span><br></pre></td></tr></table></figure>
+
+<h2 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chown user_name file_name   # 修改所属用户</span><br><span class="line"></span><br><span class="line">chown user_name:group_name file_name   # 修改所属用户和组</span><br><span class="line"></span><br><span class="line">-R   # 递归修改所有</span><br></pre></td></tr></table></figure>
+
+<h1 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h1><h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grep &lt;patter&gt; file   # 查看文本内容</span><br><span class="line"></span><br><span class="line">ls | grep &lt;patter&gt;   # 查找文件</span><br><span class="line"></span><br><span class="line">grep &quot;^[0-9]&quot; t.txt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-i   # 忽略大小写</span><br><span class="line"></span><br><span class="line">-n   # 显示所在行序号</span><br><span class="line"></span><br><span class="line">-v   # 显示不符合</span><br><span class="line"></span><br><span class="line">-r   # 查找目标目录及其子目录下所有的文件内容</span><br></pre></td></tr></table></figure>
+
+<h2 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &#39;条件1&#123;动作1&#125; 条件2&#123;动作2&#125;&#39; t.txt</span><br></pre></td></tr></table></figure>
+
+<p>条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BEGIN   # 开始的时候,awk &#39;BEGIN&#123;..&#125;&#39;</span><br><span class="line"></span><br><span class="line">END   # 结束的时候</span><br></pre></td></tr></table></figure>
+
+<p>动作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FN&#x3D;&quot;:&quot;   # 将:设为分割符,awk &#39;&#123;FN&#x3D;&quot;:&quot;&#125;&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cut -d &quot;%&quot;   # 以%为分割符</span><br><span class="line"></span><br><span class="line">cut -f 2,3 t.txt   # 只显示2,3列</span><br></pre></td></tr></table></figure>
+
+<h2 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sed -i   # 将修改写入文件</span><br><span class="line"></span><br><span class="line">sed -e   # 以选择的选项处理文件，默认都有</span><br><span class="line"></span><br><span class="line">sed -f   # 以指定文件处理</span><br><span class="line"></span><br><span class="line">sed -n   # 仅显示处理后的结果</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sed &#39;3a new&#39; file   # 在第三行后增加new</span><br><span class="line"></span><br><span class="line">sed &#39;3a</span><br><span class="line">&#39; file   # 增加第四行空行</span><br><span class="line"></span><br><span class="line">sed &#39;2i new&#39; file   # 在第二行前增加内容</span><br><span class="line"></span><br><span class="line">sed &#39;2,5c str&#39; file   # 将2~5行替换成str</span><br><span class="line"></span><br><span class="line">sed &#39;1,$s&#x2F;and&#x2F;or&#x2F;g&#39; file   # 将全文and替换成or</span><br><span class="line"></span><br><span class="line">sed -n &#39;2,5p&#39; file   # 将file中2~5行打印出来,与-n一起用</span><br></pre></td></tr></table></figure>
+
+<h1 id="root密码修改"><a href="#root密码修改" class="headerlink" title="root密码修改"></a>root密码修改</h1><p>在系统内修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<p>在系统外修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不会进入单用户模式。。。以后再弄吧</span><br></pre></td></tr></table></figure>
+
+<h1 id="进程查看"><a href="#进程查看" class="headerlink" title="进程查看"></a>进程查看</h1><h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-e   # 显示所有进程</span><br><span class="line"></span><br><span class="line">-l   # 显示详细进程</span><br><span class="line"></span><br><span class="line">-a   # 显示所有终端上的程序</span><br><span class="line"></span><br><span class="line">-u   # 以用户为主的格式显示进程</span><br><span class="line"></span><br><span class="line">-x   # 显示所有进程，不以终端区分</span><br><span class="line"></span><br><span class="line">-aux   # 查看整个系统的进程</span><br><span class="line"></span><br><span class="line">-ef   # 输出信息更具窗口大小截取</span><br><span class="line"></span><br><span class="line">-efww   # 输出完整的</span><br><span class="line"></span><br><span class="line">-p1,2   # 指定端口1，2</span><br><span class="line"></span><br><span class="line">-U   # 指定用户</span><br><span class="line"></span><br><span class="line">-C   # 指定程序</span><br><span class="line"></span><br><span class="line">-tN   # 指定终端N</span><br></pre></td></tr></table></figure>
+
+<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>系统监控命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;空格&gt;   # 刷新</span><br><span class="line"></span><br><span class="line">P   # 根据CPU使用大小排序</span><br><span class="line"></span><br><span class="line">T   # 根据时间，累计时间排序</span><br><span class="line"></span><br><span class="line">q   # 退出</span><br><span class="line"></span><br><span class="line">t   # 切换显示进程和cpu状态信息</span><br><span class="line"></span><br><span class="line">c   # 切换显示命令名称和完整命令行</span><br><span class="line"></span><br><span class="line">m   # 切换内存显示</span><br><span class="line"></span><br><span class="line">M   # 根据内存大小排序</span><br></pre></td></tr></table></figure>
+
+<p>第一行</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20201201220942236.png" alt="image-20201201220942236"></p>
+<p>第二行</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20201201220954168.png" alt="image-20201201220954168"></p>
+<p>第三行</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20201201221003800.png" alt="image-20201201221003800"></p>
+<p>第四行</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20201201221012330.png" alt="image-20201201221012330"></p>
+<p>第五行</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20201201221020829.png" alt="image-20201201221020829"></p>
+<h1 id="任务定时"><a href="#任务定时" class="headerlink" title="任务定时"></a>任务定时</h1><h2 id="at"><a href="#at" class="headerlink" title="at"></a>at</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">atq   # 查看作业列表</span><br><span class="line"></span><br><span class="line">atrm 作业编号   # 删除作业</span><br></pre></td></tr></table></figure>
+
+<p>安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install at</span><br><span class="line">systemctl start atd</span><br><span class="line">systemctl enable atd</span><br></pre></td></tr></table></figure>
+
+<p>时间设定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minutes、hours、days、weeks</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">now+0minutes</span><br><span class="line"></span><br><span class="line">4:00</span><br><span class="line"></span><br><span class="line">midnight(12AM)  noon(12PM)  teatime(4PM)</span><br><span class="line"></span><br><span class="line">011505   # 05年1月15号</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">at now+1minutes</span><br><span class="line">at&gt; ls                 # at&gt;自动生成</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">at npw+ 1minutes -f test.sh   # test.sh为一个脚本文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="batch批处理"><a href="#batch批处理" class="headerlink" title="batch批处理"></a>batch批处理</h2><p>和at差不多，在空闲的时候运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">batch</span><br><span class="line">at&gt; ls</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="toc-number">2.</span> <span class="toc-text">转义序列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ll%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">ll结果分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">基础指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#basename"><span class="toc-number">4.1.</span> <span class="toc-text">basename</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dirname"><span class="toc-number">4.2.</span> <span class="toc-text">dirname</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="toc-number">4.3.</span> <span class="toc-text">history 历史记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#help-%E5%B8%AE%E5%8A%A9"><span class="toc-number">4.4.</span> <span class="toc-text">help 帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#man-%E8%AF%A6%E7%BB%86%E5%B8%AE%E5%8A%A9"><span class="toc-number">4.5.</span> <span class="toc-text">man 详细帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#info-%E8%B6%85%E8%AF%A6%E7%BB%86%E7%9B%AE%E5%BD%95"><span class="toc-number">4.6.</span> <span class="toc-text">info 超详细目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#init"><span class="toc-number">4.7.</span> <span class="toc-text">init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#paweroff"><span class="toc-number">4.8.</span> <span class="toc-text">paweroff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shutdown"><span class="toc-number">4.9.</span> <span class="toc-text">shutdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#halt"><span class="toc-number">4.10.</span> <span class="toc-text">halt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reboot"><span class="toc-number">4.11.</span> <span class="toc-text">reboot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#logname"><span class="toc-number">4.12.</span> <span class="toc-text">logname</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#whoami"><span class="toc-number">4.13.</span> <span class="toc-text">whoami</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#who"><span class="toc-number">4.14.</span> <span class="toc-text">who</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#users"><span class="toc-number">4.15.</span> <span class="toc-text">users</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id"><span class="toc-number">4.16.</span> <span class="toc-text">id</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#last"><span class="toc-number">4.17.</span> <span class="toc-text">last</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uname"><span class="toc-number">4.18.</span> <span class="toc-text">uname</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hostname"><span class="toc-number">4.19.</span> <span class="toc-text">hostname</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hostnamectl"><span class="toc-number">4.20.</span> <span class="toc-text">hostnamectl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useradd"><span class="toc-number">4.21.</span> <span class="toc-text">useradd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#usermod"><span class="toc-number">4.22.</span> <span class="toc-text">usermod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#userdel"><span class="toc-number">4.23.</span> <span class="toc-text">userdel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#su"><span class="toc-number">4.24.</span> <span class="toc-text">su</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#groupadd"><span class="toc-number">4.25.</span> <span class="toc-text">groupadd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#groupmod"><span class="toc-number">4.26.</span> <span class="toc-text">groupmod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#groupdel"><span class="toc-number">4.27.</span> <span class="toc-text">groupdel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">4.28.</span> <span class="toc-text">cd 切换目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pwd-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="toc-number">4.29.</span> <span class="toc-text">pwd 查看当前目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cat"><span class="toc-number">4.30.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#more"><span class="toc-number">4.31.</span> <span class="toc-text">more</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ls"><span class="toc-number">4.32.</span> <span class="toc-text">ls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">4.33.</span> <span class="toc-text">mkdir 创建目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-number">4.34.</span> <span class="toc-text">rmdir 删除目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-number">4.35.</span> <span class="toc-text">touch 创建文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">4.36.</span> <span class="toc-text">cp 复制文件或目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E3%80%81%E6%94%B9%E5%90%8D"><span class="toc-number">4.37.</span> <span class="toc-text">mv 移动文件、改名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rm-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-number">4.38.</span> <span class="toc-text">rm 删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ln%E9%93%BE%E6%8E%A5"><span class="toc-number">4.39.</span> <span class="toc-text">ln链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find-%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6"><span class="toc-number">4.40.</span> <span class="toc-text">find 查找文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vi-%E7%BC%96%E8%BE%91"><span class="toc-number">4.41.</span> <span class="toc-text">vi 编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tar%E3%80%81gzip%E6%89%93%E5%8C%85%E8%A7%A3%E5%8E%8B"><span class="toc-number">4.42.</span> <span class="toc-text">tar、gzip打包解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#echo"><span class="toc-number">4.43.</span> <span class="toc-text">echo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#printf%E8%BE%93%E5%87%BA"><span class="toc-number">4.44.</span> <span class="toc-text">printf输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date"><span class="toc-number">4.45.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cal%E6%97%A5%E5%8E%86"><span class="toc-number">4.46.</span> <span class="toc-text">cal日历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#expr%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-number">4.47.</span> <span class="toc-text">expr计数器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">5.</span> <span class="toc-text">重定向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-number">6.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E4%B8%8E%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text">软链接与硬链接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">7.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5de%E7%89%B9%E5%BE%81"><span class="toc-number">7.2.</span> <span class="toc-text">软链接de特征</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E6%A0%87%E5%BF%AB%E6%8D%B7%E7%A7%BB%E5%8A%A8"><span class="toc-number">8.</span> <span class="toc-text">光标快捷移动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell-%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80"><span class="toc-number">9.</span> <span class="toc-text">Shell(高级程序设计语言)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">9.1.</span> <span class="toc-text">变量定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="toc-number">9.2.</span> <span class="toc-text">变量的更改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E6%B3%95"><span class="toc-number">9.3.</span> <span class="toc-text">shell程序的运行方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E6%B3%A8%E9%87%8A"><span class="toc-number">9.4.</span> <span class="toc-text">shell注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%8F%B7"><span class="toc-number">9.5.</span> <span class="toc-text">引号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else%E3%80%81while%E3%80%81until%E3%80%81for"><span class="toc-number">9.6.</span> <span class="toc-text">if-else、while、until、for</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">10.</span> <span class="toc-text">权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#chmod"><span class="toc-number">10.1.</span> <span class="toc-text">chmod</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E8%AE%BE%E5%AE%9A%E6%B3%95"><span class="toc-number">10.1.1.</span> <span class="toc-text">文字设定法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AE%BE%E5%AE%9A%E6%B3%95"><span class="toc-number">10.1.2.</span> <span class="toc-text">数字设定法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chgrp"><span class="toc-number">10.2.</span> <span class="toc-text">chgrp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chown"><span class="toc-number">10.3.</span> <span class="toc-text">chown</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">11.</span> <span class="toc-text">文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#grep"><span class="toc-number">11.1.</span> <span class="toc-text">grep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#awk"><span class="toc-number">11.2.</span> <span class="toc-text">awk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cut"><span class="toc-number">11.3.</span> <span class="toc-text">cut</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sed"><span class="toc-number">11.4.</span> <span class="toc-text">sed</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#root%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9"><span class="toc-number">12.</span> <span class="toc-text">root密码修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%9F%A5%E7%9C%8B"><span class="toc-number">13.</span> <span class="toc-text">进程查看</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ps"><span class="toc-number">13.1.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#top"><span class="toc-number">13.2.</span> <span class="toc-text">top</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E5%AE%9A%E6%97%B6"><span class="toc-number">14.</span> <span class="toc-text">任务定时</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#at"><span class="toc-number">14.1.</span> <span class="toc-text">at</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#batch%E6%89%B9%E5%A4%84%E7%90%86"><span class="toc-number">14.2.</span> <span class="toc-text">batch批处理</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

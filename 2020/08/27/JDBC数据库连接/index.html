@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JDBC数据库连接 - ScaryPigLX的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ScaryPigLX,"> 
+    <meta name="description" content="chenlvtang友情赞助,1.连接MySQL数据库及操作
+
+123456789101112131415161718192021222324252627import java.sql.Connection;import jav,"> 
+    <meta name="author" content="liuxiang"> 
+    <link rel="alternative" href="atom.xml" title="ScaryPigLX的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ScaryPigLX的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://2544165563.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">JDBC数据库连接</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">JDBC数据库连接</h1>
+        <div class="stuff">
+            <span>八月 27, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="1-连接MySQL数据库及操作"><a href="#1-连接MySQL数据库及操作" class="headerlink" title="1.连接MySQL数据库及操作"></a>1.连接MySQL数据库及操作</h1><a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//加载驱动类，并执行该类中的初始化代码，将驱动注册到DriverManager中</span></span><br><span class="line"> <span class="keyword">try</span> &#123;</span><br><span class="line">	Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line">	System.out.println(<span class="string">"加载数据库驱动成功"</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	System.out.println(<span class="string">"加载数据库驱动失败"</span>);</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line"> <span class="keyword">try</span> &#123;</span><br><span class="line"> <span class="comment">//数据库的路径</span></span><br><span class="line"> String url=<span class="string">"jdbc:mysql://localhost:3306/date"</span>;</span><br><span class="line"> <span class="comment">//数据库的用户名</span></span><br><span class="line"> String user=<span class="string">"root"</span>;</span><br><span class="line"> <span class="comment">//密码</span></span><br><span class="line"> String password=<span class="string">"liuxiang5."</span>;</span><br><span class="line">	Connection con=DriverManager.getConnection(url,user,password);</span><br><span class="line">	System.out.println(<span class="string">"连接数据库成功"</span>);</span><br><span class="line"> &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	System.out.println(<span class="string">"连接数据库失败"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在大佬的帮助下终于连接上了🐇</p>
+<p>解决方法链接</p>
+<p>（<a href="https://blog.csdn.net/qq_41950447/article/details/90085170）" target="_blank" rel="noopener">https://blog.csdn.net/qq_41950447/article/details/90085170）</a></p>
+<h1 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h1><p>select* from 表名</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line"><span class="comment">//向数据库发送SQL查询语句</span></span><br><span class="line">	 Statement st=con.createStatement();</span><br><span class="line"><span class="comment">//执行查询</span></span><br><span class="line">	 String sql=<span class="string">"select * from form1 where salary&gt;1900"</span>; </span><br><span class="line">	 ResultSet rs=st.executeQuery(sql);  </span><br><span class="line"><span class="comment">//处理结果</span></span><br><span class="line">	 <span class="keyword">while</span>(rs.next()) &#123;</span><br><span class="line">		 String number=rs.getString(<span class="number">1</span>);</span><br><span class="line">		 String name=rs.getString(<span class="number">2</span>);</span><br><span class="line">		 Date birthday=rs.getDate(<span class="string">"birthday"</span>);</span><br><span class="line">		 <span class="keyword">double</span> salary=rs.getDouble(<span class="number">4</span>);</span><br><span class="line">		 System.out.println(number+<span class="string">"   "</span>+name+<span class="string">"   "</span>+birthday+<span class="string">"   "</span>+salary);</span><br><span class="line">	 &#125;</span><br><span class="line">	 rs.close();  <span class="comment">//关闭结果集</span></span><br><span class="line">	 con.close();  <span class="comment">//关闭连接</span></span><br><span class="line">	 &#125; </span><br><span class="line">	 <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"数据库操作异常"</span>+e);</span><br><span class="line">		&#125;</span><br><span class="line">	 <span class="keyword">finally</span> &#123;</span><br><span class="line">		 System.out.println(<span class="string">"数据库数据获取成功"</span>);</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-增加、删除、修改"><a href="#3-增加、删除、修改" class="headerlink" title="3.增加、删除、修改"></a>3.增加、删除、修改</h1><p>1.更新记录的SQL语法</p>
+<p>UPDATE &lt;表名&gt; SET &lt;字段名&gt; = 新值 WHERE &lt;条件子句&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sql=<span class="string">"update form1 set salary=5000 where name='小明'"</span>;</span><br><span class="line">pst=con.prepareStatement(sql);</span><br><span class="line"><span class="keyword">int</span> m=pst.executeUpdate();</span><br><span class="line"><span class="keyword">if</span>(m!=<span class="number">0</span>) &#123;</span><br><span class="line"> System.out.println(<span class="string">"更新了"</span>+m+<span class="string">"条记录"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>2.添加记录的SQL语法</p>
+<p>​      INSERT INTO 表(字段列表) VALUES(对应的具体的记录)</p>
+<p>或  INSERT INTO 表 VALUES(对应的具体的记录)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sql=<span class="string">"insert into form1 values('004','小明','2005-11-29','3000')"</span>;</span><br><span class="line">	PreparedStatement pst=con.prepareStatement(sql);</span><br><span class="line">	 <span class="keyword">int</span> m=pst.executeUpdate();</span><br><span class="line">	 <span class="keyword">if</span>(m!=<span class="number">0</span>) &#123;</span><br><span class="line">		 System.out.println(<span class="string">"对标添加了"</span>+m+<span class="string">"条记录"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>3.删除记录的SQL语法</p>
+<p>DELETE FROM &lt;表名&gt; WHERE &lt;条件子句&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> sql=<span class="string">"delete from form1 where number='005'"</span>;</span><br><span class="line">pst=con.prepareStatement(sql);</span><br><span class="line"><span class="keyword">int</span> m=pst.executeUpdate();</span><br><span class="line"><span class="keyword">if</span>(m!=<span class="number">0</span>) &#123;</span><br><span class="line"> System.out.println(<span class="string">"删除了"</span>+m+<span class="string">"条记录"</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-通配符"><a href="#4-通配符" class="headerlink" title="4.通配符"></a>4.通配符</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  sql=<span class="string">"delete from form1 where salary=?"</span>;</span><br><span class="line">pst=con.prepareStatement(sql);</span><br><span class="line">pst.setDouble(<span class="number">1</span>, <span class="number">5000</span>);</span><br><span class="line"><span class="keyword">int</span> m=pst.executeUpdate();</span><br><span class="line"><span class="keyword">if</span>(m!=<span class="number">0</span>) &#123;</span><br><span class="line"> System.out.println(<span class="string">"删除了"</span>+m+<span class="string">"条记录"</span>);</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/123.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/123.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-连接MySQL数据库及操作"><span class="toc-number">1.</span> <span class="toc-text">1.连接MySQL数据库及操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-查询"><span class="toc-number">2.</span> <span class="toc-text">2.查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-增加、删除、修改"><span class="toc-number">3.</span> <span class="toc-text">3.增加、删除、修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-通配符"><span class="toc-number">4.</span> <span class="toc-text">4.通配符</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

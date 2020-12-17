@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>树先生 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1.树
+
+基本术语：
+1.结点：数据元素及分支          2.结点的度：拥有的分支数             3.树的度：等于最大的结点度
+4.叶子：没有分支的结点          5.非,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">树先生</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">树先生</h1>
+        <div class="stuff">
+            <span>十月 10, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h1><a id="more"></a>
+
+<p>基本术语：</p>
+<p>1.结点：数据元素及分支          2.结点的度：拥有的分支数             3.树的度：等于最大的结点度</p>
+<p>4.叶子：没有分支的结点          5.非终端结点：度不为0，除根结点外，也称内部结点</p>
+<p>6.双亲和孩子                             7.祖先：包括双亲                            8.子孙：包括孩子</p>
+<p>9.层次                                        10.兄弟：同一个双亲                      11.堂兄弟：双亲不同但在同一层次</p>
+<p>12.深度：最大层次                   13.有序树和无序树                         14.森林：多棵树</p>
+<p>树的三种常用表示法（懒了，遇到的时候再去看）：</p>
+<p>  （1）双亲表示法</p>
+<img src="https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/shuang.png">
+
+<p>  （2）孩子表示法</p>
+<img src="https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/hai.jpg">
+
+<p>（3）孩子兄弟法 （二叉树表示法、二叉链表表示法）</p>
+<img src="https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/hai2.png">
+
+<h1 id="2-二叉树（与树是两种类型）"><a href="#2-二叉树（与树是两种类型）" class="headerlink" title="2.二叉树（与树是两种类型）"></a>2.二叉树（与树是两种类型）</h1><h5 id="二叉树定义："><a href="#二叉树定义：" class="headerlink" title="二叉树定义："></a>二叉树定义：</h5><p>（1）最多有两个结点</p>
+<p>（2）有左右之分，不能调换</p>
+<p>   普通二叉树性质：1.叶的数量m只与度为2的结点有关，n为度为2结点数量，则m=n+1。</p>
+<p>​                                  2.第i层上至多有2的i-1次方个结点。</p>
+<p>​                                  3.深度为k，最多有2的k次方减1个结点。</p>
+<h5 id="特殊二叉树定义："><a href="#特殊二叉树定义：" class="headerlink" title="特殊二叉树定义："></a>特殊二叉树定义：</h5><p>（1）满二叉树：除叶结点外，度都为2.</p>
+<p>（2）完全二叉树：与满二叉树的顺序对应。（挨个排的树） </p>
+<p>   完全二叉树性质：1.具有n个结点，深度为[log2n]+1。</p>
+<p>​                                  2.对于结点i，其双亲为i/2,左孩子为2i,又孩子为2i+1。</p>
+<h5 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> DataType;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span>&#123;</span></span><br><span class="line">	DataType data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>,*<span class="title">rchild</span>;</span></span><br><span class="line">&#125;BiTNode,*BiTree;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Create_BiTree</span><span class="params">(BiTree *T)</span></span>&#123;</span><br><span class="line">		<span class="keyword">char</span> ch;</span><br><span class="line">		ch=getchar();</span><br><span class="line">		<span class="keyword">if</span>(ch==<span class="string">&#x27;@&#x27;</span>) *T=<span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">		*T=(BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTNode));</span><br><span class="line">		(*T)-&gt;data=ch;</span><br><span class="line">		Create_BiTree(&amp;(*T)-&gt;lchild);</span><br><span class="line">		Create_BiTree(&amp;(*T)-&gt;rchild);</span><br><span class="line">&#125; &#125;</span><br><span class="line"><span class="comment">//先序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrderTraverse</span> <span class="params">(BiTree T)</span></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,T-&gt;data);</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;lchild)</span><br><span class="line">    PreOrderTraverse(T-&gt;lchild);</span><br><span class="line">    <span class="keyword">if</span>(T-&gt;rchild)</span><br><span class="line">    PreOrderTraverse(T-&gt;rchild);&#125;</span><br><span class="line"><span class="comment">//中序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrderTraverse</span> <span class="params">(BiTree T)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;lchild)</span><br><span class="line">    PreOrderTraverse(T-&gt;lchild);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,T-&gt;data);</span><br><span class="line">    <span class="keyword">if</span>(T-&gt;rchild)</span><br><span class="line">    PreOrderTraverse(T-&gt;rchild);&#125;</span><br><span class="line"><span class="comment">//后序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrderTraverse</span><span class="params">(BiTree T)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(T-&gt;lchild)</span><br><span class="line">    PreOrderTraverse(T-&gt;lchild);</span><br><span class="line">    <span class="keyword">if</span>(T-&gt;rchild)</span><br><span class="line">    PreOrderTraverse(T-&gt;rchild);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,T-&gt;data);&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	BiTree T;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n 输入叶结点的信息（建立空二叉树输入@）: &quot;</span>);</span><br><span class="line">  Create_BiTree(&amp;T);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n 前序遍历结果: &quot;</span>);</span><br><span class="line">PreOrderTraverse(T);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n 中序遍历结果: &quot;</span>);</span><br><span class="line">InOrderTraverse (T);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n 后序遍历结果: &quot;</span>);</span><br><span class="line">PostOrderTraverse(T);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> TElemType;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiThrNode</span>&#123;</span></span><br><span class="line">	TElemType data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">BiThrNode</span> *<span class="title">lchild</span>,*<span class="title">rchild</span>;</span>     <span class="comment">//没有孩子结点则标签等于1</span></span><br><span class="line">	<span class="keyword">int</span> LTag,RTag;    <span class="comment">//等于0时指向孩子结点，等于1时指向前驱或后继</span></span><br><span class="line">&#125;BiThrNode,*BiThrTree;</span><br><span class="line"><span class="comment">//中序线索化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Inthread</span><span class="params">(BiTree root)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(root!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">		Inthread(root-&gt;lchild);</span><br><span class="line">		<span class="keyword">if</span>(root-&gt;lchild==<span class="literal">NULL</span>)</span><br><span class="line">		&#123;root-&gt;LTag=<span class="number">1</span>;root-&gt;lchild=pre;&#125;</span><br><span class="line">		<span class="keyword">if</span>(pre!=<span class="literal">NULL</span>&amp;&amp;pre-&gt;rchild==<span class="literal">NULL</span>)</span><br><span class="line">		&#123;pre-&gt;rchild=root;pre-&gt;RTag=<span class="number">1</span>;&#125;</span><br><span class="line">		pre=root;</span><br><span class="line">	Inthread(root-&gt;rchild);</span><br><span class="line">	&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（1）线索：指向前驱或后继的指针  （2）线索化：在遍历过程中修改空链域</p>
+<h1 id="3-森林、树"><a href="#3-森林、树" class="headerlink" title="3.森林、树"></a>3.森林、树</h1><p>1.树转二叉树</p>
+<p>（1）连接相邻兄弟结点（2）只保留之前与第一个孩子的连线</p>
+<p>2.二叉树还原树或森林</p>
+<p>（1）若某结点为其双亲的左孩子，则把该结点的右孩子、右孩子的右孩子。。。都与该结点的双亲相连</p>
+<p>（2）删除原有所有右孩子的连线</p>
+<p>3.森林转二叉树</p>
+<p>（1）将每一棵树转换为二叉树</p>
+<p>（2）将二叉树的根结点作为前一个二叉树根结点的右孩子连接。</p>
+<h1 id="4-树和森林的遍历"><a href="#4-树和森林的遍历" class="headerlink" title="4.树和森林的遍历"></a>4.树和森林的遍历</h1><p>树的遍历：（1）先根遍历ABECFHGD（2）后根遍历EBHFGCDA</p>
+<img src="https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/gen.png">
+
+<p>森林的遍历（1）先序（2）中序（3）后序</p>
+<h1 id="5-哈夫曼树"><a href="#5-哈夫曼树" class="headerlink" title="5.哈夫曼树"></a>5.哈夫曼树</h1><p>当有n个叶子时，就有2n-1个结点</p>
+<p>基本术语：</p>
+<p>1.路径：两个结点间的分支构成。       2.路径长度：路径上的分支数目</p>
+<p>3.树的路径长度：树根到每一个结点的路径长度之和    </p>
+<p>4.权：分为结点权和边权。                   5.结点的带权路径长度：路径长度*该结点的权值</p>
+<p>6.树的带权路径长度：所有叶子到树根的带权路径长度之和。</p>
+<p>7.哈夫曼树：树的带权路径长度最小的二叉树。</p>
+<h5 id="哈夫曼树的构造方法"><a href="#哈夫曼树的构造方法" class="headerlink" title="哈夫曼树的构造方法"></a>哈夫曼树的构造方法</h5><p>（1）给定n个权值，每个权值构成只有根结点的森林</p>
+<p>（2）将权值最小的两棵树分别当做左右孩子合并成一棵，新的权值为两棵树权值的和。</p>
+<p>（3）重复2步骤。</p>
+<h1 id="6-哈夫曼编码（最短，最优）"><a href="#6-哈夫曼编码（最短，最优）" class="headerlink" title="6.哈夫曼编码（最短，最优）"></a>6.哈夫曼编码（最短，最优）</h1><p>前缀码：在一个编码系统中，任何一个编码不是其他编码的前缀。</p>
+<p>哈夫曼码：左为1，右为0.</p>
+<p>编码方式： （1）定长编码：根据出现的情况m次，求2的n次方 &lt;=m。 求出n</p>
+<p>​                    （2）哈夫曼编码：建立哈夫曼树，根据哈夫曼树编码</p>
+<p>问题实例：</p>
+<img src="https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/shu1.png">
+
+<img src="https://cdn.jsdelivr.net/gh/2544165563/2544165563.github.io/assets/shu2.png">
+
+<p>编码过程：</p>
+<p>鸽了，过两天根据指导再打吧🐷</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88%E4%B8%8E%E6%A0%91%E6%98%AF%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">2.二叉树（与树是两种类型）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text">二叉树定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">2.0.0.0.2.</span> <span class="toc-text">特殊二叉树定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">2.0.0.0.3.</span> <span class="toc-text">遍历二叉树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">2.0.0.0.4.</span> <span class="toc-text">线索二叉树</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%A3%AE%E6%9E%97%E3%80%81%E6%A0%91"><span class="toc-number">3.</span> <span class="toc-text">3.森林、树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">4.</span> <span class="toc-text">4.树和森林的遍历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="toc-number">5.</span> <span class="toc-text">5.哈夫曼树</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">5.0.0.0.1.</span> <span class="toc-text">哈夫曼树的构造方法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%EF%BC%88%E6%9C%80%E7%9F%AD%EF%BC%8C%E6%9C%80%E4%BC%98%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">6.哈夫曼编码（最短，最优）</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
