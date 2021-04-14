@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python_GUI - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="引入使用tkinter模块
+1import tkinter
+
+创建窗口对象
+1234567top = tkinter.TK()# 窗口标题top.title(&amp;quot;Hellow&amp;quot;)#,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python_GUI</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python_GUI</h1>
+        <div class="stuff">
+            <span>四月 11, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><p>使用tkinter模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import tkinter</span><br></pre></td></tr></table></figure>
+
+<p>创建窗口对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">top = tkinter.TK()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 窗口标题</span></span><br><span class="line">top.title(<span class="string">&quot;Hellow&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 窗口大小,x为小写艾克斯</span></span><br><span class="line">top.geometry(<span class="string">&#x27;500x300&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>开启窗口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top.mainloop()</span><br></pre></td></tr></table></figure>
+
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>组件的添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label.pack()</span><br></pre></td></tr></table></figure>
+
+<h2 id="标签Label"><a href="#标签Label" class="headerlink" title="标签Label"></a>标签Label</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">labels &#x3D; tkinter.Label(top,text&#x3D;&quot;Hellow&quot;,bg&#x3D;&#39;blue&#39;,,font&#x3D;(&#39;Arial&#39;,12),width&#x3D;30,height&#x3D;2)</span><br></pre></td></tr></table></figure>
+
+<h2 id="按钮Button"><a href="#按钮Button" class="headerlink" title="按钮Button"></a>按钮Button</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var = tk.StringVar()</span><br><span class="line"></span><br><span class="line">on_hit = <span class="literal">False</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hit_me</span>():</span></span><br><span class="line">    <span class="keyword">global</span> on_hit</span><br><span class="line">    <span class="keyword">if</span> on_hit == <span class="literal">False</span>:</span><br><span class="line">        on_hit = <span class="literal">True</span></span><br><span class="line">        var.set(<span class="string">&#x27;you hit me&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        on_hit = <span class="literal">False</span></span><br><span class="line">        var.set(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"> </span><br><span class="line">label1 = tk.Label(top,textvariable=var,bg=<span class="string">&#x27;blue&#x27;</span>,font=(<span class="string">&#x27;Arial&#x27;</span>,<span class="number">12</span>),width=<span class="number">30</span>,height=<span class="number">2</span>)</span><br><span class="line">label1.pack()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">button1 = tk.Button(top,text=<span class="string">&#x27;hit me&#x27;</span>,width=<span class="number">10</span>,height=<span class="number">1</span>,command=hit_me)   <span class="comment"># command添加事件功能</span></span><br><span class="line">button1.pack()</span><br></pre></td></tr></table></figure>
+
+<h2 id="单行文本Entry"><a href="#单行文本Entry" class="headerlink" title="单行文本Entry"></a>单行文本Entry</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 密文形式</span></span><br><span class="line">entryss = tk.Entry(top,show=<span class="string">&#x27;*&#x27;</span>,font=(<span class="string">&#x27;Arial,14&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 明文形式</span></span><br><span class="line">entrys = tk.Entry(top,show=<span class="literal">None</span>,font=(<span class="string">&#x27;Arial,14&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="多行文本Text"><a href="#多行文本Text" class="headerlink" title="多行文本Text"></a>多行文本Text</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">entrys = tk.Entry(top,show=<span class="literal">None</span>)</span><br><span class="line">entrys.pack()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_point</span>():</span></span><br><span class="line">    var = entrys.get()   <span class="comment"># 获取文本里的内容</span></span><br><span class="line">    texts.insert(<span class="string">&#x27;insert&#x27;</span>,var)   <span class="comment"># 在选择位置插入</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_end</span>():</span></span><br><span class="line">    var = entrys.get()</span><br><span class="line">    texts.insert(<span class="string">&#x27;end&#x27;</span>,var)   <span class="comment"># 在末尾插入</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b1 = tk.Button(top,text=<span class="string">&#x27;insert point&#x27;</span>,command=insert_point)</span><br><span class="line">b1.pack()</span><br><span class="line">b2 = tk.Button(top,text=<span class="string">&#x27;insert end&#x27;</span>,command=insert_end)</span><br><span class="line">b2.pack()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">texts = tk.Text(top,height=<span class="number">3</span>)</span><br><span class="line">texts.pack()</span><br></pre></td></tr></table></figure>
+
+<h2 id="列表框Listbox"><a href="#列表框Listbox" class="headerlink" title="列表框Listbox"></a>列表框Listbox</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出文本</span></span><br><span class="line">var1 = tk.StringVar()</span><br><span class="line">l = tk.Label(top,bg=<span class="string">&#x27;green&#x27;</span>,textvariable=var1)</span><br><span class="line">l.pack()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择列表值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_selection</span>():</span></span><br><span class="line">    value = lb.get(lb.curselection())</span><br><span class="line">    var1.set(value)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加按钮</span></span><br><span class="line">b1 = tk.Button(top,text=<span class="string">&#x27;print selection&#x27;</span>,command=print_selection)</span><br><span class="line">b1.pack()</span><br><span class="line"></span><br><span class="line">---------------------------------------------------------------------</span><br><span class="line"><span class="comment"># 初始化插入</span></span><br><span class="line">var2 = tk.StringVar()</span><br><span class="line">var2.set((<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line">lb = tk.Listbox(top,listvariable=var2)</span><br><span class="line"><span class="comment"># 循环插入</span></span><br><span class="line">list_item = [<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> list_item:</span><br><span class="line">    lb.insert(<span class="string">&#x27;end&#x27;</span>,item)</span><br><span class="line"><span class="comment"># insert插入</span></span><br><span class="line">lb.insert(<span class="number">1</span>,<span class="string">&#x27;first&#x27;</span>)   <span class="comment"># 1为位置</span></span><br><span class="line">lb.insert(<span class="number">2</span>,<span class="string">&#x27;second&#x27;</span>)</span><br><span class="line">lb.delete(<span class="number">2</span>)</span><br><span class="line">lb.pack()</span><br><span class="line"></span><br><span class="line">top.mainloop()   <span class="comment"># 进入消息循环</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412085347770.png" alt="image-20210412085347770"></p>
+<h2 id="单选Radiobutton"><a href="#单选Radiobutton" class="headerlink" title="单选Radiobutton"></a>单选Radiobutton</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var = tk.StringVar()</span><br><span class="line">l = tk.Label(top,bg=<span class="string">&#x27;yellow&#x27;</span>,width=<span class="number">20</span>,text=<span class="string">&#x27;empty&#x27;</span>)</span><br><span class="line">l.pack()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_selection</span>():</span></span><br><span class="line">    l.config(text=<span class="string">&#x27;you have selected&#x27;</span> + var.get())</span><br><span class="line">-----------------------------------------------------------------------------------</span><br><span class="line"><span class="comment"># 将value赋值给放到var中，然后赋值给variable</span></span><br><span class="line">r1 = tk.Radiobutton(top,text=<span class="string">&#x27;Option A&#x27;</span>,variable=var,value=<span class="string">&#x27;A&#x27;</span>,command=print_selection)</span><br><span class="line">r1.pack()</span><br><span class="line">r2 = tk.Radiobutton(top,text=<span class="string">&#x27;Option B&#x27;</span>,variable=var,value=<span class="string">&#x27;B&#x27;</span>,command=print_selection)</span><br><span class="line">r2.pack()</span><br><span class="line"></span><br><span class="line">top.mainloop()   <span class="comment"># 进入消息循环</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412090619382.png" alt="image-20210412090619382"></p>
+<h2 id="多选Checkbutton"><a href="#多选Checkbutton" class="headerlink" title="多选Checkbutton"></a>多选Checkbutton</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">l = tk.Label(top,bg=<span class="string">&#x27;yellow&#x27;</span>,width=<span class="number">20</span>,text=<span class="string">&#x27;empty&#x27;</span>)</span><br><span class="line">l.pack()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_selection</span>():</span></span><br><span class="line">    <span class="keyword">if</span> (var1.get() == <span class="number">1</span>) &amp; (var2.get() == <span class="number">0</span>):</span><br><span class="line">        l.config(text=<span class="string">&#x27;I love only Python&#x27;</span>)</span><br><span class="line">    <span class="keyword">elif</span> (var1.get() == <span class="number">0</span>) &amp; (var2.get() == <span class="number">1</span>):  <span class="comment"># 如果选中第二个选项，未选中第一个选项</span></span><br><span class="line">        l.config(text=<span class="string">&#x27;I love only C++&#x27;</span>)</span><br><span class="line">    <span class="keyword">elif</span> (var1.get() == <span class="number">0</span>) &amp; (var2.get() == <span class="number">0</span>):  <span class="comment"># 如果两个选项都未选中</span></span><br><span class="line">        l.config(text=<span class="string">&#x27;I do not love either&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        l.config(text=<span class="string">&#x27;I love both&#x27;</span>)  <span class="comment"># 如果两个选项都选中</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第5步，定义两个Checkbutton选项并放置</span></span><br><span class="line">var1 = tk.IntVar()  <span class="comment"># 定义var1和var2整型变量用来存放选择行为返回值</span></span><br><span class="line">var2 = tk.IntVar()</span><br><span class="line">-------------------------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment"># onvalue选择时，offvalue不选择时</span></span><br><span class="line">c1 = tk.Checkbutton(top, text=<span class="string">&#x27;Python&#x27;</span>, variable=var1, onvalue=<span class="number">1</span>, offvalue=<span class="number">0</span>,command=print_selection)  <span class="comment"># 传值原理类似于radiobutton部件</span></span><br><span class="line">c1.pack()</span><br><span class="line">c2 = tk.Checkbutton(top, text=<span class="string">&#x27;C++&#x27;</span>, variable=var2, onvalue=<span class="number">1</span>, offvalue=<span class="number">0</span>, command=print_selection)</span><br><span class="line">c2.pack()</span><br><span class="line"></span><br><span class="line">top.mainloop()   <span class="comment"># 进入消息循环</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412093029030.png" alt="image-20210412093029030"></p>
+<h2 id="滑动条Scale"><a href="#滑动条Scale" class="headerlink" title="滑动条Scale"></a>滑动条Scale</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">l = tk.Label(top,bg=<span class="string">&#x27;green&#x27;</span>,fg=<span class="string">&#x27;white&#x27;</span>,width=<span class="number">20</span>,text=<span class="string">&#x27;empty&#x27;</span>)</span><br><span class="line">l.pack()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_selection</span>(<span class="params">v</span>):</span></span><br><span class="line">    l.config(text=<span class="string">&#x27;you have selected&#x27;</span>+v)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 长度200，重0开始到10结束，以2为刻度，精度为0.01，HORIZONTAL水平,VERTICAL竖直</span></span><br><span class="line">s = tk.Scale(top,label=<span class="string">&#x27;try me&#x27;</span>,from_=<span class="number">0</span>,to=<span class="number">10</span>,orient=tk.VERTICAL,length=<span class="number">200</span>,showvalue=<span class="number">0</span>,tickinterval=<span class="number">2</span>,resolution=<span class="number">0.01</span>,command=print_selection)</span><br><span class="line">s.pack()</span><br><span class="line"></span><br><span class="line">top.mainloop()   <span class="comment"># 进入消息循环</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412115632137.png" alt="image-20210412115632137"></p>
+<h2 id="滚动条Scrollbar"><a href="#滚动条Scrollbar" class="headerlink" title="滚动条Scrollbar"></a>滚动条Scrollbar</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scrill = tk.Scrollbar(top)</span><br><span class="line">scrill.pack(fill = <span class="string">&#x27;y&#x27;</span>,side=<span class="string">&#x27;right&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="图布Canvas"><a href="#图布Canvas" class="headerlink" title="图布Canvas"></a>图布Canvas</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">canvas = tk.Canvas(top,bg=<span class="string">&#x27;pink&#x27;</span>,height=<span class="number">500</span>,width=<span class="number">700</span>)</span><br><span class="line">canvas.pack()</span><br><span class="line"></span><br><span class="line">image_file = ImageTk.PhotoImage(file=<span class="string">&#x27;D:\我的文件\图片\大黄鸭.jpg&#x27;</span>)</span><br><span class="line">image = canvas.create_image(<span class="number">350</span>,<span class="number">0</span>,anchor=<span class="string">&#x27;n&#x27;</span>,image=image_file)   <span class="comment"># n方向上中点的位置</span></span><br><span class="line"></span><br><span class="line">x0,y0,x1,y1 = <span class="number">100</span>,<span class="number">100</span>,<span class="number">150</span>,<span class="number">150</span></span><br><span class="line"><span class="comment"># 画直线，从点(x0,y0)，到点(x1,y1)</span></span><br><span class="line">line = canvas.create_line(x0,y0,x1,y1)</span><br><span class="line"><span class="comment"># 画圆，以点构成正方形的内切圆,用粉色填充</span></span><br><span class="line">oval = canvas.create_oval(x0,y0,x1,y1,fill=<span class="string">&#x27;pink&#x27;</span>)</span><br><span class="line"><span class="comment"># 画扇形，extent设置角度</span></span><br><span class="line">arc = canvas.create_arc(x0,y0,x1,y1,extent=<span class="number">359</span>,fill=<span class="string">&#x27;pink&#x27;</span>)</span><br><span class="line"><span class="comment"># 矩形</span></span><br><span class="line">rect = canvas.create_rectangle(x0,y0,x1,y1)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveit</span>():</span></span><br><span class="line">    canvas.move(rect,<span class="number">2</span>,<span class="number">2</span>)   <span class="comment"># 移动矩形(2,2)的距离</span></span><br><span class="line"></span><br><span class="line">b = tk.Button(top,text=<span class="string">&#x27;move item&#x27;</span>,command=moveit)</span><br><span class="line">b.pack()</span><br></pre></td></tr></table></figure>
+
+<h2 id="菜单条Menu"><a href="#菜单条Menu" class="headerlink" title="菜单条Menu"></a>菜单条Menu</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">l = tk.Label(top,text=<span class="string">&#x27;pig&#x27;</span>,bg=<span class="string">&#x27;pink&#x27;</span>)</span><br><span class="line">l.pack()</span><br><span class="line"></span><br><span class="line">counter = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_job</span>():</span></span><br><span class="line">    <span class="keyword">global</span> counter</span><br><span class="line">    l.config(text=<span class="string">&#x27;do&#x27;</span>+str(counter))</span><br><span class="line">    counter += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建菜单栏</span></span><br><span class="line">menubar = tk.Menu(top)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建菜单栏选项并添加到菜单栏，tearoff=1可以让小菜单脱离出来</span></span><br><span class="line">filemenu = tk.Menu(menubar,tearoff=<span class="number">0</span>)</span><br><span class="line">menubar.add_cascade(label=<span class="string">&#x27;File&#x27;</span>,menu=filemenu)</span><br><span class="line"></span><br><span class="line">editmenu = tk.Menu(menubar,tearoff=<span class="number">0</span>)</span><br><span class="line">menubar.add_cascade(label=<span class="string">&#x27;Edit&#x27;</span>,menu=editmenu)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在File中添加菜单命令</span></span><br><span class="line">filemenu.add_command(label=<span class="string">&#x27;New&#x27;</span>,command=do_job)</span><br><span class="line">filemenu.add_command(label=<span class="string">&#x27;Open&#x27;</span>,command=do_job)</span><br><span class="line">filemenu.add_separator()   <span class="comment"># 添加分割线</span></span><br><span class="line">filemenu.add_command(label=<span class="string">&#x27;Exit&#x27;</span>,command=top.quit)</span><br><span class="line"></span><br><span class="line">editmenu.add_command(label=<span class="string">&#x27;Cut&#x27;</span>,command=do_job)</span><br><span class="line">editmenu.add_command(label=<span class="string">&#x27;Copy&#x27;</span>,command=do_job)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建二级菜单</span></span><br><span class="line">submenu = tk.Menu(filemenu,tearoff=<span class="number">0</span>)</span><br><span class="line">filemenu.add_cascade(label=<span class="string">&#x27;Import&#x27;</span>,menu=submenu,underline=<span class="number">0</span>)   <span class="comment"># underline 名称下面是否跟横线</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建三级菜单命令</span></span><br><span class="line">submenu.add_command(label=<span class="string">&#x27;Submenu_1&#x27;</span>,command=do_job)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示菜单栏</span></span><br><span class="line">top.config(menu=menubar)</span><br></pre></td></tr></table></figure>
+
+<h2 id="框架Frame"><a href="#框架Frame" class="headerlink" title="框架Frame"></a>框架Frame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">tk.Label(top,text=<span class="string">&#x27;on the top&#x27;</span>,bg=<span class="string">&#x27;pink&#x27;</span>).pack()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建框架</span></span><br><span class="line">frame = tk.Frame(top)</span><br><span class="line">frame.pack()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建第二层框架</span></span><br><span class="line">frame_1 = tk.Frame(frame)</span><br><span class="line">frame_2 = tk.Frame(frame)</span><br><span class="line">frame_1.pack(side=<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">frame_2.pack(side=<span class="string">&#x27;right&#x27;</span>)</span><br><span class="line"></span><br><span class="line">tk.Label(frame_1,text=<span class="string">&#x27;on the frame_1&#x27;</span>,bg=<span class="string">&#x27;green&#x27;</span>).pack()</span><br><span class="line">tk.Label(frame_2,text=<span class="string">&#x27;on the frame_2&#x27;</span>,bg=<span class="string">&#x27;red&#x27;</span>).pack()</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412165214229.png" alt="image-20210412165214229"></p>
+<h2 id="消息框messageBox"><a href="#消息框messageBox" class="headerlink" title="消息框messageBox"></a>消息框messageBox</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter.messagebox</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">message_box</span>():</span></span><br><span class="line">    print(tk.messagebox.askokcancel(title=<span class="string">&#x27;haha&#x27;</span>,message=<span class="string">&#x27;hahahaha&#x27;</span>))   <span class="comment"># 返回True|False</span></span><br><span class="line">    print(tk.messagebox.askyesno(title=<span class="string">&#x27;lx&#x27;</span>,message=<span class="string">&#x27;好废物的人=。=&#x27;</span>))   <span class="comment"># 返回True|False</span></span><br><span class="line">    print(tk.messagebox.askquestion(title=<span class="string">&#x27;mxm&#x27;</span>,message=<span class="string">&#x27;你还好吗&#x27;</span>))   <span class="comment"># 返回yes|no</span></span><br><span class="line">    tk.messagebox.showerror(title=<span class="string">&#x27;错误&#x27;</span>,message=<span class="string">&#x27;不要犯错！&#x27;</span>)</span><br><span class="line">    tk.messagebox.showwarning(title=<span class="string">&#x27;警告&#x27;</span>,message=<span class="string">&#x27;时日不多！&#x27;</span>)</span><br><span class="line">    tk.messagebox.showinfo(title=<span class="string">&#x27;信息&#x27;</span>,message=<span class="string">&#x27;加油！&#x27;</span>)</span><br><span class="line"></span><br><span class="line">tk.Button(top,text=<span class="string">&#x27;弹出&#x27;</span>,command=message_box).pack()</span><br></pre></td></tr></table></figure>
+
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="comment"># padx 就是单元格左右间距，pady 就是单元格上下间距，ipadx是单元格内部元素与单元格的左右间距，ipady是单元格内部元素与单元格的上下间距。</span></span><br><span class="line">        tk.Label(top,text=<span class="number">1</span>,bg=<span class="string">&#x27;red&#x27;</span>).grid(row=i,column=j,padx=<span class="number">10</span>,pady=<span class="number">10</span>,ipadx=<span class="number">10</span>,ipady=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412170951064.png" alt="image-20210412170951064"></p>
+<h2 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tk.Label(top,text=<span class="string">&#x27;p&#x27;</span>,fg=<span class="string">&#x27;red&#x27;</span>).pack(side=<span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">tk.Label(top,text=<span class="string">&#x27;p&#x27;</span>,fg=<span class="string">&#x27;red&#x27;</span>).pack(side=<span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line"></span><br><span class="line">tk.Label(top,text=<span class="string">&#x27;p&#x27;</span>,fg=<span class="string">&#x27;red&#x27;</span>).pack(side=<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line"></span><br><span class="line">tk.Label(top,text=<span class="string">&#x27;p&#x27;</span>,fg=<span class="string">&#x27;red&#x27;</span>).pack(side=<span class="string">&#x27;right&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412171149943.png" alt="image-20210412171149943"></p>
+<h2 id="Place"><a href="#Place" class="headerlink" title="Place"></a>Place</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 精准坐标，anchor为锚点</span></span><br><span class="line">tk.Label(top, text=<span class="string">&#x27;Pl&#x27;</span>, font=(<span class="string">&#x27;Arial&#x27;</span>, <span class="number">20</span>), ).place(x=<span class="number">100</span>, y=<span class="number">100</span>,anchor=<span class="string">&#x27;n&#x27;</span>)</span><br><span class="line">tk.Label(top, text=<span class="string">&#x27;HH&#x27;</span>, font=(<span class="string">&#x27;Arial&#x27;</span>, <span class="number">20</span>), ).place(x=<span class="number">100</span>, y=<span class="number">100</span>,anchor=<span class="string">&#x27;s&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210412171630157.png" alt="image-20210412171630157"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BELabel"><span class="toc-number">2.1.</span> <span class="toc-text">标签Label</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AEButton"><span class="toc-number">2.2.</span> <span class="toc-text">按钮Button</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%ACEntry"><span class="toc-number">2.3.</span> <span class="toc-text">单行文本Entry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%ACText"><span class="toc-number">2.4.</span> <span class="toc-text">多行文本Text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A1%86Listbox"><span class="toc-number">2.5.</span> <span class="toc-text">列表框Listbox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E9%80%89Radiobutton"><span class="toc-number">2.6.</span> <span class="toc-text">单选Radiobutton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%80%89Checkbutton"><span class="toc-number">2.7.</span> <span class="toc-text">多选Checkbutton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E6%9D%A1Scale"><span class="toc-number">2.8.</span> <span class="toc-text">滑动条Scale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%9A%E5%8A%A8%E6%9D%A1Scrollbar"><span class="toc-number">2.9.</span> <span class="toc-text">滚动条Scrollbar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%B8%83Canvas"><span class="toc-number">2.10.</span> <span class="toc-text">图布Canvas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E6%9D%A1Menu"><span class="toc-number">2.11.</span> <span class="toc-text">菜单条Menu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6Frame"><span class="toc-number">2.12.</span> <span class="toc-text">框架Frame</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E6%A1%86messageBox"><span class="toc-number">2.13.</span> <span class="toc-text">消息框messageBox</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%83%E5%B1%80"><span class="toc-number">3.</span> <span class="toc-text">布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Grid"><span class="toc-number">3.1.</span> <span class="toc-text">Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pack"><span class="toc-number">3.2.</span> <span class="toc-text">Pack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Place"><span class="toc-number">3.3.</span> <span class="toc-text">Place</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

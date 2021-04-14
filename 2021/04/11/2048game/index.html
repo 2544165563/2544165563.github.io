@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2048game - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">2048game</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">2048game</h1>
+        <div class="stuff">
+            <span>四月 11, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动规则</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">向左移动</span></span><br><span class="line"><span class="string">1.[0,2,4,0],去0得[2,4]  2.[2,4]+[0,0,0,0]   3.[2,4,0,0,0,0][:4]</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">trim</span>(<span class="params">seqs,direction=<span class="number">0</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> ([<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]+[n <span class="keyword">for</span> n <span class="keyword">in</span> seqs <span class="keyword">if</span> n])[<span class="number">-4</span>:] <span class="keyword">if</span> direction <span class="keyword">else</span> ([n <span class="keyword">for</span> n <span class="keyword">in</span> seqs <span class="keyword">if</span> n]+[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>])[:<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相加</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;一共三种情况[0,1].[1,2].[2,3]相等&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_seqs</span>(<span class="params">seqs,direction=<span class="number">0</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> seqs[<span class="number">1</span>] <span class="keyword">and</span> seqs[<span class="number">2</span>] <span class="keyword">and</span> seqs[<span class="number">1</span>] == seqs[<span class="number">2</span>]:</span><br><span class="line">        <span class="keyword">return</span> trim([seqs[<span class="number">0</span>], seqs[<span class="number">1</span>]*<span class="number">2</span>, <span class="number">0</span>, seqs[<span class="number">3</span>]], direction=direction)</span><br><span class="line">    <span class="keyword">if</span> seqs[<span class="number">0</span>] <span class="keyword">and</span> seqs[<span class="number">1</span>] <span class="keyword">and</span> seqs[<span class="number">0</span>] == seqs[<span class="number">1</span>]:</span><br><span class="line">        seqs[<span class="number">0</span>], seqs[<span class="number">1</span>] = seqs[<span class="number">0</span>]*<span class="number">2</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> seqs[<span class="number">2</span>] <span class="keyword">and</span> seqs[<span class="number">3</span>] <span class="keyword">and</span> seqs[<span class="number">2</span>] == seqs[<span class="number">3</span>]:</span><br><span class="line">        seqs[<span class="number">2</span>], seqs[<span class="number">3</span>] = seqs[<span class="number">2</span>]*<span class="number">2</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> trim(seqs, direction=direction)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">up</span>(<span class="params">grid</span>):</span></span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]:</span><br><span class="line">        <span class="keyword">for</span> _idx,n <span class="keyword">in</span> enumerate(sum_seqs(trim([row[col] <span class="keyword">for</span> row <span class="keyword">in</span> grid]))):</span><br><span class="line">            grid[_idx][col] = n</span><br><span class="line">    <span class="keyword">return</span> grid</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">down</span>(<span class="params">grid</span>):</span></span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]:</span><br><span class="line">        <span class="keyword">for</span> idx,n <span class="keyword">in</span> enumerate(sum_seqs(trim([row[col] <span class="keyword">for</span> row <span class="keyword">in</span> grid],direction=<span class="number">1</span>),direction=<span class="number">1</span>)):</span><br><span class="line">            grid[idx][col] = n</span><br><span class="line">    <span class="keyword">return</span> grid</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">left</span>(<span class="params">grid</span>):</span></span><br><span class="line">    <span class="keyword">return</span> [sum_seqs(trim(row)) <span class="keyword">for</span> row <span class="keyword">in</span> grid]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">right</span>(<span class="params">grid</span>):</span></span><br><span class="line">    <span class="keyword">return</span> [sum_seqs(trim(row,direction=<span class="number">1</span>),direction=<span class="number">1</span>) <span class="keyword">for</span> row <span class="keyword">in</span> grid]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 框架</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Game</span>:</span></span><br><span class="line">    grid =[[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]]</span><br><span class="line">    controls = [<span class="string">&quot;w&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;s&quot;</span>,<span class="string">&quot;d&quot;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 随机取值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rnd_field</span>(<span class="params">self</span>):</span></span><br><span class="line">        number = random.choice([<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">2</span>])</span><br><span class="line">        <span class="comment"># 将x,y坐标的全部取值返回后判断为0的位置并随机选择</span></span><br><span class="line">        x,y = random.choice([(x,y) <span class="keyword">for</span> x,y <span class="keyword">in</span> itertools.product([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) <span class="keyword">if</span> self.grid[x][y] == <span class="number">0</span>])</span><br><span class="line">        self.grid[x][y] = number</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 界面</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_screen</span>(<span class="params">self</span>):</span></span><br><span class="line">        os.system(<span class="string">&quot;cls&quot;</span>)   <span class="comment"># 清空屏幕</span></span><br><span class="line">        print(<span class="string">&#x27;-&#x27;</span>*<span class="number">21</span>)</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> self.grid:</span><br><span class="line">            print(<span class="string">&#x27;|&#123;&#125;|&#x27;</span>.format(<span class="string">&quot;|&quot;</span>.join([str(col <span class="keyword">or</span> <span class="string">&#x27; &#x27;</span>).center(<span class="number">4</span>) <span class="keyword">for</span> col <span class="keyword">in</span> row])))</span><br><span class="line">        print(<span class="string">&#x27;-&#x27;</span>*<span class="number">21</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#游戏逻辑</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">logic</span>(<span class="params">self,control</span>):</span></span><br><span class="line">        grid = &#123;<span class="string">&#x27;w&#x27;</span>:up,<span class="string">&#x27;a&#x27;</span>:left,<span class="string">&#x27;s&#x27;</span>:down,<span class="string">&#x27;d&#x27;</span>:right&#125;[control]([[c <span class="keyword">for</span> c <span class="keyword">in</span> r] <span class="keyword">for</span> r <span class="keyword">in</span> self.grid])</span><br><span class="line">        <span class="comment"># 当棋盘改变时</span></span><br><span class="line">        <span class="keyword">if</span> grid != self.grid:</span><br><span class="line">            <span class="keyword">del</span> self.grid[:]   <span class="comment"># 删除原棋盘</span></span><br><span class="line">            self.grid.extend(grid)   <span class="comment"># 改变后的棋盘代替原棋盘</span></span><br><span class="line">            <span class="comment"># 判断胜利</span></span><br><span class="line">            <span class="keyword">if</span> [n <span class="keyword">for</span> n <span class="keyword">in</span> itertools.chain(*grid) <span class="keyword">if</span> n &gt;= <span class="number">2048</span>]:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>,<span class="string">&quot;You Win!&quot;</span></span><br><span class="line"></span><br><span class="line">            self.rnd_field()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> [<span class="number">1</span> <span class="keyword">for</span> g <span class="keyword">in</span> [f(grid) <span class="keyword">for</span> f <span class="keyword">in</span> [up,down,left,right]] <span class="keyword">if</span> g != self.grid]:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>,<span class="string">&#x27;You Lost&#x27;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>,<span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">main_loop</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 初始化</span></span><br><span class="line">        self.grid = [[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]]</span><br><span class="line">        self.rnd_field()</span><br><span class="line">        self.rnd_field()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment"># 输出界面</span></span><br><span class="line">            self.print_screen()</span><br><span class="line">            <span class="comment"># 输入控制</span></span><br><span class="line">            control = input(<span class="string">&quot;input w/a/s/d:&quot;</span>)</span><br><span class="line">            <span class="comment">#判断控制</span></span><br><span class="line">            <span class="keyword">if</span> control <span class="keyword">in</span> self.controls:</span><br><span class="line">                status,info = self.logic(control)</span><br><span class="line">                <span class="keyword">if</span> status:</span><br><span class="line">                    print(info)</span><br><span class="line">                    <span class="keyword">if</span>  input(<span class="string">&#x27;Start another game?[y/n]&#x27;</span>).lower() == <span class="string">&#x27;y&#x27;</span>:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        sys.exit()</span><br><span class="line">        self.main_loop()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    Game().main_loop()</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+				
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
