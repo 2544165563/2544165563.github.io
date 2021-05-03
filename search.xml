@@ -2019,8 +2019,10 @@ public void shutdown(String s) &#123;
   </entry>
   <entry>
     <title>CSS</title>
-    <url>/2021/04/15/CSS/</url>
-    <content><![CDATA[<h1 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h1><p>&lt;style&gt;标签放在&lt;head&gt;标签中</p>
+    <url>/2021/04/29/CSS/</url>
+    <content><![CDATA[<h1 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">继承、* 》元素选择器 》 类选择器、伪类选择器 》 id选择器 》 行内样式 》!important</span><br></pre></td></tr></table></figure>
+
+<h1 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h1><p>&lt;style&gt;标签放在&lt;head&gt;标签中</p>
 <h2 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h2><p>将页面中的某种标签全部选中</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    p &#123;</span><br><span class="line">        color: red;</span><br><span class="line">        font-size: 30px;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -2044,20 +2046,13 @@ public void shutdown(String s) &#123;
 <h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><h3 id="链接伪类选择器"><a href="#链接伪类选择器" class="headerlink" title="链接伪类选择器"></a>链接伪类选择器</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">a:link &#123;</span><br><span class="line">	color: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--种类--&gt;</span></span><br><span class="line">a:link   选择未被访问的链接</span><br><span class="line"></span><br><span class="line">a:visited   选择已被访问过的链接</span><br><span class="line"></span><br><span class="line">a:hover   选择鼠标位于上面的链接</span><br><span class="line"></span><br><span class="line">a:active   选择活动链接（鼠标按下未弹起）</span><br></pre></td></tr></table></figure>
 
 <h3 id="focus伪类选择器"><a href="#focus伪类选择器" class="headerlink" title="focus伪类选择器"></a>focus伪类选择器</h3><p>当鼠标点击一个input元素时，选择该元素，除了input外还可以是其他元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">input:focus &#123;</span><br><span class="line">	background0color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">input:focus &#123;</span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="字体属性"><a href="#字体属性" class="headerlink" title="字体属性"></a>字体属性</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">font-family   字体系列:Microsoft Yahei微软雅黑</span><br><span class="line"></span><br><span class="line">font-size   16px:16像素</span><br><span class="line"></span><br><span class="line">font-weight   700粗bold,特粗bolder,细lighter,400正常normal,自定义数字</span><br><span class="line"></span><br><span class="line">font-style   normal,斜体italic</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--复合写法--&gt;</span></span><br><span class="line">font: font-style font-weight fontsize/line/height font-family;</span><br></pre></td></tr></table></figure>
 
 <h1 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">width&#x2F;heigth</span><br><span class="line"></span><br><span class="line">color</span><br><span class="line"></span><br><span class="line">background-color</span><br><span class="line"></span><br><span class="line">text-align   对齐方式center&#x2F;left&#x2F;right</span><br><span class="line"></span><br><span class="line">text-decoration   添加划线none&#x2F;underline&#x2F;overline&#x2F;line-through</span><br><span class="line"></span><br><span class="line">text-indent: 20px&#x2F;2em   文本首行缩进20个像素或2个font-size大小</span><br><span class="line"></span><br><span class="line">line-height: 26px   行间距,包含（上间距，文本高度，下间距）</span><br></pre></td></tr></table></figure>
 
-<p>添加边框</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.border</span>&#123;   </span></span><br><span class="line">        border-color: green;</span><br><span class="line">        border-width: 10px;</span><br><span class="line">        border-style: solid;</span><br><span class="line"><span class="css">        <span class="selector-tag">border-radius</span><span class="selector-pseudo">:50</span>%;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;border&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;图片地址&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>内边距</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .padding&#123;padding-top:10px;padding-right:10px;padding:left;padding-bottom:10px;&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-
-<p>外边距</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .margin&#123;margin-top:10px; margin-left:-25px;&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="消除列表序列"><a href="#消除列表序列" class="headerlink" title="消除列表序列"></a>消除列表序列</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">list-style: none;</span><br></pre></td></tr></table></figure>
 
 <h1 id="css引入方式"><a href="#css引入方式" class="headerlink" title="css引入方式"></a>css引入方式</h1><p>内部样式表</p>
 <p>行内样式表</p>
@@ -2095,6 +2090,161 @@ public void shutdown(String s) &#123;
 
 <h2 id="背景位置"><a href="#背景位置" class="headerlink" title="背景位置"></a>背景位置</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-position: x y;   可用坐标表示xy,也可用top,center等方位名称表示x,y</span><br></pre></td></tr></table></figure>
 
+<h2 id="背景固定-滚动"><a href="#背景固定-滚动" class="headerlink" title="背景固定/滚动"></a>背景固定/滚动</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-attachment: fixed&#x2F;scroll   固定&#x2F;滚动</span><br></pre></td></tr></table></figure>
+
+<h2 id="背景复合写法"><a href="#背景复合写法" class="headerlink" title="背景复合写法"></a>背景复合写法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: 颜色 地址 平铺 滚动 位置</span><br></pre></td></tr></table></figure>
+
+<h2 id="背景半透明"><a href="#背景半透明" class="headerlink" title="背景半透明"></a>背景半透明</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: rgba(0,0,0,0.5)   黑色透明度为0.5,可写成.5</span><br></pre></td></tr></table></figure>
+
+<h1 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">border-width   粗细</span><br><span class="line"></span><br><span class="line">border-style   样式</span><br><span class="line"></span><br><span class="line">border-color   颜色</span><br></pre></td></tr></table></figure>
+
+<h2 id="边框样式"><a href="#边框样式" class="headerlink" title="边框样式"></a>边框样式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">none</span><br><span class="line"></span><br><span class="line">hidden   隐藏边框</span><br><span class="line"></span><br><span class="line">dotted   点线</span><br><span class="line"></span><br><span class="line">dashed   虚线</span><br><span class="line"></span><br><span class="line">solid   实线</span><br><span class="line"></span><br><span class="line">double   双线</span><br><span class="line"></span><br><span class="line">groove   凹槽</span><br><span class="line"></span><br><span class="line">ridge   菱形</span><br><span class="line"></span><br><span class="line">inset   凹边</span><br><span class="line"></span><br><span class="line">outset   凸边</span><br></pre></td></tr></table></figure>
+
+<h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h2><p>可以用数值，可以用百分比</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">border-radius: length;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210422170748090.png" alt="image-20210422170748090"></p>
+<p>半径为length的圆</p>
+<h2 id="边框的复合写法"><a href="#边框的复合写法" class="headerlink" title="边框的复合写法"></a>边框的复合写法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">border: width style color</span><br></pre></td></tr></table></figure>
+
+<h2 id="边框分开写法"><a href="#边框分开写法" class="headerlink" title="边框分开写法"></a>边框分开写法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">border-top</span><br></pre></td></tr></table></figure>
+
+<h2 id="表格的细粗边框"><a href="#表格的细粗边框" class="headerlink" title="表格的细粗边框"></a>表格的细粗边框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">border-collapse: collapse;   合并相邻边框</span><br></pre></td></tr></table></figure>
+
+<h1 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">padding-top&#x2F;bottom&#x2F;left&#x2F;right</span><br></pre></td></tr></table></figure>
+
+<h2 id="复合写法"><a href="#复合写法" class="headerlink" title="复合写法"></a>复合写法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">padding: 5px   上下左右5</span><br><span class="line"></span><br><span class="line">padding: 5px 10px   上下5 左右10</span><br><span class="line"></span><br><span class="line">padding: 5px 10px 20px   上5 左右10 下20</span><br><span class="line"></span><br><span class="line">padding: 5px 5px 5px 5px   上 右 下 左</span><br></pre></td></tr></table></figure>
+
+<h1 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">margin-top&#x2F;bottom&#x2F;left&#x2F;right</span><br></pre></td></tr></table></figure>
+
+<h2 id="外边距水平居中"><a href="#外边距水平居中" class="headerlink" title="外边距水平居中"></a>外边距水平居中</h2><h2 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h2><p>1.指定宽度</p>
+<p>2.左右外边距设为auto</p>
+<h2 id="行内元素-行内块元素"><a href="#行内元素-行内块元素" class="headerlink" title="行内元素/行内块元素"></a>行内元素/行内块元素</h2><p>给其父亲添加text-align: center;</p>
+<h1 id="嵌套块元素垂直外边距的塌陷"><a href="#嵌套块元素垂直外边距的塌陷" class="headerlink" title="嵌套块元素垂直外边距的塌陷"></a>嵌套块元素垂直外边距的塌陷</h1><p>解决方法：</p>
+<p>1.为父元素定义边框</p>
+<p>2.为父元素定义内边距</p>
+<p>3.为父元素添加overflow: hidden;</p>
+<h1 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h1><p>盒子阴影不占用空间</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-shadow: h-shadow v-shadow blur spread color inset;</span><br><span class="line"></span><br><span class="line">h-shadow   水平阴影的位置</span><br><span class="line"></span><br><span class="line">v-shadow   垂直阴影的位置</span><br><span class="line"></span><br><span class="line">blur   模糊距离</span><br><span class="line"></span><br><span class="line">spread   阴影的尺寸</span><br><span class="line"></span><br><span class="line">color   阴影的颜色</span><br><span class="line"></span><br><span class="line">inset   将外部阴影改为内部阴影.</span><br></pre></td></tr></table></figure>
+
+<h1 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">text-shadow: h-shadow v-shadow blur color;</span><br></pre></td></tr></table></figure>
+
+<h1 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h1><h2 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h2><h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">float: none;   none&#x2F;left&#x2F;right</span><br></pre></td></tr></table></figure>
+
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>1.会脱离标准流</p>
+<p>   在没有浮动时        <img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210422181129727.png" alt="image-20210422181129727" style="zoom:25%;" /></p>
+<p>   第一个方块浮动时<img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210422181239846.png" alt="image-20210422181239846" style="zoom:25%;" /></p>
+<p>2.在一行内显示并且顶部与对齐</p>
+<p>3.具有行内块元素的特性</p>
+<p>4.浮动只会影响后面的元素，不会影响之前的元素</p>
+<p>5.浮动只会压住盒子，文字和图片会露出来</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>在父元素高度没有定义下，由于浮动在标准流中不占空间，导致后面的标准流元素上移重复，此时要清楚浮动。</p>
+<p>1.额外标签法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">clear: left&#x2F;right&#x2F;both</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;height: 60px;background-color: rgb(231, 23, 23);float: left;&quot;&gt;pig&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;clear: both;&quot;&gt;&lt;&#x2F;div&gt;   清除浮动，标签必须是块级元素</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;background-color: violet;&quot;&gt;scaryp&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.父级添加overflow</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">overflow: hidden&#x2F;auto&#x2F;scroll</span><br></pre></td></tr></table></figure>
+
+<p>3.after伪元素</p>
+<p>父级添加该css属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">	content: &quot;&quot;;</span><br><span class="line">	display: block;</span><br><span class="line">	height: 0;</span><br><span class="line">	clear: both;</span><br><span class="line">	visibility: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">	*zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.双伪元素清楚浮动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.clearfix:before,</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">	content: &quot;&quot;;</span><br><span class="line">	display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">	*zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>加了定位后，元素具有行内块元素的特征（大概吧=。=）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">position: static&#x2F;relative&#x2F;absolute&#x2F;fixed&#x2F;stickt   静态&#x2F;相对&#x2F;绝对&#x2F;固定&#x2F;粘性</span><br><span class="line"></span><br><span class="line">static</span><br><span class="line">和标准流一样</span><br><span class="line"></span><br><span class="line">relative</span><br><span class="line">相对于原来自身的位置，原来的位置继续保留，不会脱标</span><br><span class="line"></span><br><span class="line">absolute</span><br><span class="line">会脱标</span><br><span class="line">当祖级元素无定位时（包含static），以浏览器为边界</span><br><span class="line">当祖级元素有定位时，以最近的定位元素为边界</span><br><span class="line"></span><br><span class="line">fixed</span><br><span class="line">以可视窗口为边界</span><br><span class="line">不占有原来的位置</span><br><span class="line"></span><br><span class="line">sticky</span><br><span class="line">1.以浏览器可视化窗口为参照点</span><br><span class="line">2.占有原来的位置</span><br><span class="line">3，必须具有边偏移的其中一个</span><br></pre></td></tr></table></figure>
+
+<h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">top&#x2F;bottom&#x2F;left&#x2F;right</span><br></pre></td></tr></table></figure>
+
+<h3 id="固定在版心右侧位置"><a href="#固定在版心右侧位置" class="headerlink" title="固定在版心右侧位置"></a>固定在版心右侧位置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.left: 50%</span><br><span class="line">2.margin-left: 盒子height&#x2F;2</span><br></pre></td></tr></table></figure>
+
+<h3 id="叠放次序"><a href="#叠放次序" class="headerlink" title="叠放次序"></a>叠放次序</h3><p>定位才能使用</p>
+<p>如果值相同，后压前</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">z-index: 1;   数值越大，盒子就在上层</span><br></pre></td></tr></table></figure>
+
+<h1 id="css书写顺序"><a href="#css书写顺序" class="headerlink" title="css书写顺序"></a>css书写顺序</h1><p>1.布局定位属性</p>
+<p>display/position/float/clear/visibility/overflow</p>
+<p>2.自身属性</p>
+<p>width/height/margin/padding/border/background</p>
+<p>3.文本属性</p>
+<p>color/font/text-decoration/text-align/verticl-align/white-space/break-word</p>
+<p>4.其他属性</p>
+<p>content/cursor/border-radius/box-shadow/text-shadow/background:linear-gradient…..</p>
+<h1 id="隐藏和显示"><a href="#隐藏和显示" class="headerlink" title="隐藏和显示"></a>隐藏和显示</h1><p>当经过box1时显示box2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box1:hover .box2 &#123;</span><br><span class="line">	display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="display隐藏和显示"><a href="#display隐藏和显示" class="headerlink" title="display隐藏和显示"></a>display隐藏和显示</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">display: none&#x2F;block</span><br></pre></td></tr></table></figure>
+
+<p>隐藏后的元素不占有原来的位置</p>
+<h2 id="visibility隐藏和显示"><a href="#visibility隐藏和显示" class="headerlink" title="visibility隐藏和显示"></a>visibility隐藏和显示</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">visibility: visible&#x2F;hidden</span><br></pre></td></tr></table></figure>
+
+<p>隐藏后的元素占有原来位置</p>
+<h2 id="overflow溢出隐藏和显示"><a href="#overflow溢出隐藏和显示" class="headerlink" title="overflow溢出隐藏和显示"></a>overflow溢出隐藏和显示</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">overflow: visible&#x2F;hidden&#x2F;scroll&#x2F;auto</span><br><span class="line"></span><br><span class="line">visible   对溢出的内容显示</span><br><span class="line"></span><br><span class="line">hidden   将多出来的内容隐藏</span><br><span class="line"></span><br><span class="line">scroll   添加滚动条来查看溢出部分</span><br><span class="line"></span><br><span class="line">auto   在需要的时候添加滚动条</span><br></pre></td></tr></table></figure>
+
+<p>溢出的部分不占用位置</p>
+<h1 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h1><p>为了减少客户端对服务器图片的请求次数，将一些细小背景图片集合到一张图片上一次获取</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background: url(&#39;图片地址&#39;) x y;</span><br></pre></td></tr></table></figure>
+
+<p>x,y由图标在精灵图中的位置来获取</p>
+<h1 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h1><p>1.下载</p>
+<p><a href="https://icomoon.io/">https://icomoon.io/</a></p>
+<p>2.将下载的font文件夹放到根目录下</p>
+<p>3.声明字体文件，在下载的style.css文件中有代码</p>
+<p>4.声明font-family</p>
+<h2 id="图标的追加"><a href="#图标的追加" class="headerlink" title="图标的追加"></a>图标的追加</h2><p>将下载的selection.json上传，挑选新的图标</p>
+<h1 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h1><p>当宽和高为0时</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">width: 0px;</span><br><span class="line">height: 0px;</span><br><span class="line">border-top: 100px solid green;</span><br><span class="line">border-left: 100px solid black;</span><br><span class="line">border-right: 100px solid purple;</span><br><span class="line">border-bottom: 100px solid red;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210426165610065.png" alt="image-20210426165610065"></p>
+<p>三角形的画法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">width: 0px;</span><br><span class="line">height: 0px;</span><br><span class="line">border: 100px solid white;</span><br><span class="line">border-bottom: 100px solid black;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210427181135011.png" alt="image-20210427181135011"></p>
+<p>底边边框为零时</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">width: 0px;</span><br><span class="line">height: 0px;</span><br><span class="line">border-top: 100px solid green;</span><br><span class="line">border-left: 100px solid black;</span><br><span class="line">border-right: 100px solid purple;</span><br><span class="line">border-bottom: 0px solid red;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210427181232602.png" alt="image-20210427181232602"></p>
+<p>当顶部边框为200px时</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">width: 0px;</span><br><span class="line">height: 0px;</span><br><span class="line">border-top: 200px solid green;</span><br><span class="line">border-left: 100px solid black;</span><br><span class="line">border-right: 100px solid purple;</span><br><span class="line">border-bottom: 0px solid red;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210427181404838.png" alt="image-20210427181404838"></p>
+<h1 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cursor: default&#x2F;pointer手&#x2F;move移动&#x2F;text文本&#x2F;not-allowed禁止;</span><br></pre></td></tr></table></figure>
+
+<h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><h2 id="文本框去轮廓"><a href="#文本框去轮廓" class="headerlink" title="文本框去轮廓"></a>文本框去轮廓</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">outlineL 0&#x2F;none;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文本域防拖拽"><a href="#文本域防拖拽" class="headerlink" title="文本域防拖拽"></a>文本域防拖拽</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">resize: none;</span><br></pre></td></tr></table></figure>
+
+<h1 id="图片、表单、文字对齐方式"><a href="#图片、表单、文字对齐方式" class="headerlink" title="图片、表单、文字对齐方式"></a>图片、表单、文字对齐方式</h1><p>只能用于行内元素或行内块元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vertical-align: baseline基线&#x2F;top顶线&#x2F;middle中线&#x2F;bottom底线;</span><br></pre></td></tr></table></figure>
+
+<h1 id="图片下方有空隙"><a href="#图片下方有空隙" class="headerlink" title="图片下方有空隙"></a>图片下方有空隙</h1><p>1.添加除基线对齐外的其他对齐方式</p>
+<p>2.将img转换为块级元素</p>
+<h1 id="溢出文字省略"><a href="#溢出文字省略" class="headerlink" title="溢出文字省略"></a>溢出文字省略</h1><h2 id="单行文字"><a href="#单行文字" class="headerlink" title="单行文字"></a>单行文字</h2><p>1.强制一行内显示文本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">white-space: nowrap;</span><br></pre></td></tr></table></figure>
+
+<p>2.超出部分隐藏</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">overflow: hidden;</span><br></pre></td></tr></table></figure>
+
+<p>3.文字用省略号代替超出部分</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h2><p>有兼容问题，适用于webKit的内核</p>
+<p>1.隐藏代替</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">overflow: hidden;</span><br></pre></td></tr></table></figure>
+
+<p>2.弹性伸缩盒子模型显示</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">display: -webkit-box;</span><br></pre></td></tr></table></figure>
+
+<p>3.限制在一个块元素显示的文本行数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-webkit-line-clamo: 2;</span><br></pre></td></tr></table></figure>
+
+<p>4.设置或检索伸缩盒对象的子元素的排列方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2134,6 +2284,92 @@ public void shutdown(String s) &#123;
       </categories>
       <tags>
         <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5和CSS3</title>
+    <url>/2021/04/29/HTML5%E5%92%8CCSS3/</url>
+    <content><![CDATA[<h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><h2 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;<span class="name">\header</span>&gt;</span>   头部</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;<span class="name">\nav</span>&gt;</span>   导航</span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span><span class="tag">&lt;<span class="name">\article</span>&gt;</span>   内容</span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span><span class="tag">&lt;<span class="name">\section</span>&gt;</span>   定义文档某个区域</span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;<span class="name">\aside</span>&gt;</span>   侧边栏</span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;<span class="name">\footer</span>&gt;</span>   尾部</span><br></pre></td></tr></table></figure>
+
+<h2 id="多媒体标签"><a href="#多媒体标签" class="headerlink" title="多媒体标签"></a>多媒体标签</h2><h3 id="video视频"><a href="#video视频" class="headerlink" title="video视频"></a>video视频</h3><p>对不同浏览器使用不同格式</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;movie.mp4&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/mp4&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;movie.ogg&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/ogg&quot;</span>&gt;</span></span><br><span class="line">    你的浏览器不支持video标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>属性</p>
+<p>1.autoplay自动播放</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autoplay&#x3D;&quot;autoplay&quot;</span><br></pre></td></tr></table></figure>
+
+<p>谷歌浏览器无法自动播放时添加muted静音解决</p>
+<p>2.controls视频控件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">controls&#x3D;&quot;controls&quot;</span><br></pre></td></tr></table></figure>
+
+<p>添加暂停，进度条，声音等控件</p>
+<p>3.width/height</p>
+<p>4.loop视频循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">loop&#x3D;&quot;loop&quot;</span><br></pre></td></tr></table></figure>
+
+<p>5.preload预加载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">preload&#x3D;&quot;auto&quot;&#x2F;&quot;none&quot;</span><br></pre></td></tr></table></figure>
+
+<p>6.src地址</p>
+<p>7.poster加载等待图片</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">poster&#x3D;&quot;图片地址&quot;</span><br></pre></td></tr></table></figure>
+
+<p>在没有播放或等待视频时显示图片</p>
+<p>8.muted静音</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">muted&#x3D;&quot;muted&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="audio音频"><a href="#audio音频" class="headerlink" title="audio音频"></a>audio音频</h3><p>属性</p>
+<p>1.autoplay自动播放</p>
+<p>2.controls音频控件</p>
+<p>3.loop循环</p>
+<p>4.src地址</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>通过提交来验证输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>类型</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">email</span><br><span class="line"></span><br><span class="line">url</span><br><span class="line"></span><br><span class="line">date   日期</span><br><span class="line"></span><br><span class="line">time   时间</span><br><span class="line"></span><br><span class="line">month</span><br><span class="line"></span><br><span class="line">week</span><br><span class="line"></span><br><span class="line">number   数量</span><br><span class="line"></span><br><span class="line">tel   手机号</span><br><span class="line"></span><br><span class="line">search   搜索</span><br><span class="line"></span><br><span class="line">color  颜色域</span><br></pre></td></tr></table></figure>
+
+<p>属性</p>
+<p>1.required必填</p>
+<p>2.palceholder提示文本</p>
+<p>3.autofocus自动聚焦</p>
+<p>4.autocomplete历史提交</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autocomplete&#x3D;&quot;off&quot;&#x2F;&quot;on&quot;   打开&#x2F;关闭，默认打开</span><br></pre></td></tr></table></figure>
+
+<p>要放在表单内，同时具有name属性,同时提交成功</p>
+<p>5.multiole多选文件</p>
+<p>通常和file类型搭配使用</p>
+<h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[color] &#123;选择出具有color属性的div标签&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[color&#x3D;&quot;red&quot;] &#123;选择color为red的div&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[class^&#x3D;body] &#123;选择类名以body开头的div&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[class$&#x3D;body] &#123;选择类名以body结尾的div&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[class*&#x3D;body] &#123;选择类名中含有body的div&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构选择器"><a href="#结构选择器" class="headerlink" title="结构选择器"></a>结构选择器</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul :first-child &#123;选择ul里第一个孩子标签&#125;</span><br><span class="line"></span><br><span class="line">ul li:first-child &#123;选择ul里第一个标签,并判断是否是li&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul :last-child &#123;选择ul里最后一个标签&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul :nth-child(n) &#123;选择ul中第n个标签&#125;</span><br><span class="line"></span><br><span class="line">n可以时数字、关键字、公式</span><br><span class="line">关键字:even偶数、odd奇数</span><br><span class="line">公式:n全部、2n偶数、2n-1奇数、-n+5前五个...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul :first-of-type &#123;&#125;</span><br><span class="line"></span><br><span class="line">ul li:first-of-type &#123;选择ul中第一个li&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul :last-of-type &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul :nth-of-type(n)</span><br></pre></td></tr></table></figure>
+
+<h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">em::before &#123;content:&#39;在em内部前面插入内容&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">em::after &#123;content&#39;在em内部后面插入内容&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="CSS盒子模型"><a href="#CSS盒子模型" class="headerlink" title="CSS盒子模型"></a>CSS盒子模型</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-sizing: content-box&#x2F;border-box</span><br><span class="line"></span><br><span class="line">content-box   padding,border会扩展大小</span><br><span class="line"></span><br><span class="line">border-box   padding,border不会改变盒子大小</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>HTML5&amp;CSS3</tag>
       </tags>
   </entry>
 </search>
