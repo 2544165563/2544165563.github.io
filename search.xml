@@ -189,6 +189,11 @@
 
 <p>多层级</p>
 <p>&lt;&gt;.select(t1 t2)</p>
+<h3 id="attrs"><a href="#attrs" class="headerlink" title="attrs"></a>attrs</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img.attrs[&#39;src&#39;] 获取img标签的src属性</span><br></pre></td></tr></table></figure>
+
+<h3 id="has-attr"><a href="#has-attr" class="headerlink" title="has_attr"></a>has_attr</h3><p>判断img标签内是否有src属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img.has_attr(&#39;src&#39;)</span><br></pre></td></tr></table></figure>
+
 <h2 id="例-大学排名"><a href="#例-大学排名" class="headerlink" title="例 大学排名"></a>例 大学排名</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> bs4</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLText</span>(<span class="params">url</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r = requests.get(url,timeout = <span class="number">30</span>)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        <span class="keyword">return</span> r.text</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fillUnivList</span>(<span class="params">ulist,html</span>):</span></span><br><span class="line">    soup = BeautifulSoup(html,<span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> tr <span class="keyword">in</span> soup.find(<span class="string">&#x27;tbody&#x27;</span>).children:</span><br><span class="line">        <span class="keyword">if</span> isinstance(tr,bs4.element.Tag):</span><br><span class="line">            tds = tr(<span class="string">&#x27;td&#x27;</span>)</span><br><span class="line">            ulist.append([tds[<span class="number">0</span>].string,tds[<span class="number">1</span>].string,tds[<span class="number">4</span>].string])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printUnivList</span>(<span class="params">ulist,num</span>):</span></span><br><span class="line">    tplt = <span class="string">&quot;&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^10&#125;\t&#123;2:^10&#125;&quot;</span></span><br><span class="line">    print(tplt.format(<span class="string">&quot;排名&quot;</span>,<span class="string">&quot;学校&quot;</span>,<span class="string">&quot;总分&quot;</span>,chr(<span class="number">12288</span>)))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</span><br><span class="line">          u = ulist[i]</span><br><span class="line">          print(tplt.format(u[<span class="number">0</span>],u[<span class="number">1</span>],u[<span class="number">2</span>],chr(<span class="number">12288</span>)))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    uinfo = []</span><br><span class="line">    url = <span class="string">&#x27;http://www.zuihaodaxue.com/zuihaodaxuepaiming2020.html&#x27;</span></span><br><span class="line">    html = getHTMLText(url)</span><br><span class="line">    fillUnivList(uinfo,html)</span><br><span class="line">    printUnivList(uinfo,<span class="number">20</span>)</span><br><span class="line">main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
@@ -708,7 +713,7 @@
       </tags>
   </entry>
   <entry>
-    <title>requests爬取数据</title>
+    <title>python爬虫</title>
     <url>/2020/10/10/Python%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h1 id="Robots协议"><a href="#Robots协议" class="headerlink" title="Robots协议"></a>Robots协议</h1><p>User-agent: *</p>
 <p>Disallow: /</p>
@@ -820,7 +825,7 @@
 
 <h1 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h1><p>谷歌浏览器驱动下载地址：</p>
 <p><a href="http://chromedriver.storage.googleapis.com/index.html">http://chromedriver.storage.googleapis.com/index.html</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;https://www.taobao.com/&#x27;</span></span><br><span class="line">bro = webdriver.Chrome(executable_path=<span class="string">&#x27;./chromedriver&#x27;</span>)</span><br><span class="line">bro.get(url)</span><br><span class="line">html = bro.page_source   <span class="comment"># 连同动态数据一同获得</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#标签互动</span></span><br><span class="line">title1 = bro.find_element_by_id(<span class="string">&#x27;q&#x27;</span>)</span><br><span class="line">title1.send_keys(<span class="string">&#x27;我的世界&#x27;</span>)</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行js</span></span><br><span class="line">bro.execute_script(<span class="string">&#x27;window.scrollTo(0,document.body.scrollHeight)&#x27;</span>)</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#按钮互动</span></span><br><span class="line">button1 = bro.find_element_by_css_selector(<span class="string">&#x27;.tb-bg&#x27;</span>)</span><br><span class="line">button1.click()</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#回退</span></span><br><span class="line">bro.back()</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#关闭浏览器</span></span><br><span class="line">bro.quit()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;https://www.taobao.com/&#x27;</span></span><br><span class="line">bro = webdriver.Chrome(executable_path=<span class="string">&#x27;./chromedriver&#x27;</span>)</span><br><span class="line">bro.get(url)</span><br><span class="line">html = bro.page_source   <span class="comment"># 连同动态数据一同获得</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#获取标签内容</span></span><br><span class="line">title1 = bro.find_element_by_id(<span class="string">&#x27;q&#x27;</span>)</span><br><span class="line">print(title1.text)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取标签属性</span></span><br><span class="line">link = goods.find_element_by_tag_name(<span class="string">&#x27;a&#x27;</span>).get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#标签互动</span></span><br><span class="line">title1 = bro.find_element_by_id(<span class="string">&#x27;q&#x27;</span>)</span><br><span class="line">title1.send_keys(<span class="string">&#x27;我的世界&#x27;</span>)</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行js</span></span><br><span class="line">bro.execute_script(<span class="string">&#x27;window.scrollTo(0,document.body.scrollHeight)&#x27;</span>)</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#按钮互动</span></span><br><span class="line">button1 = bro.find_element_by_css_selector(<span class="string">&#x27;.tb-bg&#x27;</span>)</span><br><span class="line">button1.click()</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#回退</span></span><br><span class="line">bro.back()</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#关闭浏览器</span></span><br><span class="line">bro.quit()</span><br></pre></td></tr></table></figure>
 
 <p>处理iframe</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 动作链模组引入</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换浏览器标签定位的作用域</span></span><br><span class="line">bro.switch_to.frame(&lt;id&gt;)</span><br><span class="line">div = bro.find_.....</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动作链</span></span><br><span class="line">action = ActionChains(bro)   <span class="comment"># 定义动作链对象</span></span><br><span class="line"><span class="comment"># 点击长按</span></span><br><span class="line">action.click_and_hold(div)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    <span class="comment"># 移动标签(x,y)</span></span><br><span class="line">    <span class="comment">#perform()立即执行</span></span><br><span class="line">    action.move_by_offset(<span class="number">17</span>,<span class="number">0.</span>perform()</span><br><span class="line">    sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 释放动作链</span></span><br><span class="line">action.release()</span><br></pre></td></tr></table></figure>
@@ -2215,7 +2220,7 @@ public void shutdown(String s) &#123;
 <p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20210427181404838.png" alt="image-20210427181404838"></p>
 <h1 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cursor: default&#x2F;pointer手&#x2F;move移动&#x2F;text文本&#x2F;not-allowed禁止;</span><br></pre></td></tr></table></figure>
 
-<h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><h2 id="文本框去轮廓"><a href="#文本框去轮廓" class="headerlink" title="文本框去轮廓"></a>文本框去轮廓</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">outlineL 0&#x2F;none;</span><br></pre></td></tr></table></figure>
+<h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><h2 id="文本框去轮廓"><a href="#文本框去轮廓" class="headerlink" title="文本框去轮廓"></a>文本框去轮廓</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">outline: 0&#x2F;none;</span><br></pre></td></tr></table></figure>
 
 <h2 id="文本域防拖拽"><a href="#文本域防拖拽" class="headerlink" title="文本域防拖拽"></a>文本域防拖拽</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">resize: none;</span><br></pre></td></tr></table></figure>
 
@@ -2245,6 +2250,12 @@ public void shutdown(String s) &#123;
 
 <p>4.设置或检索伸缩盒对象的子元素的排列方式</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
+
+<h1 id="浏览器图标"><a href="#浏览器图标" class="headerlink" title="浏览器图标"></a>浏览器图标</h1><p>1.通过将png文件转换为ico文件</p>
+<p>比特虫：<a href="https://www.bitbug.net/">https://www.bitbug.net/</a></p>
+<p>2.将ico图标放到根目录下</p>
+<p>3.在head内引入图标</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;shortcut icon&quot; href&#x3D;&quot;favicon.ico&quot;&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -2365,11 +2376,38 @@ public void shutdown(String s) &#123;
 
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">em::after &#123;content&#39;在em内部后面插入内容&#39;&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="CSS盒子模型"><a href="#CSS盒子模型" class="headerlink" title="CSS盒子模型"></a>CSS盒子模型</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-sizing: content-box&#x2F;border-box</span><br><span class="line"></span><br><span class="line">content-box   padding,border会扩展大小</span><br><span class="line"></span><br><span class="line">border-box   padding,border不会改变盒子大小</span><br></pre></td></tr></table></figure>
+<h2 id="CSS盒子模型"><a href="#CSS盒子模型" class="headerlink" title="CSS盒子模型"></a>CSS盒子模型</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-sizing: content-box&#x2F;border-box</span><br><span class="line"></span><br><span class="line">content-box   padding,border会扩展大小</span><br><span class="line"></span><br><span class="line">border-box   padding,border不会改变盒子大小</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片模糊处理"><a href="#图片模糊处理" class="headerlink" title="图片模糊处理"></a>图片模糊处理</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">filter: blur(5px);</span><br></pre></td></tr></table></figure>
+
+<h2 id="calc函数"><a href="#calc函数" class="headerlink" title="calc函数"></a>calc函数</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">width: calc(100%-10px);</span><br></pre></td></tr></table></figure>
+
+<h2 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h2><p>如果对div使用过渡，属性写在div内而不是div:hover</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">transition: 属性 时间 曲线 延迟</span><br><span class="line">transition: all 1s ease .5s;</span><br><span class="line">transition: width 1s,height 1s;</span><br><span class="line"></span><br><span class="line">属性</span><br><span class="line">如width,color...可以用all表全部</span><br><span class="line"></span><br><span class="line">时间</span><br><span class="line">单位秒</span><br><span class="line"></span><br><span class="line">曲线</span><br><span class="line">默认ease,逐渐慢下来</span><br><span class="line">linear匀速,ease-in甲素,ease-out减速,ease-in-out先加后减</span><br><span class="line"></span><br><span class="line">延迟</span><br><span class="line">单位秒</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
         <tag>HTML5&amp;CSS3</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>SEO优化</title>
+    <url>/2021/05/04/SEO%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="TDK三大标签"><a href="#TDK三大标签" class="headerlink" title="TDK三大标签"></a>TDK三大标签</h1><p>1.title网站标题</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>品优购商城-综合网购首选-正品低价、品质保障、配达及时、轻松购物<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.description网站说明</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;meta name&#x3D;&quot;description&quot; content&#x3D;&quot;京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!&quot;&#x2F;&gt;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>3.keywords关键字</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;meta name&#x3D;“keywords&quot; content&#x3D;&quot;网上购物,网上商城手机,笔记本,电脑MP3,CD,VCD,DV,相机数码配件,手表,存储卡,京东&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="LOGO-SEO优化"><a href="#LOGO-SEO优化" class="headerlink" title="LOGO SEO优化"></a>LOGO SEO优化</h1><p>1.loge里面放一个h1标签，用来提权，告诉浏览器这个地方很重要</p>
+<p>2.h1里放一个链接,可以返回首页,把loge的背景图片给链接</p>
+<p>3.链接里放文字(网站名称),文字不要显示出来</p>
+<p>​    方法1：text-indent移到盒子外面(text-indent:-9999px),然后overflow:hidden隐藏</p>
+<p>​    方法2：font-size:0;</p>
+<p>4.给链接title属性</p>
+]]></content>
   </entry>
 </search>
