@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JS - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="js基础引入外部js1&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;text.js&amp;quot;&amp;gt;不能在此处编写js代码&amp;lt;/s,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">JS</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">JS</h1>
+        <div class="stuff">
+            <span>五月 19, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="引入外部js"><a href="#引入外部js" class="headerlink" title="引入外部js"></a>引入外部js</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;text.js&quot;</span>&gt;</span>不能在此处编写js代码<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注释</span></span><br></pre></td></tr></table></figure>
+
+<p>多行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*注</span></span><br><span class="line"><span class="comment">  释*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>浏览器弹出警告框</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&quot;Hellow World&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>向页面输出内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.write(&quot;Hellow World&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>向控制台输出内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log();</span><br></pre></td></tr></table></figure>
+
+<p>带有确认取消的弹窗</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">confirm(&quot;确认删除吗&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="字面量与变量"><a href="#字面量与变量" class="headerlink" title="字面量与变量"></a>字面量与变量</h2><p>字面量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">123，“123”，“NaN”...</span><br></pre></td></tr></table></figure>
+
+<p>变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 123;</span><br></pre></td></tr></table></figure>
+
+<p>查看变量类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof a);</span><br></pre></td></tr></table></figure>
+
+<p>无穷</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.MAX_VALUE*<span class="number">2</span> == <span class="literal">Infinity</span>   <span class="comment">//无穷，Infinity为字面量</span></span><br></pre></td></tr></table></figure>
+
+<p>非数字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;abc&quot; * &quot;bca&quot; &#x3D;&#x3D; NaN</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; new Array(1,2,3)</span><br><span class="line"></span><br><span class="line">var a &#x3D; [1,2,3]</span><br></pre></td></tr></table></figure>
+
+<p>长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.length</span><br></pre></td></tr></table></figure>
+
+<p>方法</p>
+<p><img src="https://i.loli.net/2021/05/22/zasM5JRwnV4XUdy.png" alt="image-20210522100538556"></p>
+<p>遍历</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>]</span><br><span class="line"></span><br><span class="line">a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">data,postion,all</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);   <span class="comment">//第一个位置传元素</span></span><br><span class="line">    <span class="built_in">console</span>.log(postion);   <span class="comment">//第二个位置传索引</span></span><br><span class="line">    <span class="built_in">console</span>.log(all);   <span class="comment">//第三个位置传全部数据</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">str1.concat(str2)   连接</span><br><span class="line"></span><br><span class="line">str1.indexOf(str2,n)   从n(可省略)的位置开始查找str2在str1的位置，-1表示没有</span><br><span class="line"></span><br><span class="line">str1.lastindexOf(str2)   从后向前找</span><br><span class="line"></span><br><span class="line">str1.slice(1,2)   从索引1开始到2(不包括，可省略)截取</span><br><span class="line"></span><br><span class="line">str1.substr(1,2)   从1开始截取两个</span><br><span class="line"></span><br><span class="line">str1.split(str2)   分割,可以传正则表达式</span><br><span class="line"></span><br><span class="line">str1.toLowerCase()   转小写</span><br><span class="line"></span><br><span class="line">str1.toUpperCase()   转大写</span><br><span class="line"></span><br><span class="line">str.search(reg)   查找位置，可传正则表达式</span><br><span class="line"></span><br><span class="line">str.match(reg)   提取出匹配字符串</span><br><span class="line"></span><br><span class="line">str.replace(&quot;被替换内容&quot;,&quot;替换内容&quot;)   可传正则表达式</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">var reg &#x3D; new RegExp(&quot;正则&quot;,&quot;匹配模式&quot;)</span><br><span class="line"></span><br><span class="line">var reg &#x3D; &#x2F;正则&#x2F;匹配模式</span><br><span class="line"></span><br><span class="line">正则</span><br><span class="line">&#x2F;a|b&#x2F;或[ab]   或者</span><br><span class="line"></span><br><span class="line">&#x2F;[a-z]&#x2F;   a到z</span><br><span class="line"></span><br><span class="line">&#x2F;[A-z]&#x2F;   任意字母</span><br><span class="line"></span><br><span class="line">&#x2F;[^ab]&#x2F;    除了ab</span><br><span class="line"></span><br><span class="line">&#x2F;a&#123;3&#125;&#x2F;   aaa</span><br><span class="line"></span><br><span class="line">&#x2F;(ab)&#123;2&#125;&#x2F;   abab</span><br><span class="line"></span><br><span class="line">&#x2F;a&#123;1,3&#125;&#x2F;   a出现一次到三次</span><br><span class="line"></span><br><span class="line">&#x2F;a&#123;2,&#125;&#x2F;   a出现2次以上</span><br><span class="line"></span><br><span class="line">&#x2F;n+&#x2F;   至少一个</span><br><span class="line"></span><br><span class="line">&#x2F;n*&#x2F;   0个或多个</span><br><span class="line"></span><br><span class="line">&#x2F;n?&#x2F;   0个或1个</span><br><span class="line"></span><br><span class="line">&#x2F;^a&#x2F;   匹配开头</span><br><span class="line"></span><br><span class="line">&#x2F;a$&#x2F;   匹配结尾</span><br><span class="line"></span><br><span class="line">&#x2F;.&#x2F;   单个字符，除了&#x2F;与结束符</span><br><span class="line"></span><br><span class="line">&#x2F;\w&#x2F;   任意字母、数字、_</span><br><span class="line"></span><br><span class="line">&#x2F;\W&#x2F;   除了\w以外</span><br><span class="line"></span><br><span class="line">&#x2F;\d&#x2F;   [0-9]</span><br><span class="line"></span><br><span class="line">&#x2F;\D&#x2F;   [^0-9]</span><br><span class="line"></span><br><span class="line">&#x2F;\s&#x2F;   空格</span><br><span class="line"></span><br><span class="line">&#x2F;\S&#x2F;   除了空格</span><br><span class="line"></span><br><span class="line">&#x2F;\b&#x2F;   单词边界，&#x2F;\bhellow\b&#x2F;单纯的hellow</span><br><span class="line"></span><br><span class="line">&#x2F;\D&#x2F;   除了单词边界</span><br><span class="line"></span><br><span class="line">匹配模式</span><br><span class="line">i   忽略大小写</span><br><span class="line"></span><br><span class="line">g   全局匹配</span><br></pre></td></tr></table></figure>
+
+<p>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg.text(str);   判断str是否符合reg</span><br></pre></td></tr></table></figure>
+
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>转换为字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a.toString();   <span class="comment">//不能转null和undefined</span></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">String</span>(a);   <span class="comment">//可以转null和undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>转换为数值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">Number</span>(a);   <span class="comment">//a为空、false、null转换为0，非字符、underfined转换为NAN，true为1</span></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">parseInt</span>(a)   <span class="comment">//&quot;123.4px&quot; -&gt; 123</span></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">parseFloat</span>(a)   <span class="comment">//&quot;123.4px&quot; -&gt; 123.4</span></span><br></pre></td></tr></table></figure>
+
+<p>转换为布尔值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; Boolean(a);</span><br></pre></td></tr></table></figure>
+
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!</span><br><span class="line"></span><br><span class="line">&amp;&amp;   <span class="comment">// 两个值都为ture返回后面的值，两个都为false返回前面的值</span></span><br><span class="line"></span><br><span class="line">||</span><br></pre></td></tr></table></figure>
+
+<h2 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">条件表达式?语句<span class="number">1</span>:语句<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">a&gt;b?<span class="literal">true</span>:<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h2><p>if…else…</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a &gt; <span class="number">10</span>)&#123;</span><br><span class="line">	alert(<span class="string">&quot;a大于10&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(a &lt; <span class="number">5</span>)</span><br><span class="line">    alert(<span class="string">&quot;a小于5&quot;</span>);</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">	alert(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>switch</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(num)&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">console</span>.log(<span class="number">1</span>);<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">console</span>.log(<span class="number">2</span>);<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">console</span>.log(<span class="number">3</span>);<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="built_in">console</span>.log(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>while</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>创建对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj &#x3D; new Object();</span><br><span class="line"></span><br><span class="line">var obj1 &#x3D; &#123;name:&quot;xiaoming&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.name &#x3D; &quot;小明&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>删除属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete obj.name;</span><br></pre></td></tr></table></figure>
+
+<p>枚举对象属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    alert(<span class="built_in">this</span>)</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = createPerson(<span class="string">&quot;xiaoming&quot;</span>,<span class="string">&quot;17&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>创建函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">方法<span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;alert(123)&quot;</span>)   <span class="comment">// 不常用</span></span><br><span class="line"></span><br><span class="line">方法<span class="number">2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">	alert(n);</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>立即执行函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;alert(n);&#125;)(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+
+<p>隐含参数</p>
+<p>1.this上下文对象</p>
+<p>2.arguments</p>
+<p>​    arguments.length   传递实参的个数</p>
+<p>​    arguments[index]   获取传递的实参</p>
+<p>​    arguments.callee    获取函数本身</p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">names,ages</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.names = names;</span><br><span class="line">    <span class="built_in">this</span>.ages = ages;</span><br><span class="line">    <span class="built_in">this</span>.actions = fun;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.fun = <span class="function"><span class="keyword">function</span>(<span class="params">sex</span>)</span>&#123;alert(<span class="string">&quot;work&quot;</span>+sex);&#125;;   <span class="comment">//prototype为原型对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> Person(<span class="string">&quot;xiaohong&quot;</span>,<span class="string">&quot;16&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br></pre></td></tr></table></figure>
+
+<p>检查一个对象是否为一个类的实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj2 <span class="keyword">instanceof</span> Person)</span><br></pre></td></tr></table></figure>
+
+<h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>在创建的类中，有隐藏对象prototpye。对于新创建创建的对象，有__proto指向prototype。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype &#x3D;&#x3D; obj.__proto__;</span><br></pre></td></tr></table></figure>
+
+<p>检查对象自身是否含有属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">&quot;name&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>获取元素节点</p>
+<p>通过id返回单个节点，而其他获取方式获得的为一个集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.box1 div&quot;</span>);   <span class="comment">//css选择器查找，只能查找第一个</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll()   <span class="comment">//css选择器查找全部</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById();</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName();</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementsByName();</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName();   <span class="comment">//不支持IE8及以下</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body;   <span class="comment">//body节点</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.documentElement;   <span class="comment">//html文档节点</span></span><br></pre></td></tr></table></figure>
+
+<p>获取元素节点的子节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">btn.getElementsByTagName()   <span class="comment">//指定子节点</span></span><br><span class="line"></span><br><span class="line">btn.childNodes   <span class="comment">//所有子节点,会把换行也当节点</span></span><br><span class="line"></span><br><span class="line">btn.children   <span class="comment">//所有子节点，比childNodes好</span></span><br><span class="line"></span><br><span class="line">btn.firstChild   <span class="comment">//首个子节点,包括空白文本节点</span></span><br><span class="line"></span><br><span class="line">btn.firstElementChild;   <span class="comment">//获取首个子元素</span></span><br><span class="line"></span><br><span class="line">btn.lastChild   <span class="comment">//最后子节点，包括空白文本节点</span></span><br></pre></td></tr></table></figure>
+
+<p>获取父节点和兄弟节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">btn.parentNode()   <span class="comment">//父节点</span></span><br><span class="line"></span><br><span class="line">btn.previousSibling()   <span class="comment">//前一个兄弟节点,包括空白文本节点</span></span><br><span class="line"></span><br><span class="line">btn.previousElementSibling()   <span class="comment">//前一个兄弟元素</span></span><br><span class="line"></span><br><span class="line">btn.nextSibling()   <span class="comment">//后一个兄弟节点,包括空白文本节点</span></span><br></pre></td></tr></table></figure>
+
+<p>获取内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">btn.innerHTML   <span class="comment">//获取标签内的所有内容</span></span><br><span class="line"></span><br><span class="line">btn.属性名    <span class="comment">//获取标签属性，btn.class无效,采用btn.className</span></span><br><span class="line"></span><br><span class="line">btn.innerText   <span class="comment">//获取标签内的文本内容</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加、删除"><a href="#增加、删除" class="headerlink" title="增加、删除"></a>增加、删除</h2><p><img src="https://i.loli.net/2021/05/23/I9GViju4nfqZ6B3.png" alt="image-20210523113730362"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tag1 = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);   <span class="comment">//创建元素节点</span></span><br><span class="line"><span class="keyword">var</span> text1 = <span class="built_in">document</span>.createTextNode(<span class="string">&quot;Hellow&quot;</span>)   <span class="comment">//创建文本节点</span></span><br><span class="line"></span><br><span class="line">tag1.appendChild(text1)   <span class="comment">//组成html标签</span></span><br><span class="line"></span><br><span class="line">obj.appendChild(tag1)   <span class="comment">//将语句添加到obj节点里,obj为子节点的父节点</span></span><br><span class="line"></span><br><span class="line">obj.insertBefore(new1,old1)   <span class="comment">//在旧节点前插入新节点</span></span><br><span class="line"></span><br><span class="line">父节点.replaceChild(new1,old1)   <span class="comment">//替换</span></span><br><span class="line"></span><br><span class="line">父节点.removeChild(子节点)   <span class="comment">//删除</span></span><br></pre></td></tr></table></figure>
+
+<p>推荐</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tag1 = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">tag1.innerHTML = <span class="string">&quot;Hellow&quot;</span>;</span><br><span class="line">obj.appendChild(tag1);</span><br></pre></td></tr></table></figure>
+
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><img src="https://i.loli.net/2021/05/23/Y1bomLCDcruZp3W.png" alt="image-20210523220135276"></p>
+<h3 id="加载后执行js"><a href="#加载后执行js" class="headerlink" title="加载后执行js"></a>加载后执行js</h3><p>当js代码放在文档前面时，要先加载页面，再运行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">&quot;文档加载完成&quot;</span>);&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="点击按钮"><a href="#点击按钮" class="headerlink" title="点击按钮"></a>点击按钮</h3><p>单击</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">alert(</span>&quot;<span class="attr">Hellow</span>&quot;)&gt;</span>按钮点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>双击</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ondblclick</span>=<span class="string">alert(</span>&quot;<span class="attr">Hellow</span>&quot;)&gt;</span>按钮点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="点击链接"><a href="#点击链接" class="headerlink" title="点击链接"></a>点击链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:alert(&quot;</span><span class="attr">Hellow</span>&quot;)&quot;&gt;</span>链接点击<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = prompt(<span class="string">&quot;请输入数字&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="滚动条滚动"><a href="#滚动条滚动" class="headerlink" title="滚动条滚动"></a>滚动条滚动</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.onscroll</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标按下"><a href="#鼠标按下" class="headerlink" title="鼠标按下"></a>鼠标按下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.onmousedown</span><br></pre></td></tr></table></figure>
+
+<h4 id="防文字拖拽"><a href="#防文字拖拽" class="headerlink" title="防文字拖拽"></a>防文字拖拽</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标松开"><a href="#鼠标松开" class="headerlink" title="鼠标松开"></a>鼠标松开</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.onmouseup</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标移动"><a href="#鼠标移动" class="headerlink" title="鼠标移动"></a>鼠标移动</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标键盘属性"><a href="#鼠标键盘属性" class="headerlink" title="鼠标键盘属性"></a>鼠标键盘属性</h3><p><img src="https://i.loli.net/2021/05/23/Eb3OCfuNznY7dm1.png" alt="image-20210523222338137"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pageX   获取鼠标相当于页面的位置</span><br><span class="line"></span><br><span class="line">pageY</span><br></pre></td></tr></table></figure>
+
+<p>当事件的响应函数被触发的时候，浏览器会将一个事件对象作为实参传递进响应函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mouse_o.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    event = event || <span class="built_in">window</span>.event;</span><br><span class="line">	<span class="keyword">var</span> p_x = event.clientX;</span><br><span class="line">&#125;   <span class="comment">//event为事件对象</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件属性"><a href="#事件属性" class="headerlink" title="事件属性"></a>事件属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">event.cancelBubble &#x3D; true;   &#x2F;&#x2F;取消冒泡</span><br><span class="line"></span><br><span class="line">event.target;   &#x2F;&#x2F;返回触发事件的元素</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件委派"><a href="#事件委派" class="headerlink" title="事件委派"></a>事件委派</h3><p>不需要对每一个超链接绑定事件，对于新加的链接同样。</p>
+<p>只需对共同的父元素绑定，通过判断确定元素</p>
+<p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;lian&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;link&quot;</span>&gt;</span>超链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./demo.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul_o = <span class="built_in">document</span>.getElementById(<span class="string">&quot;lian&quot;</span>);</span><br><span class="line"></span><br><span class="line">ul_o.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.target.className == <span class="string">&quot;link&quot;</span>)&#123;</span><br><span class="line">        alert(<span class="string">&quot;我是超链接&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><p>在btn元素绑定了一个事件后，无法再绑定相同事件，否则会被覆盖</p>
+<p>addEbventListener可绑定多个事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.addEventListener(&quot;click&quot;,function()&#123;&#125;,false);</span><br></pre></td></tr></table></figure>
+
+<p>1.事件,不要加on   2.触发函数   3.是否在捕获时触发</p>
+<p>低版本浏览器可用attachEvent()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.attachEvent(<span class="string">&quot;onclick&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);  <span class="comment">//兼容IE8</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t_o = <span class="built_in">document</span>.getElementById(<span class="string">&quot;t&quot;</span>);</span><br><span class="line"></span><br><span class="line">t_o.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = event.pageX - t_o.offsetLeft;</span><br><span class="line">    <span class="keyword">var</span> y = event.pageY - t_o.offsetTop;</span><br><span class="line">    t_o.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        t_o.style.left = event.pageX - x + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">        t_o.style.top = event.pageY - y + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        t_o.onmousemove = <span class="literal">null</span>;</span><br><span class="line">        t_o.onmouseup = <span class="literal">null</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;t&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./demo.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="滚轮滑动"><a href="#滚轮滑动" class="headerlink" title="滚轮滑动"></a>滚轮滑动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素,onwheel</span><br></pre></td></tr></table></figure>
+
+<p>属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.wheelDelta   &#x2F;&#x2F;滚轮滑动数值</span><br></pre></td></tr></table></figure>
+
+<h3 id="键盘按下"><a href="#键盘按下" class="headerlink" title="键盘按下"></a>键盘按下</h3><p>只有能够成为焦点的元素可以绑定</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(event.keyCode &gt; <span class="number">47</span> &amp;&amp; event.keyCode &lt; <span class="number">58</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;   <span class="comment">// 当按下数字的时候无法输入</span></span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.keyCode   &#x2F;&#x2F;获取按下的编码</span><br></pre></td></tr></table></figure>
+
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h3><p>只能修改和读取内联样式里的style</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.style.样式名 &#x3D; 样式值</span><br></pre></td></tr></table></figure>
+
+<p>读取当前元素正在显示的样式，不能修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">元素.currentStyle.样式名</span><br><span class="line"></span><br><span class="line">getComputedStyle(元素,null).样式名;    &#x2F;&#x2F;用[]也可</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>都只读</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">元素.clientWidth;   &#x2F;&#x2F;返回可见宽度(宽度、内边距)数字</span><br><span class="line"></span><br><span class="line">元素.clientHeight;</span><br><span class="line"></span><br><span class="line">元素.offsetWidth;   &#x2F;&#x2F;返回整个宽度(宽度、内边距、边框)</span><br><span class="line"></span><br><span class="line">元素.offsetHeight;</span><br><span class="line"></span><br><span class="line">元素.offsetParent;   &#x2F;&#x2F;返回定位最近的祖先元素</span><br><span class="line"></span><br><span class="line">元素.offsetLeft;   &#x2F;&#x2F;返回距离定位父元素的水平位置</span><br><span class="line"></span><br><span class="line">元素.offsetTop   &#x2F;&#x2F;返回距离定位父元素的竖直位置</span><br><span class="line"></span><br><span class="line">元素.scrollHeight;   &#x2F;&#x2F;获取滚动高度</span><br><span class="line"></span><br><span class="line">元素.scrollWidth;   &#x2F;&#x2F;获取滚动宽度</span><br><span class="line"></span><br><span class="line">元素.scrollLeft;   &#x2F;&#x2F;滚动条滚动的距离</span><br><span class="line"></span><br><span class="line">元素.scrollTop;   &#x2F;&#x2F;滚动条滚动的距离</span><br></pre></td></tr></table></figure>
+
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><h2 id="navigator浏览器信息"><a href="#navigator浏览器信息" class="headerlink" title="navigator浏览器信息"></a>navigator浏览器信息</h2><p><img src="https://i.loli.net/2021/05/24/LCa9bg64ontlKZ8.png" alt="image-20210524162347325"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.userAgent;   <span class="comment">//返回用户代理</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="history浏览器记录"><a href="#history浏览器记录" class="headerlink" title="history浏览器记录"></a>history浏览器记录</h2><p>属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.lenght;   <span class="comment">//访问页面的数量</span></span><br></pre></td></tr></table></figure>
+
+<p>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">history.back();   回退</span><br><span class="line"></span><br><span class="line">history.forward();   前进</span><br><span class="line"></span><br><span class="line">history.go(n);   +n表示向前跳转n个界面,-n向后跳转n个界面</span><br></pre></td></tr></table></figure>
+
+<h2 id="location地址栏"><a href="#location地址栏" class="headerlink" title="location地址栏"></a>location地址栏</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.href &#x3D; &quot;url&quot;   &#x2F;&#x2F;直接跳转至网站，如果网址不全会变为相对路径</span><br></pre></td></tr></table></figure>
+
+<p>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.reload(true);   &#x2F;&#x2F;重新加载页面,加true强制清空缓存</span><br><span class="line"></span><br><span class="line">location.replace();   &#x2F;&#x2F;用新的页面代替此页面，但不会生成历史记录</span><br></pre></td></tr></table></figure>
+
+<h2 id="screen屏幕"><a href="#screen屏幕" class="headerlink" title="screen屏幕"></a>screen屏幕</h2><p><img src="https://i.loli.net/2021/05/24/2fNQmCge38adUqr.png" alt="image-20210524175810000"></p>
+<h2 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h2><h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><p>开启定时器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var timer &#x3D; setInterval(function()&#123;&#125;,1000);   &#x2F;&#x2F;每隔1s执行一次函数</span><br></pre></td></tr></table></figure>
+
+<p>关闭定时器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearInterval(timer);</span><br></pre></td></tr></table></figure>
+
+<h3 id="延迟调用"><a href="#延迟调用" class="headerlink" title="延迟调用"></a>延迟调用</h3><p>开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var timer &#x3D; setTimeout(function()&#123;&#125;,1000);</span><br></pre></td></tr></table></figure>
+
+<p>清除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearTimeout(timer);</span><br></pre></td></tr></table></figure>
+
+<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(string);   string-&gt;JSON</span><br><span class="line"></span><br><span class="line">JOSN.stringify(json);   JSON-&gt;string</span><br></pre></td></tr></table></figure>
+
+<p>json分类</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#123;&quot;name&quot;:&quot;xiaoming&quot;,&quot;age&quot;:18&#125;&#x27;</span>   <span class="comment">//对象</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;[1,2,3]&#x27;</span>   <span class="comment">//数组</span></span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#js%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">js基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8js"><span class="toc-number">1.1.</span> <span class="toc-text">引入外部js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-number">1.3.</span> <span class="toc-text">输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">字面量与变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.5.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.6.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.8.</span> <span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.10.</span> <span class="toc-text">条件运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.11.</span> <span class="toc-text">分支语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.12.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-number">1.12.1.</span> <span class="toc-text">自定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.13.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-number">1.14.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.14.1.</span> <span class="toc-text">原型对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM"><span class="toc-number">2.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.</span> <span class="toc-text">查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E3%80%81%E5%88%A0%E9%99%A4"><span class="toc-number">2.2.</span> <span class="toc-text">增加、删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E5%90%8E%E6%89%A7%E8%A1%8Cjs"><span class="toc-number">2.3.1.</span> <span class="toc-text">加载后执行js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">点击按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5"><span class="toc-number">2.3.3.</span> <span class="toc-text">点击链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%97%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="toc-number">2.3.4.</span> <span class="toc-text">接受用户输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%BB%9A%E5%8A%A8"><span class="toc-number">2.3.5.</span> <span class="toc-text">滚动条滚动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E6%8C%89%E4%B8%8B"><span class="toc-number">2.3.6.</span> <span class="toc-text">鼠标按下</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E6%96%87%E5%AD%97%E6%8B%96%E6%8B%BD"><span class="toc-number">2.3.6.1.</span> <span class="toc-text">防文字拖拽</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E6%9D%BE%E5%BC%80"><span class="toc-number">2.3.7.</span> <span class="toc-text">鼠标松开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8"><span class="toc-number">2.3.8.</span> <span class="toc-text">鼠标移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E9%94%AE%E7%9B%98%E5%B1%9E%E6%80%A7"><span class="toc-number">2.3.9.</span> <span class="toc-text">鼠标键盘属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="toc-number">2.3.10.</span> <span class="toc-text">事件属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%B4%BE"><span class="toc-number">2.3.11.</span> <span class="toc-text">事件委派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">2.3.12.</span> <span class="toc-text">事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%96%E6%8B%BD"><span class="toc-number">2.3.13.</span> <span class="toc-text">拖拽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%9A%E8%BD%AE%E6%BB%91%E5%8A%A8"><span class="toc-number">2.3.14.</span> <span class="toc-text">滚轮滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E6%8C%89%E4%B8%8B"><span class="toc-number">2.3.15.</span> <span class="toc-text">键盘按下</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">2.4.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96"><span class="toc-number">2.4.1.</span> <span class="toc-text">获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">2.4.2.</span> <span class="toc-text">属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BOM"><span class="toc-number">3.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#navigator%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BF%A1%E6%81%AF"><span class="toc-number">3.1.</span> <span class="toc-text">navigator浏览器信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%B0%E5%BD%95"><span class="toc-number">3.2.</span> <span class="toc-text">history浏览器记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location%E5%9C%B0%E5%9D%80%E6%A0%8F"><span class="toc-number">3.3.</span> <span class="toc-text">location地址栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#screen%E5%B1%8F%E5%B9%95"><span class="toc-number">3.4.</span> <span class="toc-text">screen屏幕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Window"><span class="toc-number">3.5.</span> <span class="toc-text">Window</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">3.5.1.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E8%B0%83%E7%94%A8"><span class="toc-number">3.5.2.</span> <span class="toc-text">延迟调用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
