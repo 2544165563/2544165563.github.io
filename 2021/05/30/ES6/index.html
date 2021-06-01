@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ES6 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="let、const共有特性块级作用域
+1234for(let i=0;i&amp;lt;3;i++)&amp;#123;    let i = &amp;quot;and&amp;quot;;    console.log(i);,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">ES6</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">ES6</h1>
+        <div class="stuff">
+            <span>五月 30, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a>let、const</h1><h2 id="共有特性"><a href="#共有特性" class="headerlink" title="共有特性"></a>共有特性</h2><p><strong>块级作用域</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">&quot;and&quot;</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for循环(let i=0;i&lt;3;i++)为<strong>父作用域</strong>,{}内为<strong>子作用域</strong>,当子作用域内的i没有声明时再去找父作用域内的i。</p>
+<hr>
+<p><strong>不能重复声明</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">let</span> a = <span class="number">1</span>;   <span class="comment">// 报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arg;</span><br><span class="line">&#125;</span><br><span class="line">func() <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+
+<p>var重复声明不会报错,而let与const不允许重复声明</p>
+<hr>
+<p><strong>不存在声明提升</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);   <span class="comment">//报错：ReferenceError</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>var会存在变量提升，而let不存在这种情况</p>
+<h2 id="let变量"><a href="#let变量" class="headerlink" title="let变量"></a>let变量</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a;</span><br><span class="line"></span><br><span class="line">let a=1,b=2;</span><br></pre></td></tr></table></figure>
+
+<p>let与var都是声明变量，但是let声明的变量为<strong>局部变量</strong></p>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span>(ture)&#123;</span><br><span class="line">	a = <span class="string">&quot;123&quot;</span>;   <span class="comment">// ReferenceError</span></span><br><span class="line">	<span class="keyword">let</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果在一个块级作用域内用let声明前使用，无论有没有全局变量都会报错，称为<strong>暂时性死区</strong></p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>const用来声明一个<strong>常量</strong>，并且声明的同时就要赋值，否则会报错</p>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [];</span><br><span class="line">a.push(<span class="string">&#x27;Hello&#x27;</span>); <span class="comment">// 可执行</span></span><br><span class="line">a.length = <span class="number">0</span>;    <span class="comment">// 可执行</span></span><br><span class="line">a = [<span class="string">&#x27;Dave&#x27;</span>];    <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br><span class="line">foo.prop   <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+
+<p>const只是保证<strong>指向的内存地址不变</strong>，当指向的为一个对象时，无法保证其中的内容不变。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>可以通过Object.freeze<strong>冻结对象</strong>。</p>
+<h1 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x,y,...z] = [<span class="string">&#x27;a&#x27;</span>];   <span class="comment">// x=&quot;a&quot;,y=undefined,z=[]</span></span><br></pre></td></tr></table></figure>
+
+<p>只要两边的<strong>匹配模式</strong>相同就能赋值</p>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a,b=<span class="string">&quot;b&quot;</span>] = [<span class="string">&quot;a&quot;</span>];   <span class="comment">// a=&quot;a&quot;,b=&quot;b&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a,b=<span class="string">&quot;b&quot;</span>] = [<span class="string">&quot;a&quot;</span>,<span class="string">&quot;c&quot;</span>];   <span class="comment">// a=&quot;a&quot;,b=&quot;c&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a=<span class="string">&quot;a&quot;</span>] = <span class="literal">undefined</span>;   <span class="comment">// a=&quot;a&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a=<span class="string">&quot;a&quot;</span>] = <span class="literal">null</span>;   <span class="comment">// a=null</span></span><br></pre></td></tr></table></figure>
+
+<p>当没有给变量赋值时，会将赋值<strong>默认值</strong></p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;name,age&#125; = &#123;<span class="attr">name</span>:<span class="string">&#x27;aaa&#x27;</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>对象赋值与<strong>顺序无关</strong>，与<strong>属性名有关</strong>。</p>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">&#x27;aaa&#x27;</span>, <span class="attr">bar</span>: <span class="string">&#x27;bbb&#x27;</span> &#125;;   <span class="comment">//baz=&quot;aaa&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>当变量名和属性名不一致时，先找到同名属性，然后再赋给对应的变量，foo是匹配的模式，baz才是变量。真正被赋值的是变量baz</p>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;<span class="attr">x</span>: y = <span class="number">3</span>&#125; = &#123;<span class="attr">x</span>: <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;x = <span class="number">3</span>&#125; = &#123;<span class="attr">x</span>: <span class="literal">undefined</span>&#125;;   <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;x = <span class="number">3</span>&#125; = &#123;<span class="attr">x</span>: <span class="literal">null</span>&#125;;   <span class="comment">// null </span></span><br></pre></td></tr></table></figure>
+
+<p>当没有给变量赋值时，会将赋值<strong>默认值</strong></p>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> zhao = &#123;</span><br><span class="line">    name:<span class="string">&quot;zhao&quot;</span>,</span><br><span class="line">    action: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;Hellow&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;name,action&#125; = zhao;</span><br><span class="line">action();   <span class="comment">// Hellow</span></span><br></pre></td></tr></table></figure>
+
+<p>可以直接将方法赋值给变量，免去了使用zhao.action()的麻烦，可以直接用action</p>
+<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p>声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`Hellow World`</span>;</span><br></pre></td></tr></table></figure>
+
+<p>特性</p>
+<p>1.可以直接换行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`</span></span><br><span class="line"><span class="string">			Hellow</span></span><br><span class="line"><span class="string">			World</span></span><br><span class="line"><span class="string">			`</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.变量拼接</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str1 = <span class="string">`Hellow`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">`<span class="subst">$&#123;str1&#125;</span> World`</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="对象的简化写法"><a href="#对象的简化写法" class="headerlink" title="对象的简化写法"></a>对象的简化写法</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;Hellow&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> action = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;World&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">	name,</span><br><span class="line">	action,</span><br><span class="line">    demo()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;简化方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码相当于下列代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">	name: <span class="string">&quot;Hellow&quot;</span>,</span><br><span class="line">    </span><br><span class="line">	action: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&quot;World&quot;</span>);&#125;,</span><br><span class="line">    </span><br><span class="line">    demo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;简化方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><p>声明</p>
+<p>old</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>new</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>特性</p>
+<p>1.this是静态的，始终指向声明时所在作用域下的this</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 箭头函数</span></span><br><span class="line"><span class="keyword">let</span> getName2 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局属性</span></span><br><span class="line"><span class="built_in">window</span>.name = <span class="string">&quot;red&quot;</span>;</span><br><span class="line"><span class="comment">//对象属性</span></span><br><span class="line"><span class="keyword">const</span> school = &#123;<span class="attr">name</span>:<span class="string">&quot;pink&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接调用</span></span><br><span class="line">getName1()   <span class="comment">// red</span></span><br><span class="line">getName2()   <span class="comment">// red</span></span><br><span class="line"><span class="comment">//call调用   call调用可以更改this</span></span><br><span class="line">getName1.call(school);   <span class="comment">//pink</span></span><br><span class="line">getName2.call(school);   <span class="comment">//red</span></span><br></pre></td></tr></table></figure>
+
+<p>2.不能作为构造函数实例化对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Person = <span class="function">(<span class="params">name</span>) =&gt;</span> &#123;<span class="built_in">this</span>.name=name;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> me = <span class="keyword">new</span> Person(<span class="string">&quot;liu&quot;</span>);   <span class="comment">// TypeError</span></span><br></pre></td></tr></table></figure>
+
+<p>3.不能使用arguments变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">fun(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)   <span class="comment">// ReferenceError</span></span><br></pre></td></tr></table></figure>
+
+<p>4.再省略</p>
+<p>​    （1）当有且只有一个参数时可以省略小括号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="function"><span class="params">n</span> =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​     （2）当只有一条语句的时候可以省略花括号,并且return也要省略</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="function"><span class="params">n</span> =&gt;</span> n*n;</span><br><span class="line"></span><br><span class="line">fun(<span class="number">2</span>)   <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#let%E3%80%81const"><span class="toc-number">1.</span> <span class="toc-text">let、const</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E6%9C%89%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">共有特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#let%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.</span> <span class="toc-text">let变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const"><span class="toc-number">1.3.</span> <span class="toc-text">const</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">2.</span> <span class="toc-text">变量的解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">2.1.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.2.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.</span> <span class="toc-text">模板字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E5%8C%96%E5%86%99%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">对象的简化写法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">箭头函数</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
