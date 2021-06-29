@@ -10,7 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    
+    <meta name="description" content="JQuery中的Ajax通过get向服务器发起Ajax请求数据
+1$.get(&amp;#x27;url&amp;#x27;,[数据对象],[回调函数])
+
+1234567let url = &amp;quot;http:,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="https://raw.githubusercontent.com/2544165563/2544165563.github.io/master/assets/tou.png"> 
@@ -60,7 +63,23 @@
 
         </div>
         <div class="content markdown">
-            
+            <h1 id="JQuery中的Ajax"><a href="#JQuery中的Ajax" class="headerlink" title="JQuery中的Ajax"></a>JQuery中的Ajax</h1><p>通过get向服务器发起Ajax请求数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.get(<span class="string">&#x27;url&#x27;</span>,[数据对象],[回调函数])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="string">&quot;http://www.xxx.com&quot;</span>;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&quot;#test&quot;</span>).on(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $.get(<span class="string">&#x27;url&#x27;</span>,&#123;<span class="attr">id</span>:<span class="number">1</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;<span class="built_in">console</span>.log(res);&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>通过post向服务器发起Ajax提交数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.post(<span class="string">&#x27;url&#x27;</span>,[数据对象],[回调函数])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>通过ajax可以发起get或者post请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;<span class="attr">type</span>:<span class="string">&#x27;GET&#x27;</span>,<span class="attr">url</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">data</span>:&#123;&#125;,<span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="删除请求获取的数据"><a href="#删除请求获取的数据" class="headerlink" title="删除请求获取的数据"></a>删除请求获取的数据</h1><p>由于请求的数据无法绑定，所以通过父元素代理获得</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;tbody&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>,<span class="string">&#x27;.del&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   <span class="comment">// tbody为父元素,为代理.del的元素绑定事件</span></span><br><span class="line">    $(<span class="built_in">this</span>)[<span class="number">0</span>].parentNode.parentNode.parentNode.removeChild($(<span class="built_in">this</span>)[<span class="number">0</span>].parentNode.parentNode);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
@@ -95,7 +114,7 @@
     </div>
     
         <div class='side'>
-				
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JQuery%E4%B8%AD%E7%9A%84Ajax"><span class="toc-number">1.</span> <span class="toc-text">JQuery中的Ajax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E8%8E%B7%E5%8F%96%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">2.</span> <span class="toc-text">删除请求获取的数据</span></a></li></ol>	
         </div>
     
 </div>

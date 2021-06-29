@@ -2037,6 +2037,8 @@
 
 <h2 id="expr计数器"><a href="#expr计数器" class="headerlink" title="expr计数器"></a>expr计数器</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">expr 2 + 5         # 7</span><br><span class="line"></span><br><span class="line">expr 2+5           # 2+5</span><br><span class="line"></span><br><span class="line">expr length &quot;this&quot;   # 4</span><br><span class="line"></span><br><span class="line">expr substr &quot;this is a test&quot; 3 5   # is is 在第3个字符开始,抓取5个字符</span><br><span class="line"></span><br><span class="line">expr index &quot;123456&quot; 5   # 5 抓取该字符第一次出现的位置</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;expr $a + $b&#39;;</span><br><span class="line"></span><br><span class="line">$((a+b));</span><br><span class="line"></span><br><span class="line">$[a+b];</span><br></pre></td></tr></table></figure>
+
 <h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls &gt; t.txt   # 将ls结果存放到t.txt中</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;   # 将标准输出覆盖写入文件</span><br><span class="line"></span><br><span class="line">&gt;&gt;   # 追加写入文件</span><br><span class="line"></span><br><span class="line">&amp;&gt;   # 将错误信息重定向，&gt;&amp;一样</span><br><span class="line"></span><br><span class="line">&amp;&gt;&gt;</span><br></pre></td></tr></table></figure>
@@ -2354,8 +2356,6 @@
 <h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>通过更改ip防止被封ip的反爬机制</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 爬取的网站如果是https则使用https协议的代理服务器,http网站则对应http协议的代理服务器</span></span><br><span class="line">html1 = requests.get(url1,headers = header,proxies=&#123;<span class="string">&#x27;http&#x27;</span>:<span class="string">&#x27;120.83.101.39:9999&#x27;</span>&#125;).text</span><br></pre></td></tr></table></figure>
 
-
-
 <p>免费的代理服务器都连不上哎，不过用梯子到也可以改变ip。</p>
 <h1 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h1><h2 id="greenlet模块"><a href="#greenlet模块" class="headerlink" title="greenlet模块"></a>greenlet模块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> greenlet <span class="keyword">import</span> greenlet</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span>():</span></span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line">    gr2.switch()</span><br><span class="line">    print(<span class="number">2</span>)</span><br><span class="line">    gr2.switch()</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span>():</span></span><br><span class="line">    print(<span class="number">3</span>)</span><br><span class="line">    gr1.switch()</span><br><span class="line">    print(<span class="number">4</span>)</span><br><span class="line">    </span><br><span class="line">gr1 = greenlet(func1)</span><br><span class="line">gr2 = greenlet(func2)</span><br><span class="line"></span><br><span class="line">gr1.switch()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 3 2 4</span></span><br></pre></td></tr></table></figure>
 
@@ -2402,11 +2402,17 @@
 <p>scrapy genspider test <a href="http://www.xxx.com/">www.xxx.com</a></p>
 <p>3.运行爬虫</p>
 <p>scrapy crawl test</p>
-<h2 id="爬虫编写"><a href="#爬虫编写" class="headerlink" title="爬虫编写"></a>爬虫编写</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    name = <span class="string">&#x27;test&#x27;</span></span><br><span class="line">    start_urls = [<span class="string">&#x27;https://www.qiushibaike.com/text/&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        user = response.xpath(<span class="string">&#x27;.//div[@class=&quot;article block untagged mb15 typs_hot&quot;]&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> user:</span><br><span class="line">            user1 = i.xpath(<span class="string">&#x27;./div/a[2]/h2/text()&#x27;</span>)</span><br><span class="line">            print(user1.extract_first())   <span class="comment"># _frist()输出列表第一个内容</span></span><br><span class="line">            text1 = i.xpath(<span class="string">&#x27;.//div[@class=&quot;content&quot;]/span[1]/text()&#x27;</span>)</span><br><span class="line">            print(<span class="string">&#x27;&#x27;</span>.join(text1.extract() ) )   <span class="comment"># extracr()输出data内容</span></span><br></pre></td></tr></table></figure>
+<p>scrapy crawl test –nolog   不加载文档信息，只显示结果</p>
+<h2 id="爬虫编写"><a href="#爬虫编写" class="headerlink" title="爬虫编写"></a>爬虫编写</h2><p><strong>配置</strong></p>
+<p>将settings文件内的ROBOTSTXT_OBEY改为False</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    name = <span class="string">&#x27;test&#x27;</span></span><br><span class="line">    start_urls = [<span class="string">&#x27;https://www.qiushibaike.com/text/&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        user = response.xpath(<span class="string">&#x27;.//div[@class=&quot;article block untagged mb15 typs_hot&quot;]&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> user:</span><br><span class="line">            user1 = i.xpath(<span class="string">&#x27;./div/a[2]/h2/text()&#x27;</span>)</span><br><span class="line">            print(user1.extract_first())   <span class="comment"># _frist()输出列表第一个内容</span></span><br><span class="line">            text1 = i.xpath(<span class="string">&#x27;.//div[@class=&quot;content&quot;]/span[1]/text()&#x27;</span>)</span><br><span class="line">            print(<span class="string">&#x27;&#x27;</span>.join(text1.extract() ) )   <span class="comment"># extracr()输出data内容</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="持久化存储"><a href="#持久化存储" class="headerlink" title="持久化存储"></a>持久化存储</h2><p>5.1基于终端指令</p>
 <p>scrapy crawl test -o ./text.csv</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 只能将parse方法的返回值存储</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        list1 = []</span><br><span class="line">        user = response.xpath(<span class="string">&#x27;.//div[@class=&quot;article block untagged mb15 typs_hot&quot;]&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> user:</span><br><span class="line">            user1 = i.xpath(<span class="string">&#x27;./div/a[2]/h2/text()&#x27;</span>)</span><br><span class="line">            text1 = i.xpath(<span class="string">&#x27;.//div[@class=&quot;content&quot;]/span[1]/text()&#x27;</span>)</span><br><span class="line">            dic = &#123;<span class="string">&#x27;user&#x27;</span>:user1</span><br><span class="line">                   <span class="string">&#x27;text&#x27;</span>:text1&#125;</span><br><span class="line">            list1.append(dic)</span><br><span class="line">         <span class="keyword">return</span> list1</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 只能将parse方法的返回值存储</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        list1 = []</span><br><span class="line">        user = response.xpath(<span class="string">&#x27;.//div[@class=&quot;article block untagged mb15 typs_hot&quot;]&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> user:</span><br><span class="line">            user1 = i.xpath(<span class="string">&#x27;./div/a[2]/h2/text()&#x27;</span>)</span><br><span class="line">            text1 = i.xpath(<span class="string">&#x27;.//div[@class=&quot;content&quot;]/span[1]/text()&#x27;</span>)</span><br><span class="line">            dic = &#123;<span class="string">&#x27;user&#x27;</span>:user1，</span><br><span class="line">                   <span class="string">&#x27;text&#x27;</span>:text1&#125;</span><br><span class="line">            list1.append(dic)</span><br><span class="line">         <span class="keyword">return</span> list1</span><br></pre></td></tr></table></figure>
 
 <p>5.2基于管道</p>
 <p>在setttings里开启ITEM_PIPELINES</p>
@@ -3201,6 +3207,219 @@ public void shutdown(String s) &#123;
   <entry>
     <title>AJAX</title>
     <url>/2021/06/09/AJAX/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="JQuery中的Ajax"><a href="#JQuery中的Ajax" class="headerlink" title="JQuery中的Ajax"></a>JQuery中的Ajax</h1><p>通过get向服务器发起Ajax请求数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$.get(<span class="string">&#x27;url&#x27;</span>,[数据对象],[回调函数])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="string">&quot;http://www.xxx.com&quot;</span>;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&quot;#test&quot;</span>).on(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $.get(<span class="string">&#x27;url&#x27;</span>,&#123;<span class="attr">id</span>:<span class="number">1</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;<span class="built_in">console</span>.log(res);&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>通过post向服务器发起Ajax提交数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$.post(<span class="string">&#x27;url&#x27;</span>,[数据对象],[回调函数])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>通过ajax可以发起get或者post请求</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;<span class="attr">type</span>:<span class="string">&#x27;GET&#x27;</span>,<span class="attr">url</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">data</span>:&#123;&#125;,<span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="删除请求获取的数据"><a href="#删除请求获取的数据" class="headerlink" title="删除请求获取的数据"></a>删除请求获取的数据</h1><p>由于请求的数据无法绑定，所以通过父元素代理获得</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&#x27;tbody&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>,<span class="string">&#x27;.del&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   <span class="comment">// tbody为父元素,为代理.del的元素绑定事件</span></span><br><span class="line">    $(<span class="built_in">this</span>)[<span class="number">0</span>].parentNode.parentNode.parentNode.removeChild($(<span class="built_in">this</span>)[<span class="number">0</span>].parentNode.parentNode);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>JQuery</title>
+    <url>/2021/06/19/JQuery/</url>
+    <content><![CDATA[<h1 id="入口函数"><a href="#入口函数" class="headerlink" title="入口函数"></a>入口函数</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;等DOM结构渲染完毕执行&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="顶级对象"><a href="#顶级对象" class="headerlink" title="$顶级对象"></a>$顶级对象</h1><p>$ === JQuery</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">JQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;等DOM结构渲染完毕执行&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>JQuery对象</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&#x27;div&#x27;</span>)   <span class="comment">// 将div包装成JQuery对象</span></span><br></pre></td></tr></table></figure>
+
+<p>DOM对象与JQuery对象转换</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// $ -&gt; DOM</span></span><br><span class="line"><span class="keyword">const</span> o = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line"></span><br><span class="line">$(o);</span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM -&gt; $</span></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>)[<span class="number">0</span>];</span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).get(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;#id&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;*&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;.class&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;div,p,li&quot;</span>)   <span class="comment">//选取多个</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;div.class&quot;</span>)   <span class="comment">// 交集元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;ul&gt;li&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;ul li&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li:first&quot;</span>)   <span class="comment">// 第一个li元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li:last&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li:eq(2)&quot;</span>)   <span class="comment">// 获取第3个li元素,索引从0开始</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li:odd&quot;</span>)   <span class="comment">// 索引为奇数的元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li:even&quot;</span>)   <span class="comment">// 索引为偶数的元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li:checked&quot;</span>)   <span class="comment">// 被选中的元素</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>方法</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).parent();</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;ul&quot;</span>).chidren(<span class="string">&quot;li&quot;</span>);   <span class="comment">// ul&gt;li</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;ul&quot;</span>).find(<span class="string">&quot;li&quot;</span>)   <span class="comment">// ul li</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;.first&quot;</span>).siblings(<span class="string">&quot;li&quot;</span>)   <span class="comment">// 查找兄弟节点。不包含在自己</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;.first&quot;</span>).nextAll()   <span class="comment">// 查找当前元素之后的所有同辈元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;.last&quot;</span>).prevAll()   <span class="comment">// 查找当前元素之前的所有同辈元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).hasClass(<span class="string">&quot;protected&quot;</span>)   <span class="comment">//判断当前元素是否含有该类</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).eq(<span class="number">2</span>);   <span class="comment">// li:eq(2)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery样式操作"><a href="#JQuery样式操作" class="headerlink" title="JQuery样式操作"></a>JQuery样式操作</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;pink&quot;</span>);   <span class="comment">// 修改css样式</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).css(<span class="string">&quot;width&quot;</span>);   <span class="comment">// 返回样式属性</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).css(&#123;<span class="attr">width</span>:<span class="number">320</span>,<span class="attr">height</span>:<span class="number">200</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery效果"><a href="#JQuery效果" class="headerlink" title="JQuery效果"></a>JQuery效果</h1><p><strong>隐藏显示</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).hide([speed,[easing],[fn])   <span class="comment">// 隐藏元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).show()   <span class="comment">// 显示元素</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).toggle()   <span class="comment">// 切换隐藏和显示</span></span><br><span class="line"></span><br><span class="line">speed:<span class="string">&quot;slow&quot;</span>、<span class="string">&quot;normal&quot;</span>、<span class="string">&quot;fast&quot;</span>、<span class="number">1000</span>(毫秒)</span><br><span class="line"></span><br><span class="line">easing:默认，慢快慢<span class="string">&quot;swing&quot;</span>、匀速<span class="string">&quot;linear&quot;</span></span><br><span class="line"></span><br><span class="line">fn:回调函数</span><br></pre></td></tr></table></figure>
+
+<p><strong>滑动</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).slideDown([speed,[easing],[fn])   <span class="comment">// 下拉</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).slideUp()   <span class="comment">// 上拉</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).slideToggle()   <span class="comment">// 切换</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>切换</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)   <span class="comment">// 出去进入都出发该函数</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)   <span class="comment">// 鼠标经过时触发前一个函数，出去的时候触发后一个函数</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>淡入淡出</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).fadeIn([[speed],[easing],[fn]])</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).fadeOut()</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).fateTo(speed,opacity,[easing],[fn])   <span class="comment">// 修改透明度,opacity取值为0~1</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).fadeToggle()</span><br></pre></td></tr></table></figure>
+
+<p><strong>停止</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).stop()   <span class="comment">// 停止当前动画</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>动画</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">animate(&#123;params&#125;,[speed],[easing],[fn])</span><br><span class="line"></span><br><span class="line">params: 想要修改的样式，以对象形式传递</span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery属性操作"><a href="#JQuery属性操作" class="headerlink" title="JQuery属性操作"></a>JQuery属性操作</h1><p><strong>类</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).addClass(<span class="string">&quot;lei&quot;</span>)   <span class="comment">// 添加类名</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).removeClass(<span class="string">&quot;lei&quot;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).toggleClass(<span class="string">&quot;lei&quot;</span>)   <span class="comment">// 没有添加，有就删除</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>属性</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).prop(<span class="string">&quot;属性名&quot;</span>);   <span class="comment">// 获取固有属性值</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).prop(<span class="string">&quot;属性&quot;</span>,<span class="string">&quot;属性值&quot;</span>)   <span class="comment">// 设置固有属性值</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).attr(<span class="string">&quot;Hellow&quot;</span>)   <span class="comment">// 获取自定义属性</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).attr(<span class="string">&quot;Hellow&quot;</span>,<span class="number">5</span>)   <span class="comment">// 设置自定义属性值</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).data(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;xiaoming&quot;</span>)   <span class="comment">// 设置缓存数据</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).data(<span class="string">&quot;name&quot;</span>)   <span class="comment">// xiaoming,获取缓存数据</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery文本属性值"><a href="#JQuery文本属性值" class="headerlink" title="JQuery文本属性值"></a>JQuery文本属性值</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).html()   <span class="comment">// 获取元素内容</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).html(<span class="string">&quot;Hellow&quot;</span>)   <span class="comment">// 设置元素内容</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).text()   <span class="comment">// 获取文本内容</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).text()   <span class="comment">// 设置文本内容</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).val()   <span class="comment">// 获取表单值</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).val(<span class="string">&quot;Hellow&quot;</span>)   <span class="comment">// 设置表单值</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery元素操作"><a href="#JQuery元素操作" class="headerlink" title="JQuery元素操作"></a>JQuery元素操作</h1><h1 id="JQuery尺寸位置操作"><a href="#JQuery尺寸位置操作" class="headerlink" title="JQuery尺寸位置操作"></a>JQuery尺寸位置操作</h1><h1 id="JQuery方法"><a href="#JQuery方法" class="headerlink" title="JQuery方法"></a>JQuery方法</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;li&quot;</span>).index()   <span class="comment">// 得到当前元素的索引</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).append(<span class="string">&#x27;&lt;div&gt;&lt;/div&gt;&#x27;</span>)   <span class="comment">// 添加标签</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).mouseover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)   <span class="comment">// 鼠标经过</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).mouseout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)   <span class="comment">// 鼠标离开</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;li&quot;</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)   <span class="comment">// 发生改变时调用</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>BootStrap</title>
+    <url>/2021/06/13/BootStrap/</url>
+    <content><![CDATA[<h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>固定宽度</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>100%宽度</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container-fluid&quot;</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 超小屏幕（手机，小于 768px） */</span></span><br><span class="line"><span class="comment">/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 小屏幕（平板，大于等于 768px） */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width:</span> @screen-sm-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 中等屏幕（桌面显示器，大于等于 992px） */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width:</span> @screen-md-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 大屏幕（大桌面显示器，大于等于 1200px） */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width:</span> @screen-lg-min) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="栅格参数"><a href="#栅格参数" class="headerlink" title="栅格参数"></a>栅格参数</h1><p>将屏幕分为12列，通过定义col的大小来决定在一行内的分数</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-4&quot;</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-4&quot;</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-4&quot;</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6&quot;</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-6&quot;</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>列排序</strong></p>
+<p>push距最左边有n个列</p>
+<p>pull距最右边有n个列</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-9 col-md-push-3&quot;</span>&gt;</span>.col-md-9 .col-md-push-3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-3 col-md-pull-9&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: aqua;&quot;</span>&gt;</span>.col-md-3 .col-md-pull-9<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p><strong>普通表格</strong></p>
+<p>.table</p>
+<p><img src="https://i.loli.net/2021/06/13/46spHitzuryLQxe.png" alt="image-20210613151455460"></p>
+<p><strong>条纹表格</strong></p>
+<p>.table-striped</p>
+<p><img src="https://i.loli.net/2021/06/13/GIfEaFOZy97rbSh.png" alt="image-20210613151504420"></p>
+<p><strong>带边框的表格</strong></p>
+<p>.table-bordered</p>
+<p><img src="https://i.loli.net/2021/06/13/fuoqrhDBIdNcy3g.png" alt="image-20210613151543589"></p>
+<p><strong>鼠标悬停</strong></p>
+<p>.table-hover</p>
+<p><img src="https://i.loli.net/2021/06/13/ejS7Q2foHB68yOF.png" alt="image-20210613151618635"></p>
+<p><strong>紧凑</strong></p>
+<p>.table-condensed</p>
+<p><img src="https://i.loli.net/2021/06/13/lImuxQA2MF3wsYb.png" alt="image-20210613151705988"></p>
+<h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><p><strong>单行输入</strong></p>
+<p>.form-inline</p>
+<p><img src="https://i.loli.net/2021/06/13/QZd1pn3eg4bGrTH.png" alt="image-20210613153401919"></p>
+<p><strong>多行输入</strong></p>
+<p>.for-horizontal</p>
+<p>并且通过bs3-input:password:h添加密码等文本框</p>
+<p><img src="https://i.loli.net/2021/06/13/NrvfCLyU3lVp7bZ.png" alt="image-20210613160003616"></p>
+<p><strong>内联</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;sr-only&quot;</span> <span class="attr">for</span>=<span class="string">&quot;&quot;</span>&gt;</span>label<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;input-group&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;input-group-addon&quot;</span>&gt;</span>书名<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;exampleInputAmount&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Amount&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/Qc9ymIXaRtq4ZSU.png" alt="image-20210614153909715"></p>
+<p><strong>静态控件</strong></p>
+<p>通过为p标签添加.form-control-static来使其与label同行</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-horizontal&quot;</span> <span class="attr">role</span>=<span class="string">&quot;form&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>Form title<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;inputemail&quot;</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-2 control-label&quot;</span>&gt;</span>email:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-10&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;form-control-static&quot;</span>&gt;</span>email<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-10 col-sm-offset-2&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary&quot;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/4t1kW6RBFNmfqV8.png" alt="image-20210614095014155"></p>
+<p><strong>文本域</strong></p>
+<p>bs3-textarea</p>
+<p><img src="https://i.loli.net/2021/06/13/mwWIZjJ327xA91q.png" alt="image-20210613160535484"></p>
+<p><strong>单选</strong>    </p>
+<p>bs3-input:radio</p>
+<p>当类名改为radio-inline则变为同一行</p>
+<p><img src="https://i.loli.net/2021/06/13/gTS1DtzX9VEfAKI.png" alt="image-20210613161000963"></p>
+<p><strong>多选</strong></p>
+<p>bs3-input:checkbox</p>
+<p><img src="https://i.loli.net/2021/06/13/4elv6xUMCFPJ8HL.png" alt="image-20210613161024920"></p>
+<p><strong>下拉列表</strong></p>
+<p>bs3-input:select</p>
+<img src="https://i.loli.net/2021/06/13/TsHniDRVz28FtaP.png" alt="image-20210613162240897" style="zoom:150%;" />
+
+<p>添加multiple属性可以显示全部</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">multiple</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/13/frJjO7T3ub1od9i.png" alt="image-20210613162646662"></p>
+<p><strong>焦点状态</strong></p>
+<p>禁用disabled</p>
+<p>只读readonly</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">required</span>=<span class="string">&quot;required&quot;</span> <span class="attr">disabled</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>对所有主键添加时，只需要对最外层的fieldset添加</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fieldset</span> <span class="attr">disabled</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>提示状态</strong></p>
+<p>has-success、has-warning、has-error</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group has-success&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;inputemail&quot;</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-2 control-label&quot;</span>&gt;</span>email:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-10&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inputemail&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">required</span>=<span class="string">&quot;required&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/sMgc27KuIUqJZHf.png" alt="image-20210614101021634"></p>
+<p><strong>控件尺寸</strong></p>
+<p>通过为组件添加.input-lg与input-sm改变大小</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default input-lg&quot;</span>&gt;</span>input-lg<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/O1hLSbqcd9v5UJ8.png" alt="image-20210614102459946"></p>
+<p>可以为.form-horizontal设置尺寸，则其中包含的组件都会被改变尺寸</p>
+<h1 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h1><p>bs3-button</p>
+<p><strong>样式</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-link&quot;</span>&gt;</span>（链接）Link<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/BnC5TXtlJvkV2p3.png" alt="image-20210614110023031"></p>
+<p><strong>尺寸</strong></p>
+<p>.btn-lg、.btn-sm、.btn-xs</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default btn-xs&quot;</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/A2VcuWLf9KyRHrb.png" alt="image-20210614110432144"></p>
+<p>添加btn-block可以伸缩为父元素的100%</p>
+<p><strong>激活状态</strong></p>
+<p>为按钮添加.action可以让按钮在点击后为激活状态</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default action&quot;</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/06/14/3LhqUMxXOsFoIfJ.png" alt="image-20210614110739080"></p>
+<p><strong>禁用状态</strong></p>
+<p>button元素直接添加disabled</p>
+<p>a元素添加.disabled</p>
+<h1 id="panel"><a href="#panel" class="headerlink" title="panel"></a>panel</h1><p><img src="https://i.loli.net/2021/06/14/db3PDjUElmMcyQS.png" alt="image-20210614112043654"></p>
+<h1 id="辅助类"><a href="#辅助类" class="headerlink" title="辅助类"></a>辅助类</h1><p><img src="https://i.loli.net/2021/06/14/fMbL6xp3Tc4gYD1.png" alt="image-20210614111302686"></p>
+<p><strong>关闭符</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;close&quot;</span> <span class="attr">aria-label</span>=<span class="string">&quot;Close&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="symbol">&amp;times;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>三角符</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;caret&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>快速浮动</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pull-left&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pull-right&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>清除浮动</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>内容块居中</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;center-block&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>显示与隐藏</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;show&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hidden&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>框架</tag>
+      </tags>
   </entry>
 </search>
